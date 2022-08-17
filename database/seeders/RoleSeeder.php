@@ -19,8 +19,7 @@ class RoleSeeder extends Seeder
        $rolAdmin = Role::create(['name' => 'Admin']);
        $rolClient = Role::create(['name' => 'Cliente']);
        $rolEmpleado = Role::create(['name' => 'Empleado']);
-
-
+       
        Permission::create(['name' => 'products'])->syncRoles([$rolAdmin,$rolEmpleado]);
     }
 }
