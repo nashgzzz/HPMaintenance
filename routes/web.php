@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
+use App\Http\Controllers\roleController;
 use App\Http\Controllers\UserController;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\BrandController;
@@ -21,6 +22,7 @@ use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\ReceptionController;
 use App\Http\Controllers\EntryOrderController;
 use App\Http\Controllers\ItemClientController;
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\KindProductController;
 use App\Http\Controllers\VoucherUserController;
 use App\Http\Controllers\BranchOfficeController;
@@ -77,6 +79,10 @@ Route::resource('categoryProducts', CategoryProductController::class)->names('ca
 Route::resource('kindProducts', KindProductController::class)->names('kindProducts'); 
 Route::resource('vouchers', VoucherController::class)->names('vouchers'); 
 Route::resource('voucherUsers', VoucherUserController::class)->names('voucherUsers');   
+
+Route::resource('roles', roleController::class)->names('roles');  
+Route::resource('permissions', PermissionController::class)->names('permissions'); 
+
 
 
 

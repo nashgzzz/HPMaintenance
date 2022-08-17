@@ -46,6 +46,94 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
 
+                @if(Route::currentRouteName()=='permissions.index')
+
+                <a class="nav-link " href="#" data-toggle="collapse" data-target="#permissions" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fa fa-users"></i>
+                    <span>Permisos</span>
+                </a>
+                <div id="permissions" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Permisos</h6>
+                    <a class="collapse-item" href="{{ route('permissions.index') }}" >Listar Permisos</a>
+                        <a class="collapse-item" href="{{ route('permissions.create') }}">Agregar Permisos</a>
+                    </div>
+                </div>
+                @elseif(Route::currentRouteName()=='permissions.create')
+                <a class="nav-link " href="#" data-toggle="collapse" data-target="#permissions" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fa fa-users"></i>
+                    <span>Permisos</span>
+                </a>
+                <div id="permissions" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Permisos</h6>
+                    <a class="collapse-item" href="{{ route('permissions.index') }}" >Listar Permisos</a>
+                        <a class="collapse-item"  href="{{ route('permissions.create') }}">Agregar Permisos</a>
+                    </div>
+                </div>
+                @else
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#permissions" aria-expanded="false" aria-controls="collapseUtilities">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <span>Permisos</span>
+                
+                </a>
+                <div id="permissions" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Permisos</h6>
+                    <a class="collapse-item" href="{{ route('permissions.index') }}">Listar Permisos</a>
+                        <a class="collapse-item" href="{{ route('permissions.create') }}">Agregar Permisos</a>
+                    </div>
+                </div>
+               @endif
+
+            </li>
+
+            <li class="nav-item">
+
+                @if(Route::currentRouteName()=='roles.index')
+
+                <a class="nav-link " href="#" data-toggle="collapse" data-target="#roles" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fa fa-users"></i>
+                    <span>Roles</span>
+                </a>
+                <div id="roles" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Roles</h6>
+                    <a class="collapse-item" href="{{ route('roles.index') }}" >Listar Roles</a>
+                        <a class="collapse-item" href="{{ route('roles.create') }}">Agregar Roles</a>
+                    </div>
+                </div>
+                @elseif(Route::currentRouteName()=='roles.create')
+                <a class="nav-link " href="#" data-toggle="collapse" data-target="#roles" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fa fa-users"></i>
+                    <span>Roles</span>
+                </a>
+                <div id="roles" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Roles</h6>
+                    <a class="collapse-item" href="{{ route('roles.index') }}" >Listar Roles</a>
+                        <a class="collapse-item"  href="{{ route('roles.create') }}">Agregar Roles</a>
+                    </div>
+                </div>
+                @else
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#roles" aria-expanded="false" aria-controls="collapseUtilities">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                    <span>Roles</span>
+
+                </a>
+                <div id="roles" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Roles</h6>
+                    <a class="collapse-item" href="{{ route('roles.index') }}">Listar Roles</a>
+                        <a class="collapse-item" href="{{ route('roles.create') }}">Agregar Roles</a>
+                    </div>
+                </div>
+                @endif
+
+            </li>
+            
+            <li class="nav-item">
+
                 @if(Route::currentRouteName()=='users.index')
 
                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#usuarios" aria-expanded="true" aria-controls="collapseUtilities">
@@ -319,7 +407,7 @@
 
             </li>
 
-            @can('products')
+           
             <li class="nav-item">
 
                 @if(Route::currentRouteName()=='products.index')
@@ -369,7 +457,7 @@
                 @endif
 
             </li>
-            @endcan
+           
             <li class="nav-item">
 
                 @if(Route::currentRouteName()=='stores.index')
