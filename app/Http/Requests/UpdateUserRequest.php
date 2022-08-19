@@ -33,7 +33,8 @@ class UpdateUserRequest extends FormRequest
             'rut' => 'required',
             'fecha_nacimiento' => 'required',
             'sexo' => 'required',
-            'telefono' => 'required|max:9|min:7'
+            'telefono' => 'required|max:9|min:7',
+            'roles' => 'required'
         ];
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+//use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\roleController;
@@ -29,6 +30,7 @@ use App\Http\Controllers\BranchOfficeController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\BranchOfficeUserController;
 use App\Http\Controllers\ProductClientVoucherController;
+
 
 /*
 |--------------------------------------------------------------------------

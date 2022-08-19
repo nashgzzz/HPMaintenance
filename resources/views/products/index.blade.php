@@ -9,9 +9,12 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
+  
     
+    @can('products.create')
     <a type="button" class="btn btn-success" href='{{ route('products.create') }}'">Agregar un Producto</a>
-    
+    @endcan
+  
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -29,7 +32,9 @@
                         <th>Proovedor</th>
                         <th>Tipo Producto</th>
                         <th>Local</th>
+                        @can('products.edit')
                         <th>Acciones</th>
+                        @endcan
 
                     </tr>
                 </thead>
@@ -47,15 +52,22 @@
                             <td>{{$product->supplier_id}}</td>
                             <td>{{$product->kind_products_id}}</td>
                             <td>{{$product->store_id}}</td>
-                            <td>
-                                    <form action="{{ route('products.destroy',$product) }}" method="POST">
-                                        <a type="button" href="{{route('products.edit', $product)}}" class="btn btn-info">Editar</a>
-                                            @csrf
-                                            @method('DELETE')
-                                             <button type="submit" class="btn btn-danger">Delete</button>
                             
-                            </form>
-                             </td>
+                            @can('products.destroy')
+                            <td>
+                                   
+                                        <form action="{{ route('products.destroy',$product) }}" method="POST">
+                                            @can('products.edit')
+                                                <a type="button" href="{{route('products.edit', $product)}}" class="btn btn-info">Editar</a>
+                                            @endcan
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                
+                                        </form>
+                                    
+                            </td>
+                            @endcan
                         </tr>
                         @endforeach            
                 </tbody>

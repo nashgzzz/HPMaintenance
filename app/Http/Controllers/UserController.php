@@ -12,19 +12,26 @@ use Spatie\Permission\Models\Role;
 class UserController extends Controller
 {
     
+    public function __construct(){
+        $this->middleware('can:users.index')->only('index');
+        $this->middleware('can:users.edit')->only('edit','update');
+        $this->middleware('can:users.create')->only('create','store');
+        $this->middleware('can:users.destroy')->only('destroy');
+    }
 
     public function index()
     {
+        
         $users = User::all();
-       // dd($users);
-
         return View('users.index',compact('users'));
     }
 
     
-    public function create()
+    public function create(User $user)
     {
-        return view('users.create');
+        $roles = Role::all();
+        $user->roles()->sync($user->roles);
+        return view('users.create',compact('user', 'roles'));
     }
 
     
@@ -41,9 +48,9 @@ class UserController extends Controller
             'fecha_nacimiento' => $user->fecha_nacimiento,
             'sexo' =>$user->sexo,
             'telefono' => $user->telefono,
+            'role' => $user->roles,
         ]);
-
-        return redirect()->route('users.index');
+        return redirect()->route('users.index', $user);
     }
 
   
@@ -63,7 +70,7 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request, User $user)
     {
-    
+       
         $user->update([
             'name' => $request->name,
             'email' =>  $request->email,
@@ -74,8 +81,12 @@ class UserController extends Controller
             'fecha_nacimiento' => $request->fecha_nacimiento,
             'sexo' => $request->sexo,
             'telefono' => $request->telefono,
+            'role' => $request->role
         ]);
-        return redirect()->route('users.index');
+
+        $roles = Role::all();
+        $user->roles()->sync($request->roles);
+        return redirect()->route('users.index', $user);
 
     }
 

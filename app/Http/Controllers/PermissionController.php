@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Permission;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use App\Http\Requests\StorePermissionRequest;
 use App\Http\Requests\UpdatePermissionRequest;
 
 class PermissionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct(){
+        $this->middleware('can:permissions.index')->only('index');
+        $this->middleware('can:permissions.edit')->only('edit','update');
+        $this->middleware('can:permissions.create')->only('create','store');
+        $this->middleware('can:permissions.destroy')->only('destroy');
+    }
     public function index()
     {
         $permissions = Permission::all();

@@ -9,9 +9,9 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-    
+        
     <a type="button" class="btn btn-success" href="{{ route('users.create') }}">Agregar un Usuario</a>
-    
+  
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -28,6 +28,7 @@
                         <th>Fecha_nacimiento</th>
                         <th>Sexo</th>
                         <th>Teléfono</th>
+                        <th>Rol</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -46,14 +47,21 @@
                             <td>{{$user->fecha_nacimiento}}</td>
                             <td>{{$user->sexo}}</td>
                             <td>{{$user->telefono}}</td>
+                            <td>
+                                @foreach ($user->roles as $role)
+                                    <span> 
+                                        {{$role->name}}
+                                    </span>
+                                @endforeach
+                            </td>
                             <td> 
-                            <form action="{{ route('users.destroy',$user) }}" method="POST">
-                                <a type="button" href="{{route('users.edit', $user)}}" class="btn btn-info">Editar</a>
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                             </td>
+                                <form action="{{ route('users.destroy',$user) }}" method="POST">
+                                    <a type="button" href="{{route('users.edit', $user)}}" class="btn btn-info">Editar</a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
                         </tr>
                         @endforeach
                     

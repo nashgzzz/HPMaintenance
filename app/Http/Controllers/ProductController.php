@@ -8,11 +8,13 @@ use App\Models\Product;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct(){
+        $this->middleware('can:products.index')->only('index');
+        $this->middleware('can:products.edit')->only('edit','update');
+        $this->middleware('can:products.create')->only('create','store');
+        $this->middleware('can:products.destroy')->only('destroy');
+    }
+
     public function index()
     {
         $products = Product::all();

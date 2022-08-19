@@ -6,6 +6,7 @@ namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RoleSeeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,15 +23,8 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory()->create([
              'name' => 'User Admin',
              'email' => 'admin@example.com',
-             'password' => '123123123123'
              
          ])->assignRole('Admin');
-
-         \App\Models\User::factory()->create([
-            'name' => 'User Client',
-            'email' => 'client@example.com',
-            
-        ])->assignRole('Cliente');
 
         \App\Models\User::factory()->create([
             'name' => 'User employee',
@@ -38,6 +32,9 @@ class DatabaseSeeder extends Seeder
             
         ])->assignRole('Empleado');
         
+        User::factory(10)->create()->each(function($user){
+            $user->assignRole('Cliente');
+        });
         
         
         //Llamar a los seeder para los factory

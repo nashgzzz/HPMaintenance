@@ -22,24 +22,33 @@
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Guard Name</th>
+                        <th>Permisos</th>
                         <th>Acciones</th>
 
                     </tr>
                 </thead>
                 <tbody>
                     
-                        @foreach($roles as $key => $role)
+                        @foreach ($roles as $role)
                         <tr>
                             <td>{{$role->id}}</td>
                             <td>{{$role->name}}</td>
                             <td>{{$role->guard_name}}</td>
-                            <td><form action="{{ route('roles.destroy',$role) }}" method="POST">
-                                <a type="button" href="{{route('roles.edit', $role)}}" class="btn btn-info">Editar</a>
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                             </td>
+                            <td>
+                                @foreach ($role->permissions as $permission)
+                                    <span> 
+                                        {{$permission->name}}
+                                    </span>
+                                @endforeach
+                            </td>
+                            <td>
+                                    <form action="{{ route('roles.destroy',$role) }}" method="POST">
+                                        <a type="button" href="{{route('roles.edit', $role)}}" class="btn btn-info">Editar</a>
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                            </td>
                         </tr>
                         @endforeach            
                 </tbody>

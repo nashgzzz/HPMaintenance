@@ -2,38 +2,44 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Role;
+
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
-class roleController extends Controller
+class RoleController extends Controller
 {
-  
+    public function __construct(){
+        $this->middleware('can:roles.index')->only('index');
+        $this->middleware('can:roles.edit')->only('edit','update');
+        $this->middleware('can:roles.create')->only('create','store');
+        $this->middleware('can:roles.destroy')->only('destroy');
+    }
+
     public function index()
     {
         $roles = Role::all();
-       
-
         return View('roles.index',compact('roles'));
     }
 
    
     public function create()
     {
-        return View('roles.create');
+        $permissions = Permission::all();
+        return View('roles.create', compact('permissions'));
     }
 
 
     public function store(StoreRoleRequest $role)
     {
         
-        Role::create([
-            'name' => $role->name,
-            'guard_name' => $role->guard_name
-        ]);
-
-        return redirect()->route('roles.index');
+        $role = Role::create($role->all());
+        
+        $role->permissions()->sync($role->permissions);
+        
+         return view('roles.index', $role)->with('success','Roles Asignados');
     }
 
 
@@ -45,17 +51,17 @@ class roleController extends Controller
 
     public function edit(Role $role)
     {
-        return view('roles.edit',compact('role'));
+        $permissions = Permission::all();
+        return view('roles.edit',compact('role', 'permissions'));
     }
 
 
     public function update(UpdateRoleRequest $request, Role $role)
     {
-        $role->update([
-            'name' => $request->name,
-            'guard_name' => $request->guard_name
-        ]);
-        return redirect()->route('roles.index');
+        
+        $role->update($request->all());
+        $role->permissions()->sync($request->$permissions);
+        return redirect()->route('roles.index', $role);
     }
 
 

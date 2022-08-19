@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -7,8 +8,8 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
     <h2>Agregar Usuario</h2>
-        <form action="{{ route('users.store') }}" method="POST">
-        @csrf
+    {!! Form::open(['route' => 'users.store']) !!}
+        
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nameUser">Nombre Usuario</label>
@@ -79,8 +80,25 @@
                             <span> {{$message}} </span>
                         @enderror
                         </div>
+
+                        <div class="form-group col-md-6"> 
+                          
+                                @foreach ($roles as $role)
+                                    <div>
+                                        <label>
+                                            {!! Form::checkbox('roles[]', $role->id, null, ['class' => 'mr-1']) !!}
+                                            {{$role->name}}
+                                        </label>
+                                    </div>
+                                @endforeach
+                           
+                        </div>
+
                     </div>
-                    <button type="submit" class="btn btn-primary">Agregar Usuario</button>
+                  
+                    {!! Form::submit('Agregar Usuario', ['class' => 'btn btn-primary mt-2']) !!}
+                    {!! Form::close() !!}
+                 
         </form>
 
 
