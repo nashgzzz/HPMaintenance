@@ -684,7 +684,7 @@
 
             <li class="nav-item">
 
-                @if(Route::currentRouteName()=='branchOffices.index')
+                @if(Route::currentRouteName()=='bodegaSucursals.index')
 
                 <a class="nav-link " href="#" data-toggle="collapse" data-target="#branchie"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -694,12 +694,12 @@
                 <div id="branchie" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
                     <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Sucursales</h6>
-                    <a class="collapse-item" href="{{ route('branchOffices.index') }}" >Listar Sucursales </a>
-                        <a class="collapse-item" href="{{ route('branchOffices.create') }}">Agregar Sucursales</a>
+                    <a class="collapse-item" href="{{ route('bodegaSucursals.index') }}" >Listar Sucursales </a>
+                        <a class="collapse-item" href="{{ route('bodegaSucursals.create') }}">Agregar Sucursales</a>
                     </div>
                 </div>
 
-                @elseif(Route::currentRouteName()=='branchOffices.create')
+                @elseif(Route::currentRouteName()=='bodegaSucursals.create')
 
                 <a class="nav-link " href="#" data-toggle="collapse" data-target="#category"
                     aria-expanded="true" aria-controls="collapseUtilities">
@@ -709,8 +709,8 @@
                 <div id="branchie" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
                     <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Sucursales</h6>
-                    <a class="collapse-item" href="{{ route('branchOffices.index') }}" >Listar Sucursales </a>
-                        <a class="collapse-item" href="{{ route('branchOffices.create') }}">Agregar Sucursales</a>
+                    <a class="collapse-item" href="{{ route('bodegaSucursals.index') }}" >Listar Sucursales </a>
+                        <a class="collapse-item" href="{{ route('bodegaSucursals.create') }}">Agregar Sucursales</a>
                     </div>
                 </div>
 
@@ -724,8 +724,8 @@
                 <div id="branchie" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
                     <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Sucursales</h6>
-                    <a class="collapse-item" href="{{ route('branchOffices.index') }}" >Listar Sucursales </a>
-                        <a class="collapse-item" href="{{ route('branchOffices.create') }}">Agregar Sucursales</a>
+                    <a class="collapse-item" href="{{ route('bodegaSucursals.index') }}" >Listar Sucursales </a>
+                        <a class="collapse-item" href="{{ route('bodegaSucursals.create') }}">Agregar Sucursales</a>
                     </div>
                 </div>
                 @endif

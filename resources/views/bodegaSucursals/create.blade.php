@@ -7,7 +7,7 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
     <h2>Agregar Sucursal</h2>
-        <form action="{{ route('branchOffices.store') }}" method="POST">
+        <form action="{{ route('bodegaSucursals.store') }}" method="POST">
         @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">

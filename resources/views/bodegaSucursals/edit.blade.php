@@ -7,13 +7,13 @@
 <div class="card shadow mb-4">
     <div class="card-header py-3">
     <h2>Actualizar Sucursal</h2>
-        <form action="{{ route('branchOffices.update' , $branchOffice) }}" method="POST">
+        <form action="{{ route('bodegaSucursals.update' , $bodegaSucursal) }}" method="POST">
         @csrf
         @method('PUT')
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre Sucursal</label>
-                        <input value="{{$branchOffice->nombre}}"  type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{$bodegaSucursal->nombre}}"  type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
@@ -21,7 +21,7 @@
                      
                         <div class="form-group col-md-6">
                         <label for="adress_id">Dirección</label>
-                        <input value="{{$branchOffice->adress_id}}"  type="int" class="form-control" id="adress_id" name="adress_id" placeholder="adress_id">
+                        <input value="{{$bodegaSucursal->adress_id}}"  type="int" class="form-control" id="adress_id" name="adress_id" placeholder="adress_id">
                         @error('adress_id')
                             <span> {{$message}} </span>
                         @enderror
