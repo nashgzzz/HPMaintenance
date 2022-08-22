@@ -3,36 +3,38 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Contenedores</h1>
+<h1 class="h3 mb-2 text-gray-800">Sucursales</h1>
 
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
     
-    <a type="button" class="btn btn-success" href='{{ route('containers.create') }}'">Agregar un Contenedor</a>
+    <a type="button" class="btn btn-success" href='{{ route('bodegaSucursals.create') }}'">Agregar una Sucursal</a>
     
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="tablastores" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="tablasucursal" width="100%" cellspacing="0">
          
                 <thead>
                     <tr>
                         <th>Id</th>
                         <th>Nombre</th>
+                        <th>Dirección Id</th>
                         <th>Acciones</th>
 
                     </tr>
                 </thead>
                 <tbody>
                     
-                        @foreach($containers as $key => $container)
+                        @foreach($bodegaSucursals as $key => $sucursal)
                         <tr>
-                            <td>{{$container->id}}</td>
-                            <td>{{$container->nombre}}</td>
-                            <td><form action="{{ route('containers.destroy',$container) }}" method="POST">
-                                <a type="button" href="{{route('containers.edit', $container)}}" class="btn btn-info">Editar</a>
+                            <td>{{$sucursal->id}}</td>
+                            <td>{{$sucursal->nombre}}</td>
+                            <td>{{$sucursal->adress_id}}</td>
+                            <td><form action="{{ route('bodegaSucursals.destroy',$sucursal) }}" method="POST">
+                                <a type="button" href="{{route('bodegaSucursals.edit', $sucursal)}}" class="btn btn-info">Editar</a>
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -55,7 +57,7 @@
 <script>
 
         $(document).ready(function () {
-            $('#tablastores').DataTable({
+            $('#tablasucursal').DataTable({
                 order: [[0, 'asc']],
                 responsive: true,
             dom: 'Bfrtip',

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Container;
+use App\Models\Bodega;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class ContainerSeeder extends Seeder
+class BodegaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class ContainerSeeder extends Seeder
      */
     public function run()
     {
-        Container::factory(2)->create();
+        Bodega::factory(2)->create();
     }
 }

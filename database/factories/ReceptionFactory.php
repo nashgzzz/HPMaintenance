@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+
+use App\Models\ItemClient;
+use App\Models\BodegaSucursal;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +23,8 @@ class ReceptionFactory extends Factory
             'nombre' => fake()->name(),
             'descripcion' => fake()->words(5, true),
             'fecha' => fake()->datetime(),
-            'user_id' => User::all()->random()->id,
+            'item_clients_id' => ItemClient::all()->random()->id,
+            'bodega_sucursal_id' => BodegaSucursal::all()->random()->id,
         ];
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\BranchOffice;
+use App\Models\BodegaSucursal;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -22,7 +22,7 @@ class ItemClientFactory extends Factory
             'fecha_isntalacion' => fake()->datetime(),
             'descripcion' => fake()->words(3, true),
             'obvervaciones' => fake()->words(3, true),
-            'branch_office_id' => BranchOffice::all()->random()->id,
+            'bodega_sucursal_id' => BodegaSucursal::all()->random()->id,
         ];
     }
 }

@@ -46,7 +46,7 @@ class OrderController extends Controller
             'valor' => $order->valor,
             'fecha_pedido' => $order->fecha_pedido,
             'user_id' => $order->user_id,
-            'item_client_id' => $order->item_client_id
+            'products_id' => $order->products_id
         ]);
 
         return redirect()->route('orders.index');
@@ -89,7 +89,7 @@ class OrderController extends Controller
             'valor' => $request->valor,
             'fecha_pedido' => $request->fecha_pedido,
             'user_id' => $request->user_id,
-            'item_client_id' => $request->item_client_id
+            'products_id' => $request->products_id
             ]
         );
         return redirect()->route('orders.index');

@@ -21,8 +21,7 @@ class InventoryFactory extends Factory
         return [
             'nombre' => fake()->name(),
             'mail' => fake()->safeEmail(),
-            'descripcion' => fake()->words(5, true),
-            'container_id' => Container::all()->random()->id,
+            'descripcion' => fake()->words(5, true)
         ];
     }
 }

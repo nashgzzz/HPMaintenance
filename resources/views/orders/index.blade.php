@@ -25,7 +25,6 @@
                         <th>Valor</th>
                         <th>Fecha del Pedido</th>
                         <th>Usuario</th>
-                        <th>Producto del Cliente</th>
                         <th>Acciones</th>
 
                     </tr>
@@ -40,7 +39,6 @@
                             <td>{{$order->valor}}</td>
                             <td>{{$order->fecha_pedido}}</td>
                             <td>{{$order->user_id}}</td>
-                            <td>{{$order->item_client_id}}</td>
                             <td><form action="{{ route('orders.destroy',$order) }}" method="POST">
                                 <a type="button" href="{{route('orders.edit', $order)}}" class="btn btn-info">Editar</a>
                                 @csrf

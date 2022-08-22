@@ -20,7 +20,7 @@ return new class extends Migration
             $table->dateTime('fecha_isntalacion');
             $table->string('descripcion',200);
             $table->string('obvervaciones',400);
-            $table->foreignID('branch_office_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('bodega_sucursal_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
           
         });
     }

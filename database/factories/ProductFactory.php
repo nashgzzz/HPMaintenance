@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Store;
+use App\Models\Bodega;
 use App\Models\Supplier;
 use App\Models\Inventory;
 use App\Models\KindProduct;
@@ -30,6 +31,7 @@ class ProductFactory extends Factory
             'supplier_id' => Supplier::all()->random()->id,
             'kind_products_id' => KindProduct::all()->random()->id,
             'store_id' => Store::all()->random()->id,
+            'bodega_id' => Bodega::all()->random()->id
         ];
     }
 }

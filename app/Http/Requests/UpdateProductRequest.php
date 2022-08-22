@@ -33,7 +33,8 @@ class UpdateProductRequest extends FormRequest
             'inventory_id' =>'required',
             'supplier_id' => 'required',
             'kind_products_id' => 'required',
-            'store_id' => 'required'
+            'store_id' => 'required',
+            'bodega_id' => 'required'
         ];
     }
 }

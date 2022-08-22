@@ -832,55 +832,7 @@
 
             </li>
 
-            <li class="nav-item">
-
-                @if(Route::currentRouteName()=='containers.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#container"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Contenedores</span>
-                </a>
-                <div id="container" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Contenedores</h6>
-                    <a class="collapse-item" href="{{ route('containers.index') }}" >Listar Contenedores </a>
-                        <a class="collapse-item" href="{{ route('containers.create') }}">Agregar Contenedores</a>
-                    </div>
-                </div>
-
-                @elseif(Route::currentRouteName()=='containers.create')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#suppliers"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Contenedores</span>
-                </a>
-                <div id="container" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Contenedores</h6>
-                    <a class="collapse-item" href="{{ route('containers.index') }}" >Listar Contenedores </a>
-                        <a class="collapse-item" href="{{ route('containers.create') }}">Agregar Contenedores</a>
-                    </div>
-                </div>
-
-                @else
-
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#container" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                         <span>Contenedores</span> 
-
-                </a>
-                <div id="container" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Contenedores</h6>
-                    <a class="collapse-item" href="{{ route('containers.index') }}" >Listar Contenedores </a>
-                        <a class="collapse-item" href="{{ route('containers.create') }}">Agregar Contenedores</a>
-                    </div>
-                </div>
-                @endif
-
-            </li>
+         
 
             <li class="nav-item">
 

@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('branch_offices', function (Blueprint $table) {
+        Schema::create('product_client_vouchers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nombre',200);
-            $table->foreignID('adress_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('product_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('item_clients_id')->constrained()->onUpdate('cascade')->onDelete('cascade'); 
+            $table->foreignID('vouchers_id')->constrained()->onUpdate('cascade')->onDelete('cascade'); 
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('branch_offices');
+        Schema::dropIfExists('product_client_vouchers');
     }
 };

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreVoucherRequest extends FormRequest
+class StoreBodegaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreVoucherRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,14 +24,7 @@ class StoreVoucherRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
-            'serie' =>  'required',
-            'Hora_llegada' =>  'required',
-            'Hora_salida' => 'required',
-            'fecha' => 'required',
-            'observaciones' => 'required',
-            'branch_office_id' => 'required',
-            'products_id' => 'required'
+            //
         ];
     }
 }

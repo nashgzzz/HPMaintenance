@@ -25,7 +25,8 @@ class UpdateproductClientVoucherRequest extends FormRequest
     {
         return [
             'product_id'=> 'required',
-            'item_clients_id'=> 'required'
+            'item_clients_id'=> 'required',
+            'vouchers_id'=> 'required'
         ];
     }
 }

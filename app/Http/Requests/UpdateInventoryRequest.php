@@ -26,8 +26,7 @@ class UpdateInventoryRequest extends FormRequest
         return [
             'nombre' => 'required',
             'descripcion' => 'required',
-            'mail' =>'required',
-            'container_id' => 'required'
+            'mail' =>'required'
         ];
     }
 }

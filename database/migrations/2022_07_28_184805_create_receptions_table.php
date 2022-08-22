@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('nombre', 200);
             $table->string('descripcion', 200);
             $table->datetime('fecha');
-            $table->foreignID('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('item_clients_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('bodega_sucursal_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
 
         });
     }

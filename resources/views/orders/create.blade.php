@@ -53,13 +53,6 @@
                         @enderror
                         </div>
 
-                        <div class="form-group col-md-6">
-                        <label for="item_client_id">Producto del cliente</label>
-                        <input value="{{old('item_client_id')}}" type="int" class="form-control" id="item_client_id" name="item_client_id" placeholder="item_client_id">
-                        @error('item_client_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Agregar Pedido</button>
         </form>

@@ -47,7 +47,7 @@ class VoucherController extends Controller
             'fecha' => $voucher->fecha,
             'observaciones' => $voucher->observaciones,
             'branch_office_id' => $voucher->branch_office_id,
-            'product_client_vouchers' => $voucher->product_client_vouchers
+            'products_id' => $voucher->products_id
         ]);
 
         return redirect()->route('vouchers.index');
@@ -92,7 +92,7 @@ class VoucherController extends Controller
             'fecha' => $request->fecha,
             'observaciones' => $request->observaciones,
             'branch_office_id' => $request->branch_office_id,
-            'product_client_vouchers' => $request->product_client_vouchers
+            'products_id' => $request->products_id
         ]);
         return redirect()->route('vouchers.index');
     }

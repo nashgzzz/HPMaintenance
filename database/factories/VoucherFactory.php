@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\BranchOffice;
-use App\Models\productClientVoucher;
+use App\Models\Product;
+use App\Models\BodegaSucursal;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -25,8 +25,9 @@ class VoucherFactory extends Factory
             'hora_salida' => $this->faker->time(),
             'fecha' => fake()->datetime(),
             'observaciones' => fake()->words(3, true),
-            'branch_office_id' => BranchOffice::all()->random()->id,
-            'product_client_vouchers' => productClientVoucher::all()->random()->id,
+            'bodega_sucursal_id' => BodegaSucursal::all()->random()->id,
+            'products_id' => Product::all()->random()->id
+            
         ];
     }
 }

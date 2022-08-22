@@ -4,9 +4,9 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Database\Seeders\RoleSeeder;
-use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -43,29 +43,30 @@ class DatabaseSeeder extends Seeder
          $this -> call(CountrySeeder::class);
          $this -> call(CategorySeeder::class);
          $this -> call(SupplierSeeder::class);
-         $this -> call(ContainerSeeder::class);
          $this -> call(BrandSeeder::class);
          $this -> call(StateSeeder::class);
          $this -> call(CitySeeder::class);
          $this -> call(CarModelSeeder::class);
-         $this -> call(BranchOfficeSeeder::class);
+         $this -> call(BodegaSucursalSeeder::class);
          $this -> call(ItemClientSeeder::class);
-         $this -> call(OrderSeeder::class);
          $this -> call(KindProductSeeder::class);
          $this -> call(StoreSeeder::class);
          $this -> call(ClientSeeder::class);
          $this -> call(InventorySeeder::class);
          $this -> call(EmployeeSeeder::class);
+         $this -> call(BodegaSeeder::class);
          $this -> call(ProductSeeder::class);
+         $this -> call(OrderSeeder::class);
          $this -> call(BookingSeeder::class);
          $this -> call(CarSeeder::class);
          $this -> call(ReceptionSeeder::class);
          $this -> call(CategoryProductSeeder::class);
-         $this -> call(ProductClientVoucherSeeder::class);
          $this -> call(VoucherSeeder::class);
+         $this -> call(ProductClientVoucherSeeder::class);
          $this -> call(EntryOrderSeeder::class);
          $this -> call(BranchOfficeUserSeeder::class);
          $this -> call(VoucherUserSeeder::class);
+
           
           
           

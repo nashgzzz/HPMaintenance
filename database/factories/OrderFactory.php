@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
-use App\Models\ItemClient;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -24,7 +24,8 @@ class OrderFactory extends Factory
             'valor' => fake()->randomNumber(),
             'fecha_pedido' => fake()->datetime(),
             'user_id' => User::all()->random()->id,
-            'item_client_id' => ItemClient::all()->random()->id,
+            'products_id' => Product::all()->random()->id,
+            
         ];
     }
 }

@@ -29,7 +29,7 @@ class UpdateOrderRequest extends FormRequest
             'valor' => 'required',
             'fecha_pedido' => 'required',
             'user_id' =>'required',
-            'item_client_id' => 'required'
+            'products_id' => 'required'
         ];
     }
 }

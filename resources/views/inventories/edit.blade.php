@@ -35,13 +35,7 @@
                         @enderror
                         </div>
                     
-                        <div class="form-group col-md-6">
-                        <label for="container_id">Contenedor</label>
-                        <input value="{{$inventory->container_id}}" type="int" class="form-control" id="container_id" name="container_id" placeholder="container_id">
-                        @error('container_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                     
                     </div>
                     <button type="submit" class="btn btn-primary">Agregar Inventario Nuevo</button>
         </form>

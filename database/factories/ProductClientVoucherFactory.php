@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Product;
+use App\Models\Voucher;
 use App\Models\ItemClient;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -20,7 +21,8 @@ class ProductClientVoucherFactory extends Factory
     {
         return [
             'product_id' => Product::all()->random()->id,
-            'item_clients_id' => ItemClient::all()->random()->id
+            'item_clients_id' => ItemClient::all()->random()->id,
+            'vouchers_id' => Voucher::all()->random()->id
         ];
     }
 }

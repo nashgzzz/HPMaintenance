@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('product_client_vouchers', function (Blueprint $table) {
+        Schema::create('levantamiento_reqs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignID('product_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignID('item_clients_id')->constrained()->onUpdate('cascade')->onDelete('cascade'); 
+            $table->foreignID('item_clients_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_client_vouchers');
+        Schema::dropIfExists('levantamiento_reqs');
     }
 };

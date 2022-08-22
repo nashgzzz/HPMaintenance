@@ -23,7 +23,6 @@
                         <th>Nombre</th>
                         <th>Descripción</th>
                         <th>Email</th>
-                        <th>Contenedor</th>
                         <th>Acciónes</th>
 
                     </tr>
@@ -36,7 +35,6 @@
                             <td>{{$inventory->nombre}}</td>
                             <td>{{$inventory->descripcion}}</td>
                             <td>{{$inventory->mail}}</td>
-                            <td>{{$inventory->container_id}}</td>
                             <td><form action="{{ route('inventories.destroy',$inventory) }}" method="POST">
                                 <a type="button" href="{{route('inventories.edit', $inventory)}}" class="btn btn-info">Editar</a>
                                 @csrf

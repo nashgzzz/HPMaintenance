@@ -31,7 +31,8 @@ class UpdateVoucherRequest extends FormRequest
             'fecha' => 'required',
             'observaciones' => 'required',
             'branch_office_id' => 'required',
-            'product_client_vouchers' => 'required'
+            'products_id' => 'required'
+            
         ];
     }
 }

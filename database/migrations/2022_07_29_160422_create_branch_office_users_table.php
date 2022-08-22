@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignID('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignID('branch_office_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('bodega_sucursal_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             
         });
     }

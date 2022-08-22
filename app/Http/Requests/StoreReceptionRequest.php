@@ -27,7 +27,7 @@ class StoreReceptionRequest extends FormRequest
             'nombre' => 'required',
             'descripcion' => 'required',
             'fecha' => 'required',
-            'user_id' => 'required'
+            'bodega_sucursal_id' => 'required'
         ];
     }
 }

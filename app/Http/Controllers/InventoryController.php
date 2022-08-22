@@ -43,8 +43,7 @@ class InventoryController extends Controller
         Inventory::create([
             'nombre' => $inventory->nombre,
             'descripcion' => $inventory->descripcion,
-            'mail' => $inventory->mail,
-            'container_id' => $inventory->container_id
+            'mail' => $inventory->mail
         ]);
 
         return redirect()->route('inventories.index');
@@ -85,8 +84,7 @@ class InventoryController extends Controller
         $inventory->update([
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,
-            'mail' => $request->mail,
-            'container_id' => $request->container_id
+            'mail' => $request->mail
             
             
         ]);

@@ -22,8 +22,8 @@ return new class extends Migration
             $table->time('Hora_salida');
             $table->datetime('fecha');
             $table->string('observaciones', 200);
-            $table->foreignID('branch_office_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignID('product_client_vouchers')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('bodega_sucursal_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('products_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -43,7 +43,7 @@ class ReceptionController extends Controller
             'nombre' => $reception->nombre,
             'descripcion' => $reception->descripcion,
             'fecha' => $reception->fecha,
-            'user_id' =>$reception->user_id
+            'bodega_sucursal_id' =>$reception->bodega_sucursal_id
         ]);
 
         return redirect()->route('receptions.index');
@@ -84,7 +84,7 @@ class ReceptionController extends Controller
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,
             'fecha' => $request->fecha,
-            'user_id' =>$request->user_id
+            'bodega_sucursal_id' =>$request->bodega_sucursal_id
         ]);
         return redirect()->route('receptions.index');
     }

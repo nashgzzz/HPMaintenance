@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('inventories', function (Blueprint $table) {
+        Schema::create('bodega_sucursals', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nombre',100);
-            $table->string('descripcion',100);
-            $table->string('mail',100);
+            $table->string('nombre',200);
+            $table->foreignID('adress_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('inventories');
+        Schema::dropIfExists('bodega_sucursals');
     }
 };

@@ -18,7 +18,6 @@ use App\Http\Controllers\CarModelController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SupplierController;
-use App\Http\Controllers\ContainerController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\ReceptionController;
 use App\Http\Controllers\EntryOrderController;
@@ -26,7 +25,7 @@ use App\Http\Controllers\ItemClientController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\KindProductController;
 use App\Http\Controllers\VoucherUserController;
-use App\Http\Controllers\BranchOfficeController;
+use App\Http\Controllers\BodegaSucursalController;
 use App\Http\Controllers\CategoryProductController;
 use App\Http\Controllers\BranchOfficeUserController;
 use App\Http\Controllers\ProductClientVoucherController;
@@ -65,10 +64,9 @@ Route::resource('adress', AdressController::class)->names('adress');
 Route::resource('category', CategoryController::class)->names('category');
 Route::resource('brands', BrandController::class)->names('brands');
 Route::resource('carModels', CarModelController::class)->names('carModels');
-Route::resource('branchOffices', BranchOfficeController::class)->names('branchOffices');
+Route::resource('bodegaSucursals', BodegaSucursalController::class)->names('bodegaSucursals');
 Route::resource('bookings', BookingController::class)->names('bookings');
 Route::resource('suppliers', SupplierController::class)->names('suppliers');
-Route::resource('containers', ContainerController::class)->names('containers');
 Route::resource('inventories', InventoryController::class)->names('inventories');
 Route::resource('receptions', ReceptionController::class)->names('receptions');
 Route::resource('entryOrders', EntryOrderController::class)->names('entryOrders');  
@@ -81,7 +79,6 @@ Route::resource('categoryProducts', CategoryProductController::class)->names('ca
 Route::resource('kindProducts', KindProductController::class)->names('kindProducts'); 
 Route::resource('vouchers', VoucherController::class)->names('vouchers'); 
 Route::resource('voucherUsers', VoucherUserController::class)->names('voucherUsers');   
-
 Route::resource('roles', roleController::class)->names('roles');  
 Route::resource('permissions', PermissionController::class)->names('permissions'); 
 

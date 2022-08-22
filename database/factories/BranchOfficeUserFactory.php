@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\User;
-use App\Models\BranchOffice;
+use App\Models\BodegaSucursal;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -20,7 +20,7 @@ class BranchOfficeUserFactory extends Factory
     {
         return [
             'user_id' => User::all()->random()->id,
-            'branch_office_id' => BranchOffice::all()->random()->id
+            'bodega_sucursal_id' => BodegaSucursal::all()->random()->id
         ];
     }
 }

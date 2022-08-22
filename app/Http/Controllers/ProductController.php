@@ -50,7 +50,8 @@ class ProductController extends Controller
             'inventory_id' => $product->inventory_id,
             'supplier_id' => $product->supplier_id,
             'kind_products_id' => $product->kind_products_id,
-            'store_id' => $product->store_id
+            'store_id' => $product->store_id,
+            'bodega_id' => $product->bodega_id
         ]);
 
         return redirect()->route('products.index');
@@ -96,7 +97,8 @@ class ProductController extends Controller
             'inventory_id' => $request->inventory_id,
             'supplier_id' => $request->supplier_id,
             'kind_products_id' => $request->kind_products_id,
-            'store_id' => $request->store_id
+            'store_id' => $request->store_id,
+            'bodega_id' => $request->bodega_id
             ]
         );
         return redirect()->route('products.index');

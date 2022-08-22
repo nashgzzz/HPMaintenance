@@ -2,11 +2,12 @@
 
 namespace Database\Seeders;
 
-use App\Models\BranchOffice;
+
+use App\Models\BodegaSucursal;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class BranchOfficeSeeder extends Seeder
+class BodegaSucursalSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +16,6 @@ class BranchOfficeSeeder extends Seeder
      */
     public function run()
     {
-        BranchOffice::factory(2)->create();
+        BodegaSucursal::factory(2)->create();
     }
 }

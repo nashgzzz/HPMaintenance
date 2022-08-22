@@ -24,7 +24,8 @@ return new class extends Migration
             $table->foreignID('inventory_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignID('supplier_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->foreignID('kind_products_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignID('store_id')->constrained()->onUpdate('cascade')->onDelete('cascade');   
+            $table->foreignID('store_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('bodega_id')->constrained()->onUpdate('cascade')->onDelete('cascade');     
 
         });
     }

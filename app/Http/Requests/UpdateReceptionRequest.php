@@ -27,7 +27,8 @@ class UpdateReceptionRequest extends FormRequest
             'nombre' => 'required',
             'descripcion' => 'required',
             'fecha' => 'required',
-            'user_id' => 'required'
+            'item_clients_id' => 'required',
+            'bodega_sucursal_id' => 'required'
         ];
     }
 }

@@ -41,7 +41,8 @@ class ProductClientVoucherController extends Controller
     {
         productClientVoucher::create([
             'product_id'=> $productClientVoucher->product_id,
-            'item_clients_id'=> $productClientVoucher->item_clients_id
+            'item_clients_id'=> $productClientVoucher->item_clients_id,
+            'vouchers_id'=> $productClientVoucher->vouchers_id
         ]);
 
         return redirect()->route('productClientVouchers.index');
@@ -80,7 +81,8 @@ class ProductClientVoucherController extends Controller
     {
         $productClientVoucher->update([
             'product_id'=> $request->product_id,
-            'item_clients_id'=> $request->item_clients_id
+            'item_clients_id'=> $request->item_clients_id,
+            'vouchers_id'=> $request->vouchers_id
         
         ]);
         return redirect()->route('productClientVouchers.index');
