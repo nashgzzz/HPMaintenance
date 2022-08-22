@@ -6,8 +6,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
-use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
@@ -34,12 +34,15 @@ class RoleController extends Controller
 
     public function store(StoreRoleRequest $role)
     {
+       
+        $newRole = Role::create($role->all());
         
-        $role = Role::create($role->all());
         
-        $role->permissions()->sync($role->permissions);
         
-         return view('roles.index', $role)->with('success','Roles Asignados');
+        $newRole->permissions()->attach($role->permissions);
+    
+
+        return redirect()->route('roles.index');
     }
 
 
@@ -60,8 +63,8 @@ class RoleController extends Controller
     {
         
         $role->update($request->all());
-        $role->permissions()->sync($request->$permissions);
-        return redirect()->route('roles.index', $role);
+        $role->permissions()->sync($request->permissions);
+        return redirect()->route('roles.index');
     }
 
 

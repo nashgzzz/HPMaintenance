@@ -38,7 +38,7 @@ class UserController extends Controller
     public function store(StoreUserRequest $user)
     {
  
-        User::create([
+       $newUser = User::create([
             'name' => $user->name,
             'email' => $user->email,
             'password' => Hash::make($user->password),
@@ -48,9 +48,12 @@ class UserController extends Controller
             'fecha_nacimiento' => $user->fecha_nacimiento,
             'sexo' =>$user->sexo,
             'telefono' => $user->telefono,
-            'role' => $user->roles,
+   
         ]);
-        return redirect()->route('users.index', $user);
+
+        $newUser->roles()->attach($user->roles);
+
+        return redirect()->route('users.index');
     }
 
   
@@ -81,12 +84,13 @@ class UserController extends Controller
             'fecha_nacimiento' => $request->fecha_nacimiento,
             'sexo' => $request->sexo,
             'telefono' => $request->telefono,
-            'role' => $request->role
+            
         ]);
 
+        
         $roles = Role::all();
         $user->roles()->sync($request->roles);
-        return redirect()->route('users.index', $user);
+        return redirect()->route('users.index');
 
     }
 

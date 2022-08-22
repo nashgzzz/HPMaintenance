@@ -45,6 +45,7 @@ class PermissionController extends Controller
             'name' => $permission->name,
             'guard_name' => $permission->guard_name
         ]);
+        
 
         return redirect()->route('permissions.index');
     }
