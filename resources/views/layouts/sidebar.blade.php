@@ -45,96 +45,6 @@
 
             <hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
-            @can('permissions.index')
-              <li class="nav-item">
-
-                @if(Route::currentRouteName()=='permissions.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#permissions" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-users"></i>
-                    <span>Permisos</span>
-                </a>
-                <div id="permissions" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Permisos</h6>
-                    <a class="collapse-item" href="{{ route('permissions.index') }}" >Listar Permisos</a>
-                        <a class="collapse-item" href="{{ route('permissions.create') }}">Agregar Permisos</a>
-                    </div>
-                </div>
-                @elseif(Route::currentRouteName()=='permissions.create')
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#permissions" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-users"></i>
-                    <span>Permisos</span>
-                </a>
-                <div id="permissions" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Permisos</h6>
-                    <a class="collapse-item" href="{{ route('permissions.index') }}" >Listar Permisos</a>
-                        <a class="collapse-item"  href="{{ route('permissions.create') }}">Agregar Permisos</a>
-                    </div>
-                </div>
-                @else
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#permissions" aria-expanded="false" aria-controls="collapseUtilities">
-                    <i class="fa fa-users" aria-hidden="true"></i>
-                    <span>Permisos</span>
-                
-                </a>
-                <div id="permissions" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Permisos</h6>
-                    <a class="collapse-item" href="{{ route('permissions.index') }}">Listar Permisos</a>
-                        <a class="collapse-item" href="{{ route('permissions.create') }}">Agregar Permisos</a>
-                    </div>
-                </div>
-               @endif
-
-              </li>
-            @endcan
-            @can('roles.index')
-             <li class="nav-item">
-
-                @if(Route::currentRouteName()=='roles.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#roles" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-users"></i>
-                    <span>Roles</span>
-                </a>
-                <div id="roles" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Roles</h6>
-                    <a class="collapse-item" href="{{ route('roles.index') }}" >Listar Roles</a>
-                        <a class="collapse-item" href="{{ route('roles.create') }}">Agregar Roles</a>
-                    </div>
-                </div>
-                @elseif(Route::currentRouteName()=='roles.create')
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#roles" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-users"></i>
-                    <span>Roles</span>
-                </a>
-                <div id="roles" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Roles</h6>
-                    <a class="collapse-item" href="{{ route('roles.index') }}" >Listar Roles</a>
-                        <a class="collapse-item"  href="{{ route('roles.create') }}">Agregar Roles</a>
-                    </div>
-                </div>
-                @else
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#roles" aria-expanded="false" aria-controls="collapseUtilities">
-                    <i class="fa fa-users" aria-hidden="true"></i>
-                    <span>Roles</span>
-
-                </a>
-                <div id="roles" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Roles</h6>
-                    <a class="collapse-item" href="{{ route('roles.index') }}">Listar Roles</a>
-                        <a class="collapse-item" href="{{ route('roles.create') }}">Agregar Roles</a>
-                    </div>
-                </div>
-                @endif
-
-              </li>
-            @endcan
             
             @can('users.index')
                 <li class="nav-item">
@@ -196,99 +106,6 @@
 
             <li class="nav-item">
 
-                    @if(Route::currentRouteName()=='clients.index')
-
-                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#clientes"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Clientes</span>
-                    </a>
-                    <div id="clientes" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                        <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Cliente</h6>
-                        <a class="collapse-item" href="{{ route('clients.index') }}" >Listar Clientes</a>
-                            <a class="collapse-item" href="{{ route('clients.create') }}">Agregar Cliente</a>
-                        </div>
-                    </div>
-                    @elseif(Route::currentRouteName()=='clients.create')
-                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#clientes"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Clientes</span>
-                    </a>
-                    <div id="clientes" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                        <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Cliente</h6>
-                        <a class="collapse-item" href="{{ route('clients.index') }}" >Listar Clientes</a>
-                            <a class="collapse-item" href="{{ route('clients.create') }}">Agregar Cliente</a>
-                        </div>
-                    </div>
-                    @else
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#clientes" aria-expanded="false" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Clientes</span>
-                    
-                    </a>
-                    <div id="clientes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                        <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Cliente</h6>
-                        <a class="collapse-item" href="{{ route('clients.index') }}" >Listar Clientes</a>
-                            <a class="collapse-item" href="{{ route('clients.create') }}">Agregar Cliente</a>
-                        </div>
-                    </div>
-                    @endif
-
-            </li>
-
-
-            <li class="nav-item">
-
-                    @if(Route::currentRouteName()=='employees.index')
-
-                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#employees"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Empleados</span>
-                    </a>
-                    <div id="employees" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                        <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Empleados</h6>
-                        <a class="collapse-item" href="{{ route('employees.index') }}" >Listar Empleados</a>
-                            <a class="collapse-item" href="{{ route('employees.create') }}">Agregar Empleados</a>
-                        </div>
-                    </div>
-                    @elseif(Route::currentRouteName()=='employees.create')
-                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#employees"
-                        aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Empleados</span>
-                    </a>
-                    <div id="employees" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                        <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Empleados</h6>
-                        <a class="collapse-item" href="{{ route('employees.index') }}" >Listar Empleados</a>
-                            <a class="collapse-item" href="{{ route('employees.create') }}">Agregar Empleados</a>
-                        </div>
-                    </div>
-                    @else
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#employees" aria-expanded="false" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Empleados</span>
-                    
-                    </a>
-                    <div id="employees" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                        <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Empleados</h6>
-                        <a class="collapse-item" href="{{ route('employees.index') }}" >Listar Empleados</a>
-                            <a class="collapse-item" href="{{ route('employees.create') }}">Agregar Empleados</a>
-                        </div>
-                    </div>
-                    @endif
-
-            </li>
-
-            <li class="nav-item">
-
                 @if(Route::currentRouteName()=='itemClients.index')
 
                 <a class="nav-link " href="#" data-toggle="collapse" data-target="#itemClients"
@@ -332,6 +149,7 @@
                 @endif
 
             </li>
+            
 
             <li class="nav-item">
 
@@ -378,109 +196,6 @@
                 @endif
 
             </li>
-
-            <li class="nav-item">
-
-                @if(Route::currentRouteName()=='cars.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#car"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Vehículo</span>
-                </a>
-                <div id="car" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Autos</h6>
-                    <a class="collapse-item" href="{{ route('cars.index') }}" >Listar Vehículos</a>
-                        <a class="collapse-item" href="{{ route('cars.create') }}">Agregar Vehículo</a>
-                    </div>
-                </div>
-                @elseif(Route::currentRouteName()=='cars.create')
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#clientes"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Vehículo</span>
-                </a>
-                <div id="car" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Autos</h6>
-                    <a class="collapse-item" href="{{ route('cars.index') }}" >Listar Vehículos</a>
-                        <a class="collapse-item" href="{{ route('cars.create') }}">Agregar Vehículo</a>
-                    </div>
-                </div>
-                @else
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#car" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Vehículo</span>
-
-                </a>
-                <div id="car" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Autos</h6>
-                    <a class="collapse-item" href="{{ route('cars.index') }}" >Listar Vehículos</a>
-                        <a class="collapse-item" href="{{ route('cars.create') }}">Agregar Vehículo</a>
-                    </div>
-                </div>
-                @endif
-
-            </li>
-
-           
-            <li class="nav-item">
-
-                @if(Route::currentRouteName()=='products.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#products"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Producto</span>
-                </a>
-                <div id="products" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Autos</h6>
-                    <a class="collapse-item" href="{{ route('products.index') }}" >Listar Productos</a>
-                    @can('products.create')
-                        <a class="collapse-item" href="{{ route('products.create') }}">Agregar Producto</a>
-                        @endcan
-                    </div>
-                </div>
-
-                @elseif(Route::currentRouteName()=='products.create')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#products"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Producto</span>
-                </a>
-                <div id="products" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Autos</h6>
-                    <a class="collapse-item" href="{{ route('products.index') }}" >Listar Productos</a>
-                    @can('products.create')
-                    <a class="collapse-item" href="{{ route('products.create') }}">Agregar Producto</a>
-                    @endcan
-                    </div>
-                </div>
-
-                @else
-
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#products" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Producto</span>
-
-                </a>
-                <div id="products" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Autos</h6>
-                    <a class="collapse-item" href="{{ route('products.index') }}" >Listar Productos</a>
-                    @can('products.create')
-                    <a class="collapse-item" href="{{ route('products.create') }}">Agregar Producto</a>
-                    @endcan
-                    </div>
-                </div>
-                @endif
-
-            </li>
            
             <li class="nav-item">
 
@@ -493,7 +208,7 @@
                 </a>
                 <div id="locales" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
                     <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Autos</h6>
+                    <h6 class="collapse-header">locales</h6>
                     <a class="collapse-item" href="{{ route('stores.index') }}" >Listar Locales</a>
                         <a class="collapse-item" href="{{ route('stores.create') }}">Agregar Local</a>
                     </div>
@@ -508,7 +223,7 @@
                 </a>
                 <div id="locales" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
                     <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Autos</h6>
+                    <h6 class="collapse-header">locales</h6>
                     <a class="collapse-item" href="{{ route('stores.index') }}" >Listar Locales</a>
                         <a class="collapse-item" href="{{ route('stores.create') }}">Agregar Local</a>
                     </div>
@@ -523,159 +238,9 @@
                 </a>
                 <div id="locales" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
                     <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Autos</h6>
+                    <h6 class="collapse-header">locales</h6>
                     <a class="collapse-item" href="{{ route('stores.index') }}" >Listar Locales</a>
                         <a class="collapse-item" href="{{ route('stores.create') }}">Agregar Local</a>
-                    </div>
-                </div>
-                @endif
-
-            </li>
-
-            <li class="nav-item">
-
-                @if(Route::currentRouteName()=='category.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#category"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Categoria</span>
-                </a>
-                <div id="category" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Categoria del Producto</h6>
-                    <a class="collapse-item" href="{{ route('category.index') }}" >Listar Categorias</a>
-                        <a class="collapse-item" href="{{ route('category.create') }}">Agregar Categoria</a>
-                    </div>
-                </div>
-
-                @elseif(Route::currentRouteName()=='category.create')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#category"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Categoria</span>
-                </a>
-                <div id="category" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Categoria del Producto</h6>
-                    <a class="collapse-item" href="{{ route('category.index') }}" >Listar Categoria</a>
-                        <a class="collapse-item" href="{{ route('category.create') }}">Agregar Categoria</a>
-                    </div>
-                </div>
-
-                @else
-
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#category" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Categoria</span>
-
-                </a>
-                <div id="category" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Categoria del Producto</h6>
-                    <a class="collapse-item" href="{{ route('category.index') }}" >Listar Categoria</a>
-                        <a class="collapse-item" href="{{ route('category.create') }}">Agregar Categoria</a>
-                    </div>
-                </div>
-                @endif
-
-            </li>
-
-            <li class="nav-item">
-
-                @if(Route::currentRouteName()=='brands.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#marcaAuto"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Marca de Vehículo</span>
-                </a>
-                <div id="marcaAuto" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Marca de Vehículo</h6>
-                    <a class="collapse-item" href="{{ route('brands.index') }}" >Listar Marcas </a>
-                        <a class="collapse-item" href="{{ route('brands.create') }}">Agregar Marcas</a>
-                    </div>
-                </div>
-
-                @elseif(Route::currentRouteName()=='brands.create')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#category"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Marca de Vehículo</span>
-                </a>
-                <div id="marcaAuto" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Marca de Vehículo</h6>
-                    <a class="collapse-item" href="{{ route('brands.index') }}" >Listar Marcas </a>
-                        <a class="collapse-item" href="{{ route('brands.create') }}">Agregar Marcas</a>
-                    </div>
-                </div>
-
-                @else
-
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#marcaAuto" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Marca de Vehículo</span>
-
-                </a>
-                <div id="marcaAuto" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Marca de Vehículo</h6>
-                    <a class="collapse-item" href="{{ route('brands.index') }}" >Listar Marcas </a>
-                        <a class="collapse-item" href="{{ route('brands.create') }}">Agregar Marcas</a>
-                    </div>
-                </div>
-                @endif
-
-            </li>
-
-            <li class="nav-item">
-
-                @if(Route::currentRouteName()=='carModels.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#modelAuto"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Modelo de Vehículo</span>
-                </a>
-                <div id="modelAuto" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Modelo de Vehículo</h6>
-                    <a class="collapse-item" href="{{ route('carModels.index') }}" >Listar Modelos </a>
-                        <a class="collapse-item" href="{{ route('carModels.create') }}">Agregar Modelos</a>
-                    </div>
-                </div>
-
-                @elseif(Route::currentRouteName()=='carModels.create')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#category"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Modelo de Vehículo</span>
-                </a>
-                <div id="modelAuto" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Modelo de Vehículo</h6>
-                    <a class="collapse-item" href="{{ route('carModels.index') }}" >Listar Modelos </a>
-                        <a class="collapse-item" href="{{ route('carModels.create') }}">Agregar Modelos</a>
-                    </div>
-                </div>
-
-                @else
-
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#modelAuto" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Modelo de Vehículo</span>
-
-                </a>
-                <div id="modelAuto" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Modelo de Vehículo</h6>
-                    <a class="collapse-item" href="{{ route('carModels.index') }}" >Listar Marcas </a>
-                        <a class="collapse-item" href="{{ route('carModels.create') }}">Agregar Marcas</a>
                     </div>
                 </div>
                 @endif
@@ -688,7 +253,7 @@
 
                 <a class="nav-link " href="#" data-toggle="collapse" data-target="#branchie"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <i class="fa fa-building" aria-hidden="true"></i>
                     <span>Sucursales</span>
                 </a>
                 <div id="branchie" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
@@ -703,7 +268,7 @@
 
                 <a class="nav-link " href="#" data-toggle="collapse" data-target="#category"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <i class="fa fa-building" aria-hidden="true"></i>
                     <span>Sucursales</span>
                 </a>
                 <div id="branchie" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
@@ -717,7 +282,7 @@
                 @else
 
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#branchie" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
+                <i class="fa fa-building" aria-hidden="true"></i>
                          <span>Sucursales</span> 
 
                 </a>
@@ -738,7 +303,7 @@
 
                 <a class="nav-link " href="#" data-toggle="collapse" data-target="#bookinsg"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <i class="fa fa-book" aria-hidden="true"></i>
                     <span>Reservas</span>
                 </a>
                 <div id="bookinsg" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
@@ -753,7 +318,7 @@
 
                 <a class="nav-link " href="#" data-toggle="collapse" data-target="#category"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <i class="fa fa-book" aria-hidden="true"></i>
                     <span>Reservas</span>
                 </a>
                 <div id="bookinsg" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
@@ -767,7 +332,7 @@
                 @else
 
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#bookinsg" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
+                <i class="fa fa-book" aria-hidden="true"></i>
                          <span>Reservas</span> 
 
                 </a>
@@ -831,8 +396,6 @@
                 @endif
 
             </li>
-
-         
 
             <li class="nav-item">
 
@@ -1034,205 +597,298 @@
 
             </li>
 
-            <li class="nav-item">
+             <!-- 
+                 <li class="nav-item">
 
-                @if(Route::currentRouteName()=='branchOfficeUsers.index')
+                    @if(Route::currentRouteName()=='voucherUsers.index')
 
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#branchOfficesUsers"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#voucherUsers"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Voucher Usuario </span>
+                    </a>
+                    <div id="voucherUsers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Voucher Usuario</h6>
+                        <a class="collapse-item" href="{{ route('voucherUsers.index') }}" >Listar Voucher Usuario  </a>
+                            <a class="collapse-item" href="{{ route('voucherUsers.create') }}">Agregar Voucher Usuario </a>
+                        </div>
+                    </div>
+
+                    @elseif(Route::currentRouteName()=='voucherUsers.create')
+
+                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#voucherUsers"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Voucher Usuario</span>
+                    </a>
+                    <div id="voucherUsers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Voucher Usuario</h6>
+                        <a class="collapse-item" href="{{ route('voucherUsers.index') }}" >Listar Voucher Usuario   </a>
+                            <a class="collapse-item" href="{{ route('voucherUsers.create') }}">Agregar Voucher Usuario  </a>
+                        </div>
+                    </div>
+
+                    @else
+
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#voucherUsers" aria-expanded="false" aria-controls="collapseUtilities">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Sucursal Usuario</span>
-                </a>
-                <div id="branchOfficesUsers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Sucursal Usuario</h6>
-                    <a class="collapse-item" href="{{ route('branchOfficeUsers.index') }}" >Listar Sucursal Usuario </a>
-                        <a class="collapse-item" href="{{ route('branchOfficeUsers.create') }}">Agregar Sucursal Usuario</a>
+                            <span>Voucher Usuario</span> 
+
+                    </a>
+                    <div id="voucherUsers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Voucher Usuario</h6>
+                        <a class="collapse-item" href="{{ route('voucherUsers.index') }}" >Listar Voucher Usuario </a>
+                            <a class="collapse-item" href="{{ route('voucherUsers.create') }}">Agregar Voucher Usuario </a>
+                        </div>
                     </div>
-                </div>
+                    @endif
 
-                @elseif(Route::currentRouteName()=='branchOfficeUsers.create')
+                 </li> 
+                <li class="nav-item">
 
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#branchOfficesUsers"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                        @if(Route::currentRouteName()=='clients.index')
+
+                        <a class="nav-link " href="#" data-toggle="collapse" data-target="#clientes"
+                            aria-expanded="true" aria-controls="collapseUtilities">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span>Clientes</span>
+                        </a>
+                        <div id="clientes" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                            <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Cliente</h6>
+                            <a class="collapse-item" href="{{ route('clients.index') }}" >Listar Clientes</a>
+                                <a class="collapse-item" href="{{ route('clients.create') }}">Agregar Cliente</a>
+                            </div>
+                        </div>
+                        @elseif(Route::currentRouteName()=='clients.create')
+                        <a class="nav-link " href="#" data-toggle="collapse" data-target="#clientes"
+                            aria-expanded="true" aria-controls="collapseUtilities">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span>Clientes</span>
+                        </a>
+                        <div id="clientes" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                            <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Cliente</h6>
+                            <a class="collapse-item" href="{{ route('clients.index') }}" >Listar Clientes</a>
+                                <a class="collapse-item" href="{{ route('clients.create') }}">Agregar Cliente</a>
+                            </div>
+                        </div>
+                        @else
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#clientes" aria-expanded="false" aria-controls="collapseUtilities">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                            <span>Clientes</span>
+                        
+                        </a>
+                        <div id="clientes" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                            <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Cliente</h6>
+                            <a class="collapse-item" href="{{ route('clients.index') }}" >Listar Clientes</a>
+                                <a class="collapse-item" href="{{ route('clients.create') }}">Agregar Cliente</a>
+                            </div>
+                        </div>
+                        @endif
+
+                </li>
+                <li class="nav-item">
+
+                        @if(Route::currentRouteName()=='employees.index')
+
+                        <a class="nav-link " href="#" data-toggle="collapse" data-target="#employees"
+                            aria-expanded="true" aria-controls="collapseUtilities">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span>Empleados</span>
+                        </a>
+                        <div id="employees" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                            <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Empleados</h6>
+                            <a class="collapse-item" href="{{ route('employees.index') }}" >Listar Empleados</a>
+                                <a class="collapse-item" href="{{ route('employees.create') }}">Agregar Empleados</a>
+                            </div>
+                        </div>
+                        @elseif(Route::currentRouteName()=='employees.create')
+                        <a class="nav-link " href="#" data-toggle="collapse" data-target="#employees"
+                            aria-expanded="true" aria-controls="collapseUtilities">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span>Empleados</span>
+                        </a>
+                        <div id="employees" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                            <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Empleados</h6>
+                            <a class="collapse-item" href="{{ route('employees.index') }}" >Listar Empleados</a>
+                                <a class="collapse-item" href="{{ route('employees.create') }}">Agregar Empleados</a>
+                            </div>
+                        </div>
+                        @else
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#employees" aria-expanded="false" aria-controls="collapseUtilities">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                            <span>Empleados</span>
+                        
+                        </a>
+                        <div id="employees" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                            <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Empleados</h6>
+                            <a class="collapse-item" href="{{ route('employees.index') }}" >Listar Empleados</a>
+                                <a class="collapse-item" href="{{ route('employees.create') }}">Agregar Empleados</a>
+                            </div>
+                        </div>
+                        @endif
+
+                </li>
+            
+                <li class="nav-item">
+
+                    @if(Route::currentRouteName()=='branchOfficeUsers.index')
+
+                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#branchOfficesUsers"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Sucursal Usuario</span>
+                    </a>
+                    <div id="branchOfficesUsers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Sucursal Usuario</h6>
+                        <a class="collapse-item" href="{{ route('branchOfficeUsers.index') }}" >Listar Sucursal Usuario </a>
+                            <a class="collapse-item" href="{{ route('branchOfficeUsers.create') }}">Agregar Sucursal Usuario</a>
+                        </div>
+                    </div>
+
+                    @elseif(Route::currentRouteName()=='branchOfficeUsers.create')
+
+                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#branchOfficesUsers"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Sucursal Usuario</span>
+                    </a>
+                    <div id="branchOfficesUsers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Sucursal Usuario</h6>
+                        <a class="collapse-item" href="{{ route('branchOfficeUsers.index') }}" >Listar Sucursal Usuario </a>
+                            <a class="collapse-item" href="{{ route('branchOfficeUsers.create') }}">Agregar Sucursal Usuario</a>
+                        </div>
+                    </div>
+
+                    @else
+
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#branchOfficesUsers" aria-expanded="false" aria-controls="collapseUtilities">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Sucursal Usuario</span>
-                </a>
-                <div id="branchOfficesUsers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Sucursal Usuario</h6>
-                    <a class="collapse-item" href="{{ route('branchOfficeUsers.index') }}" >Listar Sucursal Usuario </a>
-                        <a class="collapse-item" href="{{ route('branchOfficeUsers.create') }}">Agregar Sucursal Usuario</a>
+                            <span>Sucursal Usuario</span> 
+
+                    </a>
+                    <div id="branchOfficesUsers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Sucursal Usuario</h6>
+                        <a class="collapse-item" href="{{ route('branchOfficeUsers.index') }}" >Listar Sucursal Usuario </a>
+                            <a class="collapse-item" href="{{ route('branchOfficeUsers.create') }}">Agregar Sucursal Usuario</a>
+                        </div>
                     </div>
-                </div>
+                    @endif
 
-                @else
+                </li>
 
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#branchOfficesUsers" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Sucursal Usuario</span> 
+                <li class="nav-item">
 
-                </a>
-                <div id="branchOfficesUsers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Sucursal Usuario</h6>
-                    <a class="collapse-item" href="{{ route('branchOfficeUsers.index') }}" >Listar Sucursal Usuario </a>
-                        <a class="collapse-item" href="{{ route('branchOfficeUsers.create') }}">Agregar Sucursal Usuario</a>
+                    @if(Route::currentRouteName()=='productClientVouchers.index')
+
+                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#productClientVouchers"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Voucher Producto </span>
+                    </a>
+                    <div id="productClientVouchers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Voucher Producto </h6>
+                        <a class="collapse-item" href="{{ route('productClientVouchers.index') }}" >Listar Voucher  </a>
+                            <a class="collapse-item" href="{{ route('productClientVouchers.create') }}">Agregar Voucher </a>
+                        </div>
                     </div>
-                </div>
-                @endif
 
-            </li>
+                    @elseif(Route::currentRouteName()=='productClientVouchers.create')
 
-            <li class="nav-item">
+                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#productClientVouchers"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Voucher Producto </span>
+                    </a>
+                    <div id="productClientVouchers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Voucher Producto </h6>
+                        <a class="collapse-item" href="{{ route('productClientVouchers.index') }}" >Listar Voucher   </a>
+                            <a class="collapse-item" href="{{ route('productClientVouchers.create') }}">Agregar Voucher  </a>
+                        </div>
+                    </div>
 
-                @if(Route::currentRouteName()=='productClientVouchers.index')
+                    @else
 
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#productClientVouchers"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productClientVouchers" aria-expanded="false" aria-controls="collapseUtilities">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Voucher Producto </span>
-                </a>
-                <div id="productClientVouchers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Voucher Producto </h6>
-                    <a class="collapse-item" href="{{ route('productClientVouchers.index') }}" >Listar Voucher  </a>
-                        <a class="collapse-item" href="{{ route('productClientVouchers.create') }}">Agregar Voucher </a>
+                            <span>Voucher Producto </span> 
+
+                    </a>
+                    <div id="productClientVouchers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Voucher Producto </h6>
+                        <a class="collapse-item" href="{{ route('productClientVouchers.index') }}" >Listar Voucher  </a>
+                            <a class="collapse-item" href="{{ route('productClientVouchers.create') }}">Agregar Voucher </a>
+                        </div>
                     </div>
-                </div>
+                    @endif
 
-                @elseif(Route::currentRouteName()=='productClientVouchers.create')
+                </li>
 
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#productClientVouchers"
-                    aria-expanded="true" aria-controls="collapseUtilities">
+                <li class="nav-item">
+
+                    @if(Route::currentRouteName()=='categoryProducts.index')
+
+                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#categoryProducts"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Categoria Producto </span>
+                    </a>
+                    <div id="categoryProducts" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Categoria Producto</h6>
+                        <a class="collapse-item" href="{{ route('categoryProducts.index') }}" >Listar Categoria  </a>
+                            <a class="collapse-item" href="{{ route('categoryProducts.create') }}">Agregar Categoria </a>
+                        </div>
+                    </div>
+
+                    @elseif(Route::currentRouteName()=='categoryProducts.create')
+
+                    <a class="nav-link " href="#" data-toggle="collapse" data-target="#categoryProducts"
+                        aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Categoria Producto</span>
+                    </a>
+                    <div id="categoryProducts" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Categoria Producto</h6>
+                        <a class="collapse-item" href="{{ route('categoryProducts.index') }}" >Listar Categoria   </a>
+                            <a class="collapse-item" href="{{ route('categoryProducts.create') }}">Agregar Categoria  </a>
+                        </div>
+                    </div>
+
+                    @else
+
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categoryProducts" aria-expanded="false" aria-controls="collapseUtilities">
                     <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Voucher Producto </span>
-                </a>
-                <div id="productClientVouchers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Voucher Producto </h6>
-                    <a class="collapse-item" href="{{ route('productClientVouchers.index') }}" >Listar Voucher   </a>
-                        <a class="collapse-item" href="{{ route('productClientVouchers.create') }}">Agregar Voucher  </a>
+                            <span>Categoria Producto</span> 
+
+                    </a>
+                    <div id="categoryProducts" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                        <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Categoria Producto</h6>
+                        <a class="collapse-item" href="{{ route('categoryProducts.index') }}" >Listar Categoria  </a>
+                            <a class="collapse-item" href="{{ route('categoryProducts.create') }}">Agregar Categoria </a>
+                        </div>
                     </div>
-                </div>
+                    @endif
 
-                @else
-
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productClientVouchers" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Voucher Producto </span> 
-
-                </a>
-                <div id="productClientVouchers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Voucher Producto </h6>
-                    <a class="collapse-item" href="{{ route('productClientVouchers.index') }}" >Listar Voucher  </a>
-                        <a class="collapse-item" href="{{ route('productClientVouchers.create') }}">Agregar Voucher </a>
-                    </div>
-                </div>
-                @endif
-
-            </li>
-
-            <li class="nav-item">
-
-                @if(Route::currentRouteName()=='categoryProducts.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#categoryProducts"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Categoria Producto </span>
-                </a>
-                <div id="categoryProducts" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Categoria Producto</h6>
-                    <a class="collapse-item" href="{{ route('categoryProducts.index') }}" >Listar Categoria  </a>
-                        <a class="collapse-item" href="{{ route('categoryProducts.create') }}">Agregar Categoria </a>
-                    </div>
-                </div>
-
-                @elseif(Route::currentRouteName()=='categoryProducts.create')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#categoryProducts"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Categoria Producto</span>
-                </a>
-                <div id="categoryProducts" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Categoria Producto</h6>
-                    <a class="collapse-item" href="{{ route('categoryProducts.index') }}" >Listar Categoria   </a>
-                        <a class="collapse-item" href="{{ route('categoryProducts.create') }}">Agregar Categoria  </a>
-                    </div>
-                </div>
-
-                @else
-
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#categoryProducts" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Categoria Producto</span> 
-
-                </a>
-                <div id="categoryProducts" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Categoria Producto</h6>
-                    <a class="collapse-item" href="{{ route('categoryProducts.index') }}" >Listar Categoria  </a>
-                        <a class="collapse-item" href="{{ route('categoryProducts.create') }}">Agregar Categoria </a>
-                    </div>
-                </div>
-                @endif
-
-            </li>
-
-            <li class="nav-item">
-
-                @if(Route::currentRouteName()=='kindProducts.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#kindProducts"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Tipo de Producto </span>
-                </a>
-                <div id="kindProducts" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Tipo de Producto</h6>
-                    <a class="collapse-item" href="{{ route('kindProducts.index') }}" >Listar Tipo  </a>
-                        <a class="collapse-item" href="{{ route('kindProducts.create') }}">Agregar Tipo </a>
-                    </div>
-                </div>
-
-                @elseif(Route::currentRouteName()=='kindProducts.create')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#kindProducts"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Tipo de Producto</span>
-                </a>
-                <div id="kindProducts" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Tipo de Producto</h6>
-                    <a class="collapse-item" href="{{ route('kindProducts.index') }}" >Listar Tipo   </a>
-                        <a class="collapse-item" href="{{ route('kindProducts.create') }}">Agregar Tipo  </a>
-                    </div>
-                </div>
-
-                @else
-
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#kindProducts" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Tipo de Producto</span> 
-
-                </a>
-                <div id="kindProducts" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Tipo de Producto</h6>
-                    <a class="collapse-item" href="{{ route('kindProducts.index') }}" >Listar Tipo  </a>
-                        <a class="collapse-item" href="{{ route('kindProducts.create') }}">Agregar Tipo </a>
-                    </div>
-                </div>
-                @endif
-
-            </li>
+                </li>
+            -->
+           
 
             <li class="nav-item">
 
@@ -1284,89 +940,82 @@
 
             </li>
 
+             <!-- MANTENEDOR DIVIDER Vehiculos -->
             <li class="nav-item">
+                
 
-                @if(Route::currentRouteName()=='voucherUsers.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#voucherUsers"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Voucher Usuario </span>
-                </a>
-                <div id="voucherUsers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Voucher Usuario</h6>
-                    <a class="collapse-item" href="{{ route('voucherUsers.index') }}" >Listar Voucher Usuario  </a>
-                        <a class="collapse-item" href="{{ route('voucherUsers.create') }}">Agregar Voucher Usuario </a>
-                    </div>
-                </div>
-
-                @elseif(Route::currentRouteName()=='voucherUsers.create')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#voucherUsers"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Voucher Usuario</span>
-                </a>
-                <div id="voucherUsers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Voucher Usuario</h6>
-                    <a class="collapse-item" href="{{ route('voucherUsers.index') }}" >Listar Voucher Usuario   </a>
-                        <a class="collapse-item" href="{{ route('voucherUsers.create') }}">Agregar Voucher Usuario  </a>
-                    </div>
-                </div>
-
-                @else
-
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#voucherUsers" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Voucher Usuario</span> 
-
-                </a>
-                <div id="voucherUsers" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Voucher Usuario</h6>
-                    <a class="collapse-item" href="{{ route('voucherUsers.index') }}" >Listar Voucher Usuario </a>
-                        <a class="collapse-item" href="{{ route('voucherUsers.create') }}">Agregar Voucher Usuario </a>
-                    </div>
-                </div>
-                @endif
-
-            </li>
-
-            
-
-
-
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Addons
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
-                    <span>Pages</span>
+                    <i class="fa fa-car"></i>
+                    <span>Vehículos</span>
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Login Screens:</h6>
-                        <a class="collapse-item" href="login.html">Login</a>
-                        <a class="collapse-item" href="register.html">Register</a>
-                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                        <div class="collapse-divider"></div>
-                        <h6 class="collapse-header">Other Pages:</h6>
-                        <a class="collapse-item" href="404.html">404 Page</a>
-                        <a class="collapse-item" href="blank.html">Blank Page</a>
+                        <h6 class="collapse-header">Menú</h6>
+                        <a class="collapse-item" href="{{ route('cars.index') }}">Listar Vehículo</a>
+                        <a class="collapse-item" href="{{ route('cars.create') }}">Agregar Vehículo</a>
+                       <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Otras Funcionalidades</h6>
+                        <a class="collapse-item" href="{{ route('carModels.index') }}">Ver Modelos</a>
+                        <a class="collapse-item" href="{{ route('brands.index') }}">Ver Marcas</a> 
                     </div>
                 </div>
+               
             </li>
+
+
+
+
+            <!-- MANTENEDOR DIVIDER PRODUCTOS -->
+            <li class="nav-item">
+                
+
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#productos"
+                    aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fa fa-briefcase"></i>
+                    <span>Productos</span>
+                </a>
+                <div id="productos" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Menú</h6>
+                        <a class="collapse-item" href="{{ route('cars.index') }}">Listar Productos</a>
+                        <a class="collapse-item" href="{{ route('cars.create') }}">Agregar Productos</a>
+                       <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Otras Funcionalidades</h6>
+                        <a class="collapse-item" href="{{ route('category.index') }}">Ver Categoría</a>
+                        <a class="collapse-item" href="{{ route('kindProducts.index') }}">Ver Tipo</a> 
+                    </div>
+                </div>
+               
+            </li>
+
+
+             <!-- MANTENEDOR DIVIDER PRODUCTOS -->
+             @can('roles.index', 'permissions.index')
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#roles"
+                        aria-expanded="true" aria-controls="collapsePages">
+                        <i class="fas fa-cogs"></i>
+                        <span>Roles y Permisos</span>
+                    </a>
+                    <div id="roles" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Roles</h6>
+                            
+                            <a class="collapse-item" href="{{ route('roles.index') }}">Ver Roles</a>
+                            <a class="collapse-item" href="{{ route('roles.create') }}">Agregar Rol</a>
+                            
+                            <div class="collapse-divider"></div>
+                            <h6 class="collapse-header">Permisos</h6>
+                            
+                            <a class="collapse-item" href="{{ route('permissions.index') }}">Ver Permisos</a>
+                            <a class="collapse-item" href="{{ route('permissions.index') }}">Agregar Permiso</a> 
+                            
+                        </div>
+                    </div>
+                    
+                </li>
+             @endcan
 
             <!-- Nav Item - Charts 
             <li class="nav-item">
@@ -1389,14 +1038,6 @@
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-               
-               
-            </div>
-
         </ul>
         <!-- End of Sidebar -->
 

@@ -53,6 +53,14 @@ class UserController extends Controller
 
         $newUser->roles()->attach($user->roles);
 
+        if($newUser)
+        {
+            toast('Usuario agregado','success');
+            
+        }else{
+            toast('Usuario no agregado','warning');
+        }
+
         return redirect()->route('users.index');
     }
 
@@ -90,6 +98,13 @@ class UserController extends Controller
         
         $roles = Role::all();
         $user->roles()->sync($request->roles);
+        if($user)
+        {
+            toast('Usuario actualizado','success');
+            
+        }else{
+            toast('Usuario no actualizado','warning');
+        }
         return redirect()->route('users.index');
 
     }
@@ -98,7 +113,14 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         //dd($user);
-        $user->delete();
+       $mensaje =  $user->delete();
+       if($mensaje)
+        {
+            toast('Usuario eliminado','success');
+            
+        }else{
+            toast('Usuario no eliminado','warning');
+        }
         return redirect()->route('users.index');
     }
 }

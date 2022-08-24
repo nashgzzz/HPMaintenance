@@ -39,11 +39,19 @@ class SupplierController extends Controller
      */
     public function store(StoreSupplierRequest $supplier)
     {
-        Supplier::create([
+        $mensaje = Supplier::create([
             'nombre' => $supplier->nombre,
             'rut' => $supplier->rut,
             'dirección' => $supplier->dirección
         ]);
+
+        if($mensaje)
+        {
+            toast('Proovedor agregado','success');
+            
+        }else{
+            toast('Proovedor no agregado','warning');
+        }
 
         return redirect()->route('suppliers.index');
     }
@@ -79,11 +87,19 @@ class SupplierController extends Controller
      */
     public function update(UpdateSupplierRequest $request, Supplier $supplier)
     {
-        $supplier->update([
+        $mensaje = $supplier->update([
             'nombre' => $request->nombre,
             'rut' => $request->rut,
             'dirección' => $request->dirección
         ]);
+        if($mensaje)
+        {
+            toast('Proovedor actualizado','success');
+            
+        }else{
+            toast('Proovedor no actualiado','warning');
+        }
+
         return redirect()->route('suppliers.index');
     }
 
@@ -95,7 +111,15 @@ class SupplierController extends Controller
      */
     public function destroy(Supplier $supplier)
     {
-        $supplier->delete();
+        $mensaje = $supplier->delete();
+        if($mensaje)
+        {
+            toast('Proovedor eliminado','success');
+            
+        }else{
+            toast('Proovedor no eliminado','warning');
+        }
+
         return redirect()->route('suppliers.index');
     }
 }

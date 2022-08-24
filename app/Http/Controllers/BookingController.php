@@ -40,11 +40,18 @@ class BookingController extends Controller
      */
     public function store(StoreBookingRequest $booking)
     {
-        Booking::create([
+       $mensaje =  Booking::create([
             'nombre' => $booking->nombre,
             'descripcion' => $booking->descripcion,
             'product_id' => $booking->product_id
         ]);
+        if($mensaje)
+        {
+            toast('Reserva agregada','success');
+            
+        }else{
+            toast('Reserva no agregada','warning');
+        }
 
         return redirect()->route('bookings.index');
     }
@@ -81,11 +88,18 @@ class BookingController extends Controller
      */
     public function update(UpdateBookingRequest $request, Booking $booking)
     {
-        $booking->update([
+        $mensaje = $booking->update([
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,
             'product_id' => $request->product_id
         ]);
+        if($mensaje)
+        {
+            toast('Reserva actualizada','success');
+            
+        }else{
+            toast('Reserva no actualizada','warning');
+        }
         return redirect()->route('bookings.index');
     }
 
@@ -97,7 +111,14 @@ class BookingController extends Controller
      */
     public function destroy(Booking $booking)
     {
-        $booking->delete();
+        $mensaje = $booking->delete();
+        if($mensaje)
+        {
+            toast('Reserva eliminada','success');
+            
+        }else{
+            toast('Reserva no eliminada','warning');
+        }
         return redirect()->route('bookings.index');
     }
 }

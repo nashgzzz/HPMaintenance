@@ -8,11 +8,7 @@ use App\Models\CarModel;
 
 class CarModelController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
         $carsModels = CarModel::all();
@@ -21,79 +17,74 @@ class CarModelController extends Controller
         return View('carModel.index',compact('carsModels'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
         return view('carModel.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreCarModelRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function store(StoreCarModelRequest $carModel)
     {
-        CarModel::create([
+        $mensaje = CarModel::create([
             'nombre' => $carModel->nombre,
             'brand_id' => $carModel->brand_id
         ]);
 
+        if($mensaje)
+        {
+            toast('Modelo de auto agregado','success');
+            
+        }else{
+            toast('Modelo de auto no agregado','warning');
+        }
+        
         return redirect()->route('carModels.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\CarModel  $carModel
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function show(CarModel $carModel)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\CarModel  $carModel
-     * @return \Illuminate\Http\Response
-     */
+  
     public function edit(CarModel $carModel)
     {
         return view('carModel.edit',compact('carModel'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateCarModelRequest  $request
-     * @param  \App\Models\CarModel  $carModel
-     * @return \Illuminate\Http\Response
-     */
+  
     public function update(UpdateCarModelRequest $request, CarModel $carModel)
     {
-        $carModel->update([
+        $mensaje = $carModel->update([
             'nombre' => $request->nombre,
             'brand_id' => $request->brand_id
         ]);
+        if($mensaje)
+        {
+            toast('Modelo de auto actualizado','success');
+            
+        }else{
+            toast('Modelo de auto no actualizado','warning');
+        }
+       
         return redirect()->route('carModels.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\CarModel  $carModel
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function destroy(CarModel $carModel)
     {
-        $carModel->delete();
+        $mensaje = $carModel->delete();
+        
+        if($mensaje)
+        {
+            toast('Modelo de auto eliminado','success');
+            
+        }else{
+            toast('Modelo de auto no eliminado','warning');
+        }
+       
         return redirect()->route('carModels.index');
     }
 }

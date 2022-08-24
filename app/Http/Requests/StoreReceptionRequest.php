@@ -24,8 +24,8 @@ class StoreReceptionRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
-            'descripcion' => 'required',
+            'nombre' => 'required|alpha',
+            'descripcion' => 'required|alpha',
             'fecha' => 'required',
             'bodega_sucursal_id' => 'required'
         ];

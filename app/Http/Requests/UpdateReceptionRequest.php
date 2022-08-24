@@ -24,8 +24,8 @@ class UpdateReceptionRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
-            'descripcion' => 'required',
+            'nombre' => 'required|alpha',
+            'descripcion' => 'required|alpha',
             'fecha' => 'required',
             'item_clients_id' => 'required',
             'bodega_sucursal_id' => 'required'

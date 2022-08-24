@@ -26,10 +26,17 @@ class BodegaSucursalController extends Controller
 
     public function store(StoreBodegaSucursalRequest $bodegaSucursal)
     {
-        BodegaSucursal::create([
+        $mensaje = BodegaSucursal::create([
             'nombre' => $bodegaSucursal->nombre,
             'adress_id' => $bodegaSucursal->adress_id
         ]);
+        if($mensaje)
+        {
+            toast('Bodega de sucursal agregada','success');
+            
+        }else{
+            toast('Bodega de sucursal no agregada','warning');
+        }
 
         return redirect()->route('bodegaSucursals.index');
     }
@@ -49,16 +56,31 @@ class BodegaSucursalController extends Controller
 
     public function update(UpdateBodegaSucursalRequest $request, BodegaSucursal $bodegaSucursal)
     {
-        $bodegaSucursal->update([
+        $mensaje = $bodegaSucursal->update([
             'nombre' => $request->nombre,
             'adress_id' => $request->adress_id
         ]);
+        if($mensaje)
+        {
+            toast('Bodega de sucursal actualizada','success');
+            
+        }else{
+            toast('Bodega de sucursal no actualizada','warning');
+        }
+
         return redirect()->route('bodegaSucursals.index');
     }
 
     public function destroy(BodegaSucursal $bodegaSucursal)
     {
-        $bodegaSucursal->delete();
+        $mensaje = $bodegaSucursal->delete();
+        if($mensaje)
+        {
+            toast('Bodega de sucursal eliminada','success');
+            
+        }else{
+            toast('Bodega de sucursal no eliminada','warning');
+        }
         return redirect()->route('bodegaSucursals.index');
     }
 }

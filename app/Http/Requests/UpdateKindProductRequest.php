@@ -24,7 +24,7 @@ class UpdateKindProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
+            'nombre' => 'required|alpha',
             'status' => 'required'
         ];
     }

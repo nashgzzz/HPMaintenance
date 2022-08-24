@@ -27,7 +27,6 @@ class VoucherFactory extends Factory
             'observaciones' => fake()->words(3, true),
             'bodega_sucursal_id' => BodegaSucursal::all()->random()->id,
             'products_id' => Product::all()->random()->id
-            
         ];
     }
 }

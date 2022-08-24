@@ -24,7 +24,7 @@ class UpdateCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required'
+            'nombre' => 'required|regex:/^[\pL\s\-]+$/u'
         ];
     }
 }

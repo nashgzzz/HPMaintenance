@@ -29,6 +29,7 @@ return new class extends Migration
             $table->datetime('fecha_nacimiento');
             $table->string('sexo');
             $table->integer('telefono');
+            
         });
     }
 

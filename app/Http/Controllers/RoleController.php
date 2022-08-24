@@ -36,12 +36,14 @@ class RoleController extends Controller
     {
        
         $newRole = Role::create($role->all());
-        
-        
-        
         $newRole->permissions()->attach($role->permissions);
-    
-
+        if($newRole)
+        {
+            toast('Rol agregado','success');
+            
+        }else{
+            toast('Rol no agregado','warning');
+        }
         return redirect()->route('roles.index');
     }
 
@@ -64,13 +66,27 @@ class RoleController extends Controller
         
         $role->update($request->all());
         $role->permissions()->sync($request->permissions);
+        if($role)
+        {
+            toast('Rol actualizado','success');
+            
+        }else{
+            toast('Rol no actualizado','warning');
+        }
         return redirect()->route('roles.index');
     }
 
 
     public function destroy(Role $role)
     {
-        $role->delete();
+        $mensaje = $role->delete();
+        if($mensaje)
+        {
+            toast('Rol eliminado','success');
+            
+        }else{
+            toast('Rol no eliminado','warning');
+        }
         return redirect()->route('roles.index');
     }
 }

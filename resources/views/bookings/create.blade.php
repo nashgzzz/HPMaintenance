@@ -19,7 +19,7 @@
                         </div>
 
                         <div class="form-group col-md-6">
-                        <label for="descripcion">Nombre de Sucursal</label>
+                        <label for="descripcion">Descripción de Sucursal</label>
                         <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion">
                         @error('descripcion')
                             <span> {{$message}} </span>

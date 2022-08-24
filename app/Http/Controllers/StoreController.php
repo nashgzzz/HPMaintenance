@@ -39,11 +39,17 @@ class StoreController extends Controller
      */
     public function store(StoreStoreRequest $store)
     {
-        Store::create([
+        $mensaje = Store::create([
             'nombre' => $store->nombre,
             'adress_id' => $store->adress_id
         ]);
-
+        if($mensaje)
+        {
+            toast('Local agregado','success');
+            
+        }else{
+            toast('Local no agregado','warning');
+        }
         return redirect()->route('stores.index');
     }
 
@@ -78,10 +84,17 @@ class StoreController extends Controller
      */
     public function update(UpdateStoreRequest $request, Store $store)
     {
-        $store->update([
+        $mensaje = $store->update([
             'nombre' => $request->nombre,
             'adress_id' => $request->adress_id
         ]);
+        if($mensaje)
+        {
+            toast('Local actualizado','success');
+            
+        }else{
+            toast('Local no actualizado','warning');
+        }
         return redirect()->route('stores.index');
     }
 
@@ -93,7 +106,14 @@ class StoreController extends Controller
      */
     public function destroy(Store $store)
     {
-        $store->delete();
+        $mensaje = $store->delete();
+        if($mensaje)
+        {
+            toast('Local eliminado','success');
+            
+        }else{
+            toast('Local no eliminado','warning');
+        }
         return redirect()->route('stores.index');
     }
 }

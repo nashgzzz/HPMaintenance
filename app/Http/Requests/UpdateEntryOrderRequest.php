@@ -24,8 +24,8 @@ class UpdateEntryOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
-            'detalle' => 'required',
+            'nombre' => 'required|alpha',
+            'detalle' => 'required|alpha',
             'users_id' => 'required'
         ];
     }

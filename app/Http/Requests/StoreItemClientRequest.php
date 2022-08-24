@@ -24,10 +24,10 @@ class StoreItemClientRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
+            'nombre' => 'required|alpha',
             'fecha_isntalacion' => 'required',
-            'descripcion' => 'required',
-            'obvervaciones' => 'required',
+            'descripcion' => 'required|alpha',
+            'obvervaciones' => 'required|alpha',
             'branch_office_id' => 'required'
         ];
     }

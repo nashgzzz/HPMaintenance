@@ -18,8 +18,12 @@
                            @enderror
                            </div>
                            <div class="form-group col-md-6">
-                           <label for="inputPassword4">Contraseña</label>
-                           <input value="{{$user->password}}" type="password" class="form-control" id="password" name="password"  placeholder="Contraseña">
+                           <label for="inputPassword4">Contraseña 
+                            <small>
+                                **Ingrese Contraseña Nueva**
+                            </small>
+                        </label>
+                           <input  type="password" class="form-control" id="password" name="password"  placeholder="****">
                            @error('password')
                                <span> {{$message}} </span>
                            @enderror
@@ -62,11 +66,11 @@
                            </div>
                            <div class="form-group col-md-6">
                            <label for="sexUser">Sexo</label>
-                           <select value="{{$user->sexo}}"  class="form-control form-control-sm" id="sexo" name="sexo" >
+                           <select class="form-control form-control-sm" id="sexo" name="sexo" >
                                <option value=''>Seleccione</option>
-                               <option value='male'>Hombre</option>
-                               <option value='female'>Mujer</option>
-                               <option value='other'>Otro</option>
+                               <option value='male' @if($user->sexo=='male') selected @endif >Hombre</option>
+                               <option value='female' @if($user->sexo=='female') selected @endif >Mujer</option>
+                               <option value='other'@if($user->sexo=='other') selected @endif >Otro</option>
                                </select>
                                @error('sexo')
                                <span> {{$message}} </span>

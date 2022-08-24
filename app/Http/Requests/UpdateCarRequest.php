@@ -24,10 +24,10 @@ class UpdateCarRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required',
+            'nombre' => 'required|alpha',
             'patente' => 'required',
             'color' => 'required',
-            'descripcion' => 'required',
+            'descripcion' => 'required|alpha',
             'car_models_id' => 'required',
             'user_id' => 'required'
         ];

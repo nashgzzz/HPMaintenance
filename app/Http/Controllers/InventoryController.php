@@ -40,11 +40,19 @@ class InventoryController extends Controller
      */
     public function store(StoreInventoryRequest $inventory)
     {
-        Inventory::create([
+        $mensaje = Inventory::create([
             'nombre' => $inventory->nombre,
             'descripcion' => $inventory->descripcion,
             'mail' => $inventory->mail
         ]);
+
+        if($mensaje)
+        {
+            toast('Inventario agregado','success');
+            
+        }else{
+            toast('Inventario no agregado','warning');
+        }
 
         return redirect()->route('inventories.index');
     
@@ -81,13 +89,23 @@ class InventoryController extends Controller
      */
     public function update(UpdateInventoryRequest $request, Inventory $inventory)
     {
-        $inventory->update([
+       $mensaje =  $inventory->update([
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,
             'mail' => $request->mail
             
             
         ]);
+
+        if($mensaje)
+        {
+            toast('Inventario actualizado','success');
+            
+        }else{
+            toast('Inventario no actualizado','warning');
+        }
+
+
         return redirect()->route('inventories.index');
     }
 
@@ -99,7 +117,15 @@ class InventoryController extends Controller
      */
     public function destroy(Inventory $inventory)
     {
-        $inventory->delete();
+        $mensaje = $inventory->delete();
+        if($mensaje)
+        {
+            toast('Inventario eliminado','success');
+            
+        }else{
+            toast('Inventario no eliminado','warning');
+        }
+
         return redirect()->route('inventories.index');
     }
 }

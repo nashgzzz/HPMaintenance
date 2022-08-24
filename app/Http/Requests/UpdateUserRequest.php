@@ -28,12 +28,12 @@ class UpdateUserRequest extends FormRequest
             'name' => 'required',
             'email' => 'required',
             'password' => 'required',
-            'first_name' => 'required',
-            'last_name' => 'required',
+            'first_name' => 'required|regex:/^[\pL\s\-]+$/u',
+            'last_name' => 'required|regex:/^[\pL\s\-]+$/u',
             'rut' => 'required',
             'fecha_nacimiento' => 'required',
             'sexo' => 'required',
-            'telefono' => 'required|max:9|min:7',
+            'telefono' => 'required|digits:9|max:9|min:7',
             'roles' => 'required'
         ];
     }

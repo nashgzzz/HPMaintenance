@@ -41,9 +41,16 @@ class AdressController extends Controller
     {
        
         
-        Adress::create([
+        $mensaje = Adress::create([
             'nombre' => $adress->nombre
         ]);
+        if($mensaje)
+        {
+            toast('Dirección agregada','success');
+            
+        }else{
+            toast('Dirección no agregada','warning');
+        }
 
         return redirect()->route('adress.index');
     }
@@ -79,9 +86,16 @@ class AdressController extends Controller
      */
     public function update(UpdateAdressRequest $request, Adress $adress)
     {
-        $adress->update([
+        $mensaje = $adress->update([
             'nombre' => $request->nombre
         ]);
+        if($mensaje)
+        {
+            toast('Dirección actualizada','success');
+            
+        }else{
+            toast('Dirección no actualizada','warning');
+        }
         return redirect()->route('adress.index');
     }
 
@@ -93,7 +107,14 @@ class AdressController extends Controller
      */
     public function destroy(Adress $adress)
     {
-        $adress->delete();
+       $mensaje =  $adress->delete();
+        if($mensaje)
+        {
+            toast('Dirección eliminada','success');
+            
+        }else{
+            toast('Dirección no eliminada','warning');
+        }
         return redirect()->route('adress.index');
     }
 }

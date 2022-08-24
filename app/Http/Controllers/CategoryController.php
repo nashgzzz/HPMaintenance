@@ -39,9 +39,16 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $category)
     {
-        Category::create([
+        $mensaje = Category::create([
             'nombre' => $category->nombre
         ]);
+        if($mensaje)
+        {
+            toast('Categoria agregada','success');
+            
+        }else{
+            toast('Categoria no agregada','warning');
+        }
 
         return redirect()->route('category.index');
     }
@@ -77,9 +84,16 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        $category->update([
+        $mensaje = $category->update([
             'nombre' => $request->nombre
         ]);
+        if($mensaje)
+        {
+            toast('Categoria actualizada','success');
+            
+        }else{
+            toast('Categoria no actualizada','warning');
+        }
         return redirect()->route('category.index');
 
     }
@@ -92,7 +106,14 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        $category->delete();
+        $mensaje = $category->delete();
+        if($mensaje)
+        {
+            toast('Categoria eliminada','success');
+            
+        }else{
+            toast('Categoria no eliminada','warning');
+        }
         return redirect()->route('category.index');
     }
 }

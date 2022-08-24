@@ -16,6 +16,11 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
     use HasRoles;
 
+    public function bodegas()
+    {
+        return $this->belongsToMany(Bodega::class, 'bodega_usuario');
+    }
+
     protected $guarded = [ 'id' ];
 
 
