@@ -41,5 +41,9 @@ class RoleSeeder extends Seeder
        Permission::create(['name' => 'permissions.edit'])->assignRole([$rolAdmin]);
        Permission::create(['name' => 'permissions.create'])->assignRole([$rolAdmin]);
        Permission::create(['name' => 'permissions.destroy'])->assignRole([$rolAdmin]);
+
+
+
+
     }
 }

@@ -8,79 +8,80 @@ use App\Models\Bodega;
 
 class BodegaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $bodegas = Bodega::all();
+        return View('bodegas.index',compact('bodegas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create()
     {
-        //
+        return view('bodegas.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreBodegaRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreBodegaRequest $request)
+    public function store(StoreBodegaRequest $bodega)
     {
-        //
+        $mensaje =  Bodega::create([
+            'nombre' => $bodega->nombre
+        ]);
+
+        if($mensaje)
+        {
+            toast('Bodega agregada','success');
+            
+        }else{
+            toast('Bodega no agregada','warning');
+        }
+
+        return redirect()->route('bodegas.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Bodega  $bodega
-     * @return \Illuminate\Http\Response
-     */
     public function show(Bodega $bodega)
     {
-        //
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Bodega  $bodega
-     * @return \Illuminate\Http\Response
-     */
+  
     public function edit(Bodega $bodega)
     {
-        //
+        return view('bodegas.edit',compact('bodega'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateBodegaRequest  $request
-     * @param  \App\Models\Bodega  $bodega
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(UpdateBodegaRequest $request, Bodega $bodega)
     {
-        //
+        $mensaje = $bodega->update([
+            'nombre' => $request->nombre
+        ]);
+
+        if($mensaje)
+        {
+            toast('Bodega actualizada','success');
+            
+        }else{
+            toast('Bodega no actualizada','warning');
+        }
+
+        return redirect()->route('bodegas.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Bodega  $bodega
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(Bodega $bodega)
+
     {
-        //
+
+        $mensaje = $bodega->delete();
+
+        if($mensaje)
+        {
+            toast('Bodega eliminada','success');
+            
+        }else{
+            toast('Bodega no eliminada','warning');
+        }
+
+        return redirect()->route('bodegas.index');
     }
 }

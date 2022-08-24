@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Bodega;
+use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use Spatie\Permission\Models\Role;
 
 
 class UserController extends Controller
@@ -123,5 +125,31 @@ class UserController extends Controller
         }
         return redirect()->route('users.index');
     }
+
+    public function asignar(User $user)
+    {
+        
+        $bodegas = Bodega::all();
+
+        return view('users.asignar',compact('user', 'bodegas'));
+    }
+
+    public function asignar_bodega(Request $request, User $user)
+    {
+        $newUser = User::find($user->id);
+        $newUser->bodegas()->attach($request->bodegas);
+        
+        if($newUser)
+        {
+            toast('Bodega asignada','success');
+            
+        }else{
+            toast('Bodega no asignada','warning');
+        }
+        
+        return redirect()->route('users.index');
+
+    }
+    
 }
 

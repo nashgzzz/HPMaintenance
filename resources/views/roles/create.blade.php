@@ -11,7 +11,7 @@
             
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                            <label for="name">Nombre Role</label>
+                            <label for="name">Nombre del Rol</label>
                             <input  type="text" class="form-control" id="name" name="name" placeholder="name">
                             @error('name')
                                 <span> {{$message}} </span>
@@ -28,7 +28,7 @@
 
                             
                             <div class="form-group col-md-6">
-                                <label for="guard_name">Asignar Permisos</label>
+                                <label for="guard_name">Asignamiento de Permisos</label>
                                 @foreach ($permissions as $permission)
                                     <div>
                                         <label>

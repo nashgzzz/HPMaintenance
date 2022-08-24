@@ -11,7 +11,7 @@
         @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <label for="nombre">Nombre de Sucursal</label>
+                        <label for="nombre">Nombre de Reserva</label>
                         <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
@@ -19,7 +19,7 @@
                         </div>
 
                         <div class="form-group col-md-6">
-                        <label for="descripcion">Descripción de Sucursal</label>
+                        <label for="descripcion">Descripción de la Reserva</label>
                         <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion">
                         @error('descripcion')
                             <span> {{$message}} </span>

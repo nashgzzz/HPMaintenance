@@ -10,6 +10,7 @@ use App\Http\Controllers\BrandController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\AdressController;
+use App\Http\Controllers\BodegaController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProductController;
@@ -53,7 +54,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
-
+Route::get('users/asignar/{user}', [ UserController::class, 'asignar'])->name('users.asignar');
+Route::put('users/asignar/bodega', [ UserController::class, 'asignar_bodega'])->name('users.asignar.bodega');
 
 Route::resource('clients', ClientController::class)->names('clients');
 Route::resource('users', UserController::class)->names('users');
@@ -81,6 +83,7 @@ Route::resource('vouchers', VoucherController::class)->names('vouchers');
 Route::resource('voucherUsers', VoucherUserController::class)->names('voucherUsers');   
 Route::resource('roles', roleController::class)->names('roles');  
 Route::resource('permissions', PermissionController::class)->names('permissions'); 
+Route::resource('bodegas', BodegaController::class)->names('bodegas'); 
 
 
 

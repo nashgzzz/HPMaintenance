@@ -18,7 +18,7 @@ class User extends Authenticatable
 
     public function bodegas()
     {
-        return $this->belongsToMany(Bodega::class, 'bodega_usuario');
+        return $this->belongsToMany(Bodega::class, 'bodega_usuario','user_id', 'bodega_id');
     }
 
     protected $guarded = [ 'id' ];

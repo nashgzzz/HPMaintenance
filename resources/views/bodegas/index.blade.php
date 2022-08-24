@@ -3,77 +3,44 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Usuarios</h1>
+<h1 class="h3 mb-2 text-gray-800">Bodega Principal</h1>
 
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        
-    <a type="button" class="btn btn-success" href="{{ route('users.create') }}">Agregar un Usuario</a>
-  
+    
+    <a type="button" class="btn btn-success" href='{{ route('bodegas.create') }}'">Agregar una Bodega</a>
+    
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="tablaUser" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="tableta" width="100%" cellspacing="0">
          
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Nombre Usuario</th>
-                        <th>Email</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Rut</th>
-                        <th>Fecha_nacimiento</th>
-                        <th>Sexo</th>
-                        <th>Teléfono</th>
-                        <th>Rol</th>
                         <th>Acciones</th>
+
                     </tr>
                 </thead>
-                
-               
                 <tbody>
                     
-                        @foreach($users as $key => $user)
+                        @foreach($bodegas as $key => $bodega)
                         <tr>
-                            <td>{{$user->id}}</td>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->first_name}}</td>
-                            <td>{{$user->last_name}}</td>
-                            <td>{{$user->rut}}</td>
-                            <td>{{$user->fecha_nacimiento}}</td>
-                            <td>{{$user->sexo}}</td>
-                            <td>{{$user->telefono}}</td>
+                            <td>{{$bodega->id}}</td>
+                            <td>{{$bodega->nombre}}</td>
                             <td>
-                                @foreach ($user->roles as $role)
-                                    <span> 
-                                        {{$role->name}}
-                                    </span>
-                                @endforeach
-                            </td>
-                            <td> 
-                                <form method="POST" action="{{ route('users.destroy',$user) }}">
+                                <form method="POST" action="{{ route('bodegas.destroy',$bodega) }}">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
                                 </form>
-                            
-                                    <a type="button" href="{{route('users.edit', $user)}}" class="btn btn-info">Editar</a>
-                                    <a type="button" href="{{route('users.asignar', $user)}}" class="btn btn-info">Asignar Bodega</a>
-
-                               
-                            </td>
+                                    <a type="button" href="{{route('bodegas.edit', $bodega)}}" class="btn btn-info">Editar</a>
+                             </td>
                         </tr>
-                        @endforeach
-                    
-
-
-                   
-             
-                
+                        @endforeach            
                 </tbody>
             </table>
         </div>
@@ -84,11 +51,12 @@
 @endsection
 
 
+
 @section('scripts')
 <script>
 
         $(document).ready(function () {
-            $('#tablaUser').DataTable({
+            $('#tableta').DataTable({
                 order: [[0, 'asc']],
                 responsive: true,
             dom: 'Bfrtip',
@@ -140,9 +108,6 @@
         });
 
 </script>
-
-
-
 @endsection
 
 @section('js')

@@ -33,7 +33,7 @@ class StoreUserRequest extends FormRequest
             'rut' => 'required',
             'fecha_nacimiento' => 'required',
             'sexo' => 'required',
-            'telefono' => 'required|digits|max:9|min:7',
+            'telefono' => 'numeric|required',
             'roles' => 'required'
         ];
     }

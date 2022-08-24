@@ -11,14 +11,14 @@
         @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <label for="nombre">Nombre Reserva</label>
+                        <label for="nombre">Nombre de la recepción</label>
                         <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                         <div class="form-group col-md-6">
-                        <label for="descripcion">Descripcion</label>
+                        <label for="descripcion">Descripción</label>
                         <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion">
                         @error('descripcion')
                             <span> {{$message}} </span>
