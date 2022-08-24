@@ -37,7 +37,7 @@
             
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -353,7 +353,7 @@
 
                 <a class="nav-link " href="#" data-toggle="collapse" data-target="#suppliers"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <i class="fa fa-truck" aria-hidden="true"></i>
                     <span>Proovedores</span>
                 </a>
                 <div id="suppliers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
@@ -368,7 +368,7 @@
 
                 <a class="nav-link " href="#" data-toggle="collapse" data-target="#suppliers"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <i class="fa fa-truck" aria-hidden="true"></i>
                     <span>Proovedores</span>
                 </a>
                 <div id="suppliers" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
@@ -382,7 +382,7 @@
                 @else
 
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#suppliers" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
                          <span>Proovedores</span> 
 
                 </a>
@@ -978,8 +978,8 @@
                 <div id="productos" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Menú</h6>
-                        <a class="collapse-item" href="{{ route('cars.index') }}">Listar Productos</a>
-                        <a class="collapse-item" href="{{ route('cars.create') }}">Agregar Productos</a>
+                        <a class="collapse-item" href="{{ route('products.index') }}">Listar Productos</a>
+                        <a class="collapse-item" href="{{ route('products.create') }}">Agregar Productos</a>
                        <div class="collapse-divider"></div>
                         <h6 class="collapse-header">Otras Funcionalidades</h6>
                         <a class="collapse-item" href="{{ route('category.index') }}">Ver Categoría</a>

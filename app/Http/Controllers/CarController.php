@@ -40,7 +40,7 @@ class CarController extends Controller
     public function store(StoreCarRequest $car)
     {
       
-        $car = Car::create([
+        $mensaje = $car = Car::create([
             
             'nombre' => $car->nombre,
             'patente' => $car->patente,
@@ -49,6 +49,15 @@ class CarController extends Controller
             'car_models_id' => $car->car_models_id,
             'user_id' => $car->user_id
         ]);
+
+        if($mensaje)
+        {
+            toast('Vehículo agregado','success');
+            
+        }else{
+            toast('Vehículo no agregado','warning');
+        }
+
 
         return redirect()->route('cars.index');
     }
@@ -85,7 +94,7 @@ class CarController extends Controller
     public function update(UpdateCarRequest $request, Car $car)
     {
 
-        $car->update([
+        $mensaje = $car->update([
             'nombre' => $request->nombre,
             'patente' => $request->patente,
             'color' => $request->color,
@@ -94,6 +103,13 @@ class CarController extends Controller
             'user_id' => $request->user_id
             ]
         );
+        if($mensaje)
+        {
+            toast('Vehículo actualizado','success');
+            
+        }else{
+            toast('Vehículo no actualizado','warning');
+        }
         return redirect()->route('cars.index');
     }
 
@@ -105,7 +121,15 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        $car->delete();
+        $mensaje = $car->delete();
+        if($mensaje)
+        {
+            toast('Vehículo eliminado','success');
+            
+        }else{
+            toast('Vehículo no eliminado','warning');
+        }
+
         return redirect()->route('cars.index');
     }
 }

@@ -24,7 +24,7 @@ class UpdateOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|alpha',
+            'nombre' => 'required',
             'cantidad' => 'required',
             'valor' => 'required',
             'fecha_pedido' => 'required',

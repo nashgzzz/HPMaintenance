@@ -24,12 +24,12 @@ class StoreVoucherRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|alpha',
+            'nombre' => 'required',
             'serie' =>  'required',
             'Hora_llegada' =>  'required',
             'Hora_salida' => 'required',
             'fecha' => 'required',
-            'observaciones' => 'required|alpha',
+            'observaciones' => 'required',
             'branch_office_id' => 'required',
             'products_id' => 'required'
         ];

@@ -24,8 +24,8 @@ class StoreKindProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|alpha',
-            'status' => 'required'
+            'nombre' => 'required',
+            'status' => 'required|integer|between:0,1'
         ];
     }
 }

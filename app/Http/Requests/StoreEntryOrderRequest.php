@@ -24,8 +24,8 @@ class StoreEntryOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|alpha',
-            'detalle' => 'required|alpha',
+            'nombre' => 'required',
+            'detalle' => 'required',
             'users_id' => 'required'
         ];
     }
