@@ -9,4 +9,13 @@ class voucherUser extends Model
 {
     use HasFactory;
     protected $guarded = [ 'id' ];
+
+    public function users(){
+        return $this->belongsTo(User::Class);
+    }
+
+    public function vouchers(){
+        return $this->belongsTo(Voucher::Class);
+    }
+
 }

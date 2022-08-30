@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\levantamientoReq;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class LevantamientoReqSeeder extends Seeder
 {
@@ -14,6 +15,6 @@ class LevantamientoReqSeeder extends Seeder
      */
     public function run()
     {
-        //
+        levantamientoReq::factory(2)->create();
     }
 }

@@ -66,6 +66,7 @@ class DatabaseSeeder extends Seeder
          $this -> call(EntryOrderSeeder::class);
          $this -> call(BranchOfficeUserSeeder::class);
          $this -> call(VoucherUserSeeder::class);
+         $this -> call(LevantamientoReqSeeder::class);
 
           
           

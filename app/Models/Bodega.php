@@ -15,4 +15,12 @@ class Bodega extends Model
         return $this->belongsToMany(User::class, 'bodega_usuario','user_id', 'bodega_id');
     }
 
+    public function products(){
+        return $this->hasMany(Product::class);
+    }
+    
+    public function bodega_usuarios(){
+        return $this->hasMany(BodegaUsuario::class);
+    }
+
 }

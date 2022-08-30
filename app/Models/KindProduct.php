@@ -9,5 +9,11 @@ class KindProduct extends Model
 {
     use HasFactory;
     protected $guarded=['id'];
+
+
+    public function kind_products(){
+        return $this->hasMany(KindProduct::Class);
+    }
+
     
 }

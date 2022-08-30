@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('levantamiento_reqs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignID('item_clients_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignID('item_clients_id')->constrained()->onUpdate('cascade')->onDelete('cascade');           
         });
     }
 

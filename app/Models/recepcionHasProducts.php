@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class recepcionHasProducts extends Model
 {
     use HasFactory;
+
+    public function products(){
+        return $this->belongsTo(Product::Class);
+    }
+
+    public function receptions(){
+        return $this->belongsTo(Reception::Class);
+    }
 }

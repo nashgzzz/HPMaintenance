@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class ordenEntregaBodeguero extends Model
 {
     use HasFactory;
+
+    public function users(){
+        return $this->belongsTo(User::Class);
+    }
+    public function products(){
+        return $this->belongsTo(Product::Class);
+    }
+
+
 }

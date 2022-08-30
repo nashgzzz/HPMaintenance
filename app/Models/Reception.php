@@ -9,4 +9,21 @@ class Reception extends Model
 {
     use HasFactory;
     protected $guarded = [ 'id' ];
+
+    public function recepcion_has_products(){
+        return $this->hasMany(recepcionHasProducts::class);
+    }
+
+
+    public function bodega_sucursals(){
+        return $this->belongsTo(BodegaSucursal::class);
+    }
+
+    public function item_clients(){
+        return $this->belongsTo(ItemClient::class);
+    }
+   
+
+
+
 }

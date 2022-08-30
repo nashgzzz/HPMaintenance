@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class bodegaTecnicoProduct extends Model
 {
     use HasFactory;
+
+    public function products(){
+        return $this->belongsTo(Product::class);
+    }
+
+
 }
