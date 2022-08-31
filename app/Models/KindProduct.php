@@ -11,8 +11,8 @@ class KindProduct extends Model
     protected $guarded=['id'];
 
 
-    public function kind_products(){
-        return $this->hasMany(KindProduct::Class);
+    public function products(){
+        return $this->hasOne(Product::Class);
     }
 
     

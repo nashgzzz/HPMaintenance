@@ -23,7 +23,8 @@
                         <th>Nombre </th>
                         <th>Descripción</th>
                         <th>Fecha</th>
-                        <th>Usuario</th>
+                        <th>Producto del cliente</th>
+                        <th>Nombre de Bodega</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -37,7 +38,8 @@
                             <td>{{$reception->nombre}}</td>
                             <td>{{$reception->descripcion}}</td>
                             <td>{{$reception->fecha}}</td>
-                            <td>{{$reception->user_id}}</td>
+                            <td>{{$reception->item_clients->nombre}}</td>
+                            <td>{{$reception->bodega_sucursal->nombre}}</td>
                             <td> 
                             <form action="{{ route('receptions.destroy',$reception) }}" method="POST">
                                 <a type="button" href="{{route('receptions.edit', $reception)}}" class="btn btn-info">Editar</a>

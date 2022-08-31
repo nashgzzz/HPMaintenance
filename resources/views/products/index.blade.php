@@ -32,6 +32,7 @@
                         <th>Proovedor</th>
                         <th>Tipo Producto</th>
                         <th>Local</th>
+                        <th>Bodega</th>
                         @can('products.edit')
                         <th>Acciones</th>
                         @endcan
@@ -48,10 +49,11 @@
                             <td>{{$product->serie}}</td>
                             <td>{{$product->iva}}</td>
                             <td>{{$product->precio}}</td>
-                            <td>{{$product->inventory_id}}</td>
-                            <td>{{$product->supplier_id}}</td>
-                            <td>{{$product->kind_products_id}}</td>
-                            <td>{{$product->store_id}}</td>
+                            <td>{{$product->inventory->nombre}}</td>
+                            <td>{{$product->supplier->nombre}}</td>
+                            <td>{{$product->kind_products->nombre}}</td>
+                            <td>{{$product->store->nombre}}</td>
+                            <td>{{$product->bodega->nombre}}</td>
                             
                             @can('products.destroy')
                             <td>

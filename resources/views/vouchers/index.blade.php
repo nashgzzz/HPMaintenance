@@ -26,8 +26,8 @@
                         <th>Hora Salida</th>
                         <th>Fecha </th>
                         <th>Observaciones</th>
-                        <th>Sucursal</th>
-                        <th>Voucher Producto Cliente</th>
+                        <th>Bodega Sucursal</th>
+                        <th>Producto</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -44,8 +44,8 @@
                             <td>{{$voucher->Hora_salida}}</td>
                             <td>{{$voucher->fecha}}</td>
                             <td>{{$voucher->observaciones}}</td>
-                            <td>{{$voucher->branch_office_id}}</td>
-                            <td>{{$voucher->product_client_vouchers}}</td>
+                            <td>{{$voucher->bodega_sucursal->nombre}}</td>
+                            <td>{{$voucher->products->nombre}}</td>
                             <td> 
                             <form action="{{ route('vouchers.destroy',$voucher) }}" method="POST">
                                 <a type="button" href="{{route('vouchers.edit', $voucher)}}" class="btn btn-info">Editar</a>

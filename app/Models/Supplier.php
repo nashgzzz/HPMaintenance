@@ -12,7 +12,7 @@ class Supplier extends Model
 
 
     public function products(){
-        return $this->hasMany(Product::Class);
+        return $this->hasOne(Product::Class);
     }
     
 }

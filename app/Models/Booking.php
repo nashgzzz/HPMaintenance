@@ -10,7 +10,7 @@ class Booking extends Model
     use HasFactory;
     protected $guarded=['id'];
 
-    public function products(){
+    public function product(){
         return $this->belongsTo(Product::class);
     }
 }

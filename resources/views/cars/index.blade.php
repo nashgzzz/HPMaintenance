@@ -39,8 +39,8 @@
                             <td>{{$car->patente}}</td>
                             <td>{{$car->color}}</td>
                             <td>{{$car->descripcion}}</td>
-                            <td>{{$car->car_models_id}}</td>
-                            <td>{{$car->user_id}}</td>
+                            <td>{{$car->car_models->nombre}}</td>
+                            <td>{{$car->user->nombre}}</td>
                             <td>
                                 
                                 <form method="POST" action="{{ route('cars.destroy',$car) }}">

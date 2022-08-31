@@ -14,7 +14,7 @@ class Car extends Model
     public function car_models(){
         return $this->belongsTo(CarModel::Class);
     }
-    public function users(){
+    public function user(){
         return $this->belongsTo(User::Class);
     }
 

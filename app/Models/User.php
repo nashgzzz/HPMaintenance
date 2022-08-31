@@ -40,7 +40,7 @@ class User extends Authenticatable
         return $this->hasMany(BodegaUsuario::Class);
     }
     public function cars(){
-        return $this->hasMany(Car::Class);
+        return $this->hasOne(Car::Class);
     }
     public function clients(){
         return $this->hasMany(Client::Class);
@@ -48,7 +48,7 @@ class User extends Authenticatable
     public function employees(){
         return $this->hasMany(Employee::Class);
     }
-    public function entry_orders(){
+    public function entryOrder(){
         return $this->hasMany(EntryOrder::Class);
     }
 

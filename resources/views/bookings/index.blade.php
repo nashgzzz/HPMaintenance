@@ -34,7 +34,7 @@
                             <td>{{$booking->id}}</td>
                             <td>{{$booking->nombre}}</td>
                             <td>{{$booking->descripcion}}</td>
-                            <td>{{$booking->product_id}}</td>
+                            <td>{{$booking->product->nombre}}</td>
                             <td>
                                 
                                 <form method="POST" action="{{ route('bookings.destroy',$booking) }}">

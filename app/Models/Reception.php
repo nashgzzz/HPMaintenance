@@ -15,7 +15,7 @@ class Reception extends Model
     }
 
 
-    public function bodega_sucursals(){
+    public function bodega_sucursal(){
         return $this->belongsTo(BodegaSucursal::class);
     }
 

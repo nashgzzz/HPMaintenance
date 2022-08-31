@@ -10,7 +10,7 @@ class Inventory extends Model
     use HasFactory;
     protected $guarded=['id'];
 
-    public function inventories(){
-        return $this->belongsTo(Inventory::Class);
+    public function products(){
+        return $this->hasOne(Products::Class);
     }
 }

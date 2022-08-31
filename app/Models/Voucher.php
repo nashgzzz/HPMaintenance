@@ -11,7 +11,7 @@ class Voucher extends Model
     protected $guarded = [ 'id' ];
 
 
-    public function bodega_sucursals(){
+    public function bodega_sucursal(){
         return $this->belongsTo(BodegaSucursal::Class);
     }
 

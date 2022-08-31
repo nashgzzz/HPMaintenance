@@ -12,7 +12,7 @@ class Store extends Model
 
 
      //uno a muchos relacion  (inverso)
-     public function adresses(){
+     public function adress(){
         return $this->belongsTo(Adress::Class);
     }
 

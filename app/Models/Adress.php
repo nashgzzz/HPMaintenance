@@ -13,7 +13,7 @@ class Adress extends Model
 
     //uno muchos de citie
     public function cities(){
-        return $this->hasMany(City::class);
+        return $this->hasOne(City::class);
     }
      //uno muchos de stores
     public function stores(){
@@ -21,7 +21,7 @@ class Adress extends Model
     }
 
      //uno muchos de bodegasucursales
-    public function bodega_sucursals(){
+    public function bodega_sucursal(){
         return $this->hasMany(BodegaSucursal::class);
     }
 

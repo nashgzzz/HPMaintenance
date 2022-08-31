@@ -34,6 +34,7 @@ class OrderController extends Controller
             'fecha_pedido' => $order->fecha_pedido,
             'user_id' => $order->user_id,
             'products_id' => $order->products_id
+            
         ]);
 
         return redirect()->route('orders.index');

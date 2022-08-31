@@ -13,15 +13,15 @@ class Product extends Model
 
 
     //uno a muchos relacion  (inverso)
-    public function stores(){
+    public function store(){
         return $this->belongsTo(Store::Class);
     }
 
-    public function suppliers(){
+    public function supplier(){
         return $this->belongsTo(Supplier::Class);
     }
     
-    public function inventories(){
+    public function inventory(){
         return $this->belongsTo(Inventory::Class);
     }
 
@@ -29,7 +29,7 @@ class Product extends Model
         return $this->belongsTo(KindProduct::Class);
     }
 
-    public function bodegas(){
+    public function bodega(){
         return $this->belongsTo(Bodega::Class);
     }
 
@@ -37,7 +37,7 @@ class Product extends Model
 
 
     //uno a muchos relacion
-    public function bookings(){
+    public function booking(){
         return $this->hasMany(Booking::Class);
     }
 

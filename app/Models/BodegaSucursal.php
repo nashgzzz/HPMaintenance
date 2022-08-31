@@ -11,7 +11,7 @@ class BodegaSucursal extends Model
     protected $guarded=['id'];
 
 
-    public function adresses(){
+    public function adress(){
         return $this->belongsTo(Adress::class);
     }
 
@@ -27,7 +27,7 @@ class BodegaSucursal extends Model
         return $this->hasMany(Reception::Class);
     }
 
-    public function item_clients(){
+    public function item_client(){
         return $this->hasMany(ItemClient::Class);
     }
    

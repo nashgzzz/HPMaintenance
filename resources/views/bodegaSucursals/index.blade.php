@@ -32,7 +32,7 @@
                         <tr>
                             <td>{{$sucursal->id}}</td>
                             <td>{{$sucursal->nombre}}</td>
-                            <td>{{$sucursal->adress_id}}</td>
+                            <td>{{$sucursal->adress->nombre}}</td>
                             <td>
                                 <form method="POST" action="{{ route('bodegaSucursals.destroy',$sucursal) }}">
                                     @csrf

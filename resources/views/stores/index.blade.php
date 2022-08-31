@@ -32,7 +32,7 @@
                         <tr>
                             <td>{{$store->id}}</td>
                             <td>{{$store->nombre}}</td>
-                            <td>{{$store->adress_id}}</td>
+                            <td>{{$store->adress->nombre}}</td>
                             <td>
                                 <form method="POST" action="{{ route('stores.destroy',$store) }}">
                                     @csrf

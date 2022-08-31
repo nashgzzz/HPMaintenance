@@ -10,11 +10,11 @@ class ItemClient extends Model
     use HasFactory;
     protected $guarded=['id'];
 
-    public function bodega_sucursals(){
+    public function bodega_sucursal(){
         return $this->belongsTo(BodegaSucursal::class);
     }
     
-    public function receptions(){
+    public function reception(){
         return $this->hasOne(Reception::class);
     }
 

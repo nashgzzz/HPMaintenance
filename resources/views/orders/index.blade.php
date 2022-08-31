@@ -25,6 +25,7 @@
                         <th>Valor</th>
                         <th>Fecha del Pedido</th>
                         <th>Usuario</th>
+                        <th>Producto</th>
                         <th>Acciones</th>
 
                     </tr>
@@ -38,7 +39,8 @@
                             <td>{{$order->cantidad}}</td>
                             <td>{{$order->valor}}</td>
                             <td>{{$order->fecha_pedido}}</td>
-                            <td>{{$order->user_id}}</td>
+                            <td>{{$order->user->nombre}}</td>
+                            <td>{{$order->products->nombre}}</td>
                             <td><form action="{{ route('orders.destroy',$order) }}" method="POST">
                                 <a type="button" href="{{route('orders.edit', $order)}}" class="btn btn-info">Editar</a>
                                 @csrf
