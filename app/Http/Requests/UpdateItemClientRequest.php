@@ -24,11 +24,10 @@ class UpdateItemClientRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|alpha',
+            'nombre' => 'required',
             'fecha_isntalacion' => 'required',
-            'descripcion' => 'required|alpha',
-            'obvervaciones' => 'required|alpha',
-            'branch_office_id' => 'required'
+            'descripcion' => 'required',
+            'obvervaciones' => 'required'
         ];
     }
 }

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Store;
+use App\Models\Adress;
 use App\Http\Requests\StoreStoreRequest;
 use App\Http\Requests\UpdateStoreRequest;
-use App\Models\Store;
 
 class StoreController extends Controller
 {
@@ -39,9 +40,15 @@ class StoreController extends Controller
      */
     public function store(StoreStoreRequest $store)
     {
+
+        $adress = Adress::create([
+            'nombre' => $store->adress,
+        ]);
+
+
         $mensaje = Store::create([
             'nombre' => $store->nombre,
-            'adress_id' => $store->adress_id
+            'adress_id' => $adress->id
         ]);
         if($mensaje)
         {

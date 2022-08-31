@@ -82,16 +82,15 @@
                         </div>
 
                         <div class="form-group col-md-6"> 
-                          
-                                @foreach ($roles as $role)
-                                    <div>
-                                        <label>
-                                            {!! Form::checkbox('roles[]', $role->id, null, ['class' => 'mr-1']) !!}
-                                            {{$role->name}}
-                                        </label>
-                                    </div>
-                                @endforeach
-                           
+                            <label for="RoleAsigne">Asignar Rol a usuario</label>
+                                   @foreach ($roles as $role)
+                                       <div>
+                                           <label>
+                                               {!! Form::checkbox('roles[]', $role->id, null, ['class' => 'mr-1']) !!}
+                                               {{$role->name}}
+                                           </label>
+                                       </div>
+                                   @endforeach
                         </div>
 
                     </div>

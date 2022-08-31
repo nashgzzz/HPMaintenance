@@ -30,7 +30,7 @@ class EntryOrderController extends Controller
 
             'nombre' =>  $entryOrder->nombre,
             'detalle' =>  $entryOrder->detalle,
-            'users_id' =>  $entryOrder->users_id
+            'user_id' =>  auth()->user()->id
         ]);
 
         if($mensaje)
@@ -62,7 +62,7 @@ class EntryOrderController extends Controller
         $mensaje = $entryOrder->update([
             'nombre' =>  $request->nombre,
             'detalle' =>  $request->detalle,
-            'users_id' =>  $request->users_id
+            'user_id' =>  auth()->user()->id
             ]
         );
 

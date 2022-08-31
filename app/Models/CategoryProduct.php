@@ -12,11 +12,11 @@ class CategoryProduct extends Model
 
      //uno a muchos relacion  (inverso)
      public function categories(){
-        return $this->belongsTo(Category::Class);
+        return $this->belongsTo(Category::class);
     }
 
     public function products(){
-        return $this->belongsTo(Product::Class);
+        return $this->belongsTo(Product::class);
     }
 
 }

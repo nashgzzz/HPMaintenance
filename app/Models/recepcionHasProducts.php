@@ -10,10 +10,10 @@ class recepcionHasProducts extends Model
     use HasFactory;
 
     public function products(){
-        return $this->belongsTo(Product::Class);
+        return $this->belongsTo(Product::class);
     }
 
     public function receptions(){
-        return $this->belongsTo(Reception::Class);
+        return $this->belongsTo(Reception::class);
     }
 }

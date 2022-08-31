@@ -12,7 +12,7 @@
                        <div class="form-row">
                            <div class="form-group col-md-6">
                            <label for="nameUser">Nombre Usuario</label>
-                           <input value="{{$user->name}}" type="text" class="form-control" id="name" name="name" placeholder="Usuario">
+                           <input value="{{$user->name}}" type="text" class="form-control" id="name" name="name">
                            @error('name')
                                <span> {{$message}} </span>
                            @enderror
@@ -30,7 +30,7 @@
                            </div>
                            <div class="form-group col-md-6">
                            <label for="inputEmail4">Email</label>
-                           <input value="{{$user->email}}" type="email" class="form-control" id="email" name="email" placeholder="Email">
+                           <input value="{{$user->email}}" type="email" class="form-control" id="email" name="email">
                            @error('email')
                                <span> {{$message}} </span>
                            @enderror
@@ -38,35 +38,35 @@
                            
                            <div class="form-group col-md-6">
                            <label for="NombreUser">Nombre Completo</label>
-                           <input value="{{$user->first_name}}" type="text" class="form-control" id="first_name" name="first_name" placeholder="Nombre Completo">
+                           <input value="{{$user->first_name}}" type="text" class="form-control" id="first_name" name="first_name">
                            @error('first_name')
                                <span> {{$message}} </span>
                            @enderror
                            </div>
                            <div class="form-group col-md-6">
                            <label for="ApellidosUser">Apellidos</label>
-                           <input value="{{$user->last_name}}"  type="text" class="form-control" id="last_name" name="last_name" placeholder="Apellidos">
+                           <input value="{{$user->last_name}}"  type="text" class="form-control" id="last_name" name="last_name">
                            @error('last_name')
                                <span> {{$message}} </span>
                            @enderror
                            </div>
                            <div class="form-group col-md-6">
                            <label for="rutUser">Rut</label>
-                           <input value="{{$user->rut}}" type="text" class="form-control" id="rut" name="rut" placeholder="Rut">
+                           <input value="{{$user->rut}}" type="text" class="form-control" id="rut" name="rut">
                            @error('rut')
                                <span> {{$message}} </span>
                            @enderror
                            </div>
                            <div class="form-group col-md-6">
                            <label for="fechaNac">Fecha Nacimiento</label>
-                           <input value="{{\Carbon\Carbon::parse($user->fecha_nacimiento)->format('Y-m-d')}}" type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento"placeholder="Fecha Nacimiento">
+                           <input value="{{\Carbon\Carbon::parse($user->fecha_nacimiento)->format('Y-m-d')}}" type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
                            @error('fecha_nacimiento')
                                <span> {{$message}} </span>
                            @enderror
                            </div>
                            <div class="form-group col-md-6">
                            <label for="sexUser">Sexo</label>
-                           <select class="form-control form-control-sm" id="sexo" name="sexo" >
+                           <select class="form-control form-control-sm" id="sexo" name="sexo">
                                <option value=''>Seleccione</option>
                                <option value='male' @if($user->sexo=='male') selected @endif >Hombre</option>
                                <option value='female' @if($user->sexo=='female') selected @endif >Mujer</option>
@@ -78,14 +78,14 @@
                            </div>
                            <div class="form-group col-md-6">
                            <label for="TelUser">Teléfono</label>
-                           <input value="{{$user->telefono}}" type="int" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+                           <input value="{{$user->telefono}}" type="int" class="form-control" id="telefono" name="telefono">
                            @error('telefono')
                                <span> {{$message}} </span>
                            @enderror
                            </div>
    
                            <div class="form-group col-md-6"> 
-                            <label for="RoleAsigne">Asignar Rol</label>
+                            <label for="RoleAsigne">Editar Rol a usuario</label>
                                    @foreach ($roles as $role)
                                        <div>
                                            <label>

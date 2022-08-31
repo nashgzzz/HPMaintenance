@@ -45,16 +45,6 @@
                             <span> {{$message}} </span>
                         @enderror
                         </div>
-                     
-                        <div class="form-group col-md-6">
-                        <label for="user_id">Usuario</label>
-                        <input value="{{$order->user_id}}" type="int" class="form-control" id="user_id" name="user_id" placeholder="user_id">
-                        @error('user_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
-
-                       
                     </div>
                     <button type="submit" class="btn btn-primary">Actualizar el Pedido</button>
         </form>

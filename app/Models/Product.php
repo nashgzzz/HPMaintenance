@@ -14,23 +14,23 @@ class Product extends Model
 
     //uno a muchos relacion  (inverso)
     public function store(){
-        return $this->belongsTo(Store::Class);
+        return $this->belongsTo(Store::class);
     }
 
     public function supplier(){
-        return $this->belongsTo(Supplier::Class);
+        return $this->belongsTo(Supplier::class);
     }
     
     public function inventory(){
-        return $this->belongsTo(Inventory::Class);
+        return $this->belongsTo(Inventory::class);
     }
 
     public function kind_products(){
-        return $this->belongsTo(KindProduct::Class);
+        return $this->belongsTo(KindProduct::class);
     }
 
     public function bodega(){
-        return $this->belongsTo(Bodega::Class);
+        return $this->belongsTo(Bodega::class);
     }
 
 
@@ -38,36 +38,36 @@ class Product extends Model
 
     //uno a muchos relacion
     public function booking(){
-        return $this->hasMany(Booking::Class);
+        return $this->hasMany(Booking::class);
     }
 
     public function category_products(){
-        return $this->hasMany(CategoryProduct::Class);
+        return $this->hasMany(CategoryProduct::class);
     }
 
     public function bodega_tecnico_products(){
-        return $this->hasMany(bodegaTecnicoProduct::Class);
+        return $this->hasMany(bodegaTecnicoProduct::class);
     }
 
     public function orden_entrega_bodegueros(){
-        return $this->hasMany(ordenEntregaBodeguero::Class);
+        return $this->hasMany(ordenEntregaBodeguero::class);
     }
 
     public function orders(){
-        return $this->hasMany(Order::Class);
+        return $this->hasMany(Order::class);
     }
 
     public function recepcion_has_products(){
-        return $this->hasMany(recepcionHasProducts::Class);
+        return $this->hasMany(recepcionHasProducts::class);
     }
 
     public function productClientVouchers(){
-        return $this->hasMany(productClientVouchers::Class);
+        return $this->hasMany(productClientVouchers::class);
     }
     
 
     public function bodega_sucursals(){
-        return $this->hasMany(BodegaSucursal::Class);
+        return $this->hasMany(BodegaSucursal::class);
     }
 
 

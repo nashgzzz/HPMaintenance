@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\BodegaUsuario>
  */
-class BodegaUsuarioFactory extends Factory
+class BodegaUserFactory extends Factory
 {
     /**
      * Define the model's default state.

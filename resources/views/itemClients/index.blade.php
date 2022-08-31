@@ -38,7 +38,14 @@
                             <td>{{$itemClient->fecha_isntalacion}}</td>
                             <td>{{$itemClient->descripcion}}</td>
                             <td>{{$itemClient->obvervaciones}}</td>
-                            <td>{{$itemClient->bodega_sucursal->nombre}}</td>
+                       
+                            <td>
+                                @foreach ($itemClients->bodegaSucursales as $bodega_sucursal)
+                                    <span> 
+                                        {{$bodega_sucursal->nombre}}
+                                    </span>
+                                @endforeach
+                            </td>
                             <td><form action="{{ route('itemClients.destroy',$itemClient) }}" method="POST">
                                 <a type="button" href="{{route('itemClients.edit', $itemClient)}}" class="btn btn-info">Editar</a>
                                 @csrf

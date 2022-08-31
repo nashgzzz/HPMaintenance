@@ -11,6 +11,6 @@ class Inventory extends Model
     protected $guarded=['id'];
 
     public function products(){
-        return $this->hasOne(Products::Class);
+        return $this->hasOne(Products::class);
     }
 }

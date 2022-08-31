@@ -25,13 +25,7 @@
                         @enderror
                         </div>
 
-                        <div class="form-group col-md-6">
-                        <label for="fecha">Usuario</label>
-                        <input value="{{old('users_id')}}" type="int" class="form-control" id="users_id" name="users_id" placeholder="users_id">
-                        @error('users_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                       
                     
                       
                     </div>

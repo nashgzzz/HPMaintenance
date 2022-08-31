@@ -18,7 +18,7 @@ class User extends Authenticatable
 
     public function bodegas()
     {
-        return $this->belongsToMany(Bodega::class, 'bodega_usuario','user_id', 'bodega_id');
+        return $this->belongsToMany(Bodega::class, 'bodega_user','user_id', 'bodega_id');
     }
 
     protected $guarded = [ 'id' ];
@@ -37,36 +37,36 @@ class User extends Authenticatable
 
 
     public function bodega_usuarios(){
-        return $this->hasMany(BodegaUsuario::Class);
+        return $this->hasMany(BodegaUsuario::class);
     }
     public function cars(){
-        return $this->hasOne(Car::Class);
+        return $this->hasOne(Car::class);
     }
     public function clients(){
-        return $this->hasMany(Client::Class);
+        return $this->hasMany(Client::class);
     }
     public function employees(){
-        return $this->hasMany(Employee::Class);
+        return $this->hasMany(Employee::class);
     }
     public function entryOrder(){
-        return $this->hasMany(EntryOrder::Class);
+        return $this->hasOne(EntryOrder::class);
     }
 
     public function orden_entrega_bodegueros(){
-        return $this->hasMany(ordenEntregaBodeguero::Class);
+        return $this->hasMany(ordenEntregaBodeguero::class);
     }
 
 
     public function orders(){
-        return $this->hasMany(Order::Class);
+        return $this->hasMany(Order::class);
     }
 
     public function branch_office_users(){
-        return $this->hasMany(branchOfficeUser::Class);
+        return $this->hasMany(branchOfficeUser::class);
     }
     
     public function voucher_users(){
-        return $this->hasMany(voucherUser::Class);
+        return $this->hasMany(voucherUser::class);
     }
 
 }

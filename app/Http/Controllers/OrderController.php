@@ -25,6 +25,7 @@ class OrderController extends Controller
   
     public function store(StoreOrderRequest $order)
     {
+     
         
         $order = Order::create([
 
@@ -32,8 +33,7 @@ class OrderController extends Controller
             'cantidad' => $order->cantidad,
             'valor' => $order->valor,
             'fecha_pedido' => $order->fecha_pedido,
-            'user_id' => $order->user_id,
-            'products_id' => $order->products_id
+            'user_id' => auth()->user()->id
             
         ]);
 
@@ -59,8 +59,7 @@ class OrderController extends Controller
             'cantidad' => $request->cantidad,
             'valor' => $request->valor,
             'fecha_pedido' => $request->fecha_pedido,
-            'user_id' => $request->user_id,
-            'products_id' => $request->products_id
+            'user_id' => auth()->user()->id
             ]
         );
         return redirect()->route('orders.index');

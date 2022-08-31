@@ -17,7 +17,7 @@ class Adress extends Model
     }
      //uno muchos de stores
     public function stores(){
-        return $this->hasMany(Store::Class);
+        return $this->hasMany(Store::class);
     }
 
      //uno muchos de bodegasucursales

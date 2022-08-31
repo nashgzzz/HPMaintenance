@@ -21,7 +21,7 @@
                     <tr>
                         <th>Id</th>
                         <th>Nombre</th>
-                        <th>Dirección Id</th>
+                        <th>Dirección</th>
                         <th>Acciones</th>
 
                     </tr>

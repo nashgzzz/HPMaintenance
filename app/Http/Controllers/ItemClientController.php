@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ItemClient;
+use App\Models\BodegaSucursal;
 use App\Http\Requests\StoreItemClientRequest;
 use App\Http\Requests\UpdateItemClientRequest;
-use App\Models\ItemClient;
 
 class ItemClientController extends Controller
 {
@@ -19,22 +20,35 @@ class ItemClientController extends Controller
     
     public function create()
     {
-        return view('itemClients.create');
+        $bodegaSucursales = BodegaSucursal::all();
+        return view('itemClients.create', compact('bodegaSucursales'));
     }
 
 
     public function store(StoreItemClientRequest $itemClient)
     {
+        
         $itemClient = ItemClient::create([
 
             'nombre' => $itemClient->nombre,
             'fecha_isntalacion' => $itemClient->fecha_isntalacion,
             'descripcion' => $itemClient->descripcion,
-            'obvervaciones' => $itemClient->obvervaciones,
-            'branch_office_id' => $itemClient->branch_office_id
+            'obvervaciones' => $itemClient->obvervaciones
         ]);
 
+        $itemClient->bodegaSucursales()->attach($itemClient->bodegaSucursales);
+
+        if($itemClient)
+        {
+            toast('Productos Cliente agregado','success');
+            
+        }else{
+            toast('Producto Cliente no agregado','warning');
+        }
+
         return redirect()->route('itemClients.index');
+
+     
     }
 
     public function show(ItemClient $itemClient)
@@ -45,12 +59,14 @@ class ItemClientController extends Controller
 
     public function edit(ItemClient $itemClient)
     {
-        return View('itemClients.edit' , compact('itemClient'));
+        $bodegaSucursales = BodegaSucursal::all();
+        return View('itemClients.edit' , compact('itemClient' , 'bodegaSucursales'));
     }
 
     
     public function update(UpdateItemClientRequest $request, ItemClient $itemClient)
     {
+        
         $itemClient->update([
             'nombre' => $request->nombre,
             'fecha_isntalacion' => $request->fecha_isntalacion,
@@ -59,6 +75,9 @@ class ItemClientController extends Controller
             'branch_office_id' => $request->branch_office_id
             ]
         );
+        $bodegaSucursales = BodegaSucursal::all();
+        $itemClient->bodegaSucursales()->sync($itemClient->bodegaSucursales);
+
         return redirect()->route('itemClients.index');
     }
 

@@ -25,6 +25,6 @@ class ItemClient extends Model
 
 
     public function productClientVouchers(){
-        return $this->hasMany(productClientVouchers::Class);
+        return $this->hasMany(productClientVouchers::class);
     }
 }

@@ -39,15 +39,16 @@ class CarController extends Controller
      */
     public function store(StoreCarRequest $car)
     {
-      
+
         $mensaje = $car = Car::create([
+            
             
             'nombre' => $car->nombre,
             'patente' => $car->patente,
             'color' => $car->color,
             'descripcion' => $car->descripcion,
             'car_models_id' => $car->car_models_id,
-            'user_id' => $car->user_id
+            'user_id' => auth()->user()->id
         ]);
 
         if($mensaje)
@@ -100,7 +101,7 @@ class CarController extends Controller
             'color' => $request->color,
             'descripcion' => $request->descripcion,
             'car_models_id' => $request->car_models_id,
-            'user_id' => $request->user_id
+            'user_id' => auth()->user()->id
             ]
         );
         if($mensaje)

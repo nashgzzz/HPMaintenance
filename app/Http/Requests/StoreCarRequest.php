@@ -29,8 +29,7 @@ class StoreCarRequest extends FormRequest
             'patente' => 'required',
             'color' => 'required',
             'descripcion' => 'required',
-            'car_models_id' => 'required',
-            'user_id' => 'required'
+            'car_models_id' => 'required'
         ];
     }
 }

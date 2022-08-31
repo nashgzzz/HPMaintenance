@@ -25,8 +25,7 @@ class StoreEntryOrderRequest extends FormRequest
     {
         return [
             'nombre' => 'required',
-            'detalle' => 'required',
-            'users_id' => 'required'
+            'detalle' => 'required'
         ];
     }
 }

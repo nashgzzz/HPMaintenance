@@ -55,7 +55,7 @@ Route::get('/dashboard', function () {
 
 
 Route::get('users/asignar/{user}', [ UserController::class, 'asignar'])->name('users.asignar');
-Route::put('users/asignar/bodega', [ UserController::class, 'asignar_bodega'])->name('users.asignar.bodega');
+Route::put('users/asignar/bodega/{user}', [ UserController::class, 'asignar_bodega'])->name('users.asignar.bodega');
 
 Route::resource('clients', ClientController::class)->names('clients');
 Route::resource('users', UserController::class)->names('users');

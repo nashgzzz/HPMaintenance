@@ -14,7 +14,7 @@ class Country extends Model
     //uno a muchos relacion de contry and state
     
     public function states(){
-        return $this->hasMany(State::Class);
+        return $this->hasMany(State::class);
     }
 }  
 

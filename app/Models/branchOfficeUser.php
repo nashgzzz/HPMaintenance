@@ -16,7 +16,7 @@ class branchOfficeUser extends Model
 
    //uno muchos de bodegasucursales
    public function bodega_sucursals(){
-    return $this->belongsTo(BodegaSucursal::Class);
+    return $this->belongsTo(BodegaSucursal::class);
 
     }
 }

@@ -11,11 +11,11 @@ class voucherUser extends Model
     protected $guarded = [ 'id' ];
 
     public function users(){
-        return $this->belongsTo(User::Class);
+        return $this->belongsTo(User::class);
     }
 
     public function vouchers(){
-        return $this->belongsTo(Voucher::Class);
+        return $this->belongsTo(Voucher::class);
     }
 
 }

@@ -11,7 +11,7 @@ class Brand extends Model
     protected $guarded=['id'];
 
     public function car_models(){
-        return $this->hasOne(CarModel::Class);
+        return $this->hasOne(CarModel::class);
     }
 
 

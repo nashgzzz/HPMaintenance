@@ -36,7 +36,9 @@ class RoleController extends Controller
     {
        
         $newRole = Role::create($role->all());
+        
         $newRole->permissions()->attach($role->permissions);
+
         if($newRole)
         {
             toast('Rol agregado','success');
@@ -65,7 +67,9 @@ class RoleController extends Controller
     {
         
         $role->update($request->all());
+
         $role->permissions()->sync($request->permissions);
+
         if($role)
         {
             toast('Rol actualizado','success');

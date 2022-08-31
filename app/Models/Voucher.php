@@ -12,17 +12,17 @@ class Voucher extends Model
 
 
     public function bodega_sucursal(){
-        return $this->belongsTo(BodegaSucursal::Class);
+        return $this->belongsTo(BodegaSucursal::class);
     }
 
     public function products(){
-        return $this->belongsTo(Product::Class);
+        return $this->belongsTo(Product::class);
     }
 
     public function voucher_users(){
-        return $this->hasMany(voucherUser::Class);
+        return $this->hasMany(voucherUser::class);
     }
     public function productClientVouchers(){
-        return $this->hasMany(productClientVouchers::Class);
+        return $this->hasMany(productClientVouchers::class);
     }
 }

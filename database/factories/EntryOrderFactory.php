@@ -20,7 +20,7 @@ class EntryOrderFactory extends Factory
         return [
             'nombre' => fake()->name(),
             'detalle' => fake()->sentence(3),
-            'users_id' => User::all()->random()->id
+            'user_id' => User::all()->random()->id
         ];
     }
 }

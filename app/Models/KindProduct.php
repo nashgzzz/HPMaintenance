@@ -12,7 +12,7 @@ class KindProduct extends Model
 
 
     public function products(){
-        return $this->hasOne(Product::Class);
+        return $this->hasOne(Product::class);
     }
 
     

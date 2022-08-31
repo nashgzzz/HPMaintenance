@@ -33,7 +33,7 @@
                             <td>{{$entryOrder->id}}</td>
                             <td>{{$entryOrder->nombre}}</td>
                             <td>{{$entryOrder->detalle}}</td>
-                            <td>{{$entryOrder->users->nombre}}</td>
+                            <td>{{$entryOrder->user->name}}</td>
                             <td> 
 
                                 <form method="POST" action="{{ route('entryOrders.destroy',$entryOrder) }}">

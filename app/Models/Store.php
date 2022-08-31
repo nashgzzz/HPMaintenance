@@ -13,11 +13,11 @@ class Store extends Model
 
      //uno a muchos relacion  (inverso)
      public function adress(){
-        return $this->belongsTo(Adress::Class);
+        return $this->belongsTo(Adress::class);
     }
 
 
     public function products(){
-        return $this->hasMany(Product::Class);
+        return $this->hasMany(Product::class);
     }
 }

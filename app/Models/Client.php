@@ -11,6 +11,6 @@ class Client extends Model
     protected $guarded=['id'];
 
     public function users(){
-        return $this->belongsTo(User::Class);
+        return $this->belongsTo(User::class);
     }
 }

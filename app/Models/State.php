@@ -11,12 +11,12 @@ class State extends Model
 
     //uno a muchos relacion entre state and country (inverso)
     public function country(){
-        return $this->belongsTo(Country::Class);
+        return $this->belongsTo(Country::class);
     }
 
 
     // uno muchos a ciudad
     public function cities(){
-        return $this->hasMany(City::Class);
+        return $this->hasMany(City::class);
     }
 }

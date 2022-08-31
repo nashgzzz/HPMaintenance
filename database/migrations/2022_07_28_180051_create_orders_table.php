@@ -21,7 +21,6 @@ return new class extends Migration
             $table->integer('valor');
             $table->datetime('fecha_pedido');
             $table->foreignID('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignID('products_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             
     
         });

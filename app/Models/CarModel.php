@@ -11,11 +11,11 @@ class CarModel extends Model
     protected $guarded=['id'];
 
     public function brand(){
-        return $this->belongsTo(Brand::Class);
+        return $this->belongsTo(Brand::class);
     }
 
     public function cars(){
-        return $this->hasOne(Car::Class);
+        return $this->hasOne(Car::class);
     }
 
 

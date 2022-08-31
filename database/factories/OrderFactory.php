@@ -23,8 +23,7 @@ class OrderFactory extends Factory
             'cantidad' => fake()->randomDigitNotNull(),
             'valor' => fake()->randomNumber(),
             'fecha_pedido' => fake()->datetime(),
-            'user_id' => User::all()->random()->id,
-            'products_id' => Product::all()->random()->id,
+            'user_id' => User::all()->random()->id
             
         ];
     }

@@ -10,10 +10,10 @@ class ordenEntregaBodeguero extends Model
     use HasFactory;
 
     public function users(){
-        return $this->belongsTo(User::Class);
+        return $this->belongsTo(User::class);
     }
     public function products(){
-        return $this->belongsTo(Product::Class);
+        return $this->belongsTo(Product::class);
     }
 
 

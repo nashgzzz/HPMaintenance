@@ -13,7 +13,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre Producto</label>
-                        <input value="{{$itemClient->nombre}}"  type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{$itemClient->nombre}}"  type="text" class="form-control" id="nombre" name="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
@@ -21,7 +21,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="fecha_isntalacion">Fecha Instalación</label>
-                        <input  value="{{\Carbon\Carbon::parse($itemClient->fecha_isntalacion)->format('Y-m-d')}}"  type="date" class="form-control" id="fecha_isntalacion" name="fecha_isntalacion" placeholder="fecha_isntalacion">
+                        <input  value="{{\Carbon\Carbon::parse($itemClient->fecha_isntalacion)->format('Y-m-d')}}"  type="date" class="form-control" id="fecha_isntalacion" name="fecha_isntalacion">
                         @error('fecha_isntalacion')
                             <span> {{$message}} </span>
                         @enderror
@@ -29,7 +29,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="descripcion">Descripción</label>
-                        <input value="{{$itemClient->descripcion}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion">
+                        <input value="{{$itemClient->descripcion}}" type="text" class="form-control" id="descripcion" name="descripcion" >
                         @error('descripcion')
                             <span> {{$message}} </span>
                         @enderror
@@ -37,20 +37,24 @@
 
                         <div class="form-group col-md-6">
                         <label for="obvervaciones">Observaciones</label>
-                        <input value="{{$itemClient->obvervaciones}}" type="text" class="form-control" id="obvervaciones" name="obvervaciones" placeholder="obvervaciones">
+                        <input value="{{$itemClient->obvervaciones}}" type="text" class="form-control" id="obvervaciones" name="obvervaciones">
                         @error('obvervaciones')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                        
-                       
-                        <div class="form-group col-md-6">
-                        <label for="branch_office_id">Sucursal</label>
-                        <input value="{{$itemClient->branch_office_id}}" type="text" class="form-control" id="branch_office_id" name="branch_office_id" placeholder="branch_office_id">
-                        @error('branch_office_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                        <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Editar sucursal del cliente</label>
+                                   @foreach ($bodegaSucursales as $sucursal)
+                                       <div>
+                                           <label>
+                                               {!! Form::checkbox('bodegaSucursales[]', $sucursal->id, null, ['class' => 'mr-1']) !!}
+                                               {{$sucursal->nombre}}
+                                           </label>
+                                       </div>
+                                   @endforeach
+                        </div> 
+   
 
                        
                        

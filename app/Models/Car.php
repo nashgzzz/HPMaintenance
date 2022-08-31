@@ -12,10 +12,10 @@ class Car extends Model
     protected $guarded = [ 'id' ];
 
     public function car_models(){
-        return $this->belongsTo(CarModel::Class);
+        return $this->belongsTo(CarModel::class);
     }
     public function user(){
-        return $this->belongsTo(User::Class);
+        return $this->belongsTo(User::class);
     }
 
 

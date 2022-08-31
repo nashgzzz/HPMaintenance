@@ -13,11 +13,11 @@ class City extends Model
 
     //uno a muchos relacion  (inverso)
     public function states(){
-        return $this->belongsTo(State::Class);
+        return $this->belongsTo(State::class);
     }
     //uno a muchos relacion  (inverso)
     public function adresses(){
-        return $this->belongsTo(Adress::Class);
+        return $this->belongsTo(Adress::class);
     }
 
 }

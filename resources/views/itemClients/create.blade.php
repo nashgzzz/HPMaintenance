@@ -12,7 +12,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre Producto</label>
-                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
@@ -28,7 +28,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="descripcion">Descripción</label>
-                        <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion">
+                        <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion">
                         @error('descripcion')
                             <span> {{$message}} </span>
                         @enderror
@@ -36,20 +36,24 @@
 
                         <div class="form-group col-md-6">
                         <label for="obvervaciones">Observaciones</label>
-                        <input value="{{old('obvervaciones')}}" type="text" class="form-control" id="obvervaciones" name="obvervaciones" placeholder="obvervaciones">
+                        <input value="{{old('obvervaciones')}}" type="text" class="form-control" id="obvervaciones" name="obvervaciones" placeholder="Obvervaciones">
                         @error('obvervaciones')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                        
-                       
-                        <div class="form-group col-md-6">
-                        <label for="branch_office_id">Sucursal</label>
-                        <input value="{{old('branch_office_id')}}" type="text" class="form-control" id="branch_office_id" name="branch_office_id" placeholder="branch_office_id">
-                        @error('branch_office_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                        <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Asignar sucursal del cliente</label>
+                                   @foreach ($bodegaSucursales as $sucursal)
+                                       <div>
+                                           <label>
+                                               {!! Form::checkbox('bodegaSucursales[]', $sucursal->id, null, ['class' => 'mr-1']) !!}
+                                               {{$sucursal->nombre}}
+                                           </label>
+                                       </div>
+                                   @endforeach
+                        </div> 
+                        
 
                        
                        

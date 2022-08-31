@@ -27,12 +27,16 @@
                         </div>
                      
                         <div class="form-group col-md-6">
-                        <label for="product_id">Dirección</label>
+                        <label for="product_id">producto</label>
                         <input value="{{old('product_id')}}" type="int" class="form-control" id="product_id" name="product_id" placeholder="product_id">
                         @error('product_id')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
+
+                     
+
+
                     </div>
                     <button type="submit" class="btn btn-primary">Agregar Reserva</button>
         </form>

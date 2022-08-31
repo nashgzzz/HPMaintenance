@@ -32,7 +32,6 @@ class UserController extends Controller
     public function create(User $user)
     {
         $roles = Role::all();
-        $user->roles()->sync($user->roles);
         return view('users.create',compact('user', 'roles'));
     }
 
@@ -136,10 +135,11 @@ class UserController extends Controller
 
     public function asignar_bodega(Request $request, User $user)
     {
-        $newUser = User::find($user->id);
-        $newUser->bodegas()->attach($request->bodegas);
+
+      
+        $user->bodegas()->sync($request->bodegas);
         
-        if($newUser)
+        if($user)
         {
             toast('Bodega asignada','success');
             

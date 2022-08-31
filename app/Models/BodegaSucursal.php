@@ -20,15 +20,15 @@ class BodegaSucursal extends Model
     }
 
     public function vouchers(){
-        return $this->hasMany(Voucher::Class);
+        return $this->hasMany(Voucher::class);
     }
 
     public function receptions(){
-        return $this->hasMany(Reception::Class);
+        return $this->hasMany(Reception::class);
     }
 
     public function item_client(){
-        return $this->hasMany(ItemClient::Class);
+        return $this->hasOne(ItemClient::class);
     }
    
 }

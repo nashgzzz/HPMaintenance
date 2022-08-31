@@ -8,7 +8,7 @@
     <div class="card-header py-3">
     <h2>Actualizar</h2>
 
-            {!! Form::model($user, ['route' => ['users.asignar.bodega'], 'method' => 'PUT']) !!}
+            {!! Form::model($user, ['route' => ['users.asignar.bodega', $user->id], 'method' => 'PUT']) !!}
                 <div class="form-row">
                     <div class="form-group col-md-6">
                     <label for="name">Nombre</label>
