@@ -26,13 +26,17 @@
                         @enderror
                         </div>
                      
-                        <div class="form-group col-md-6">
-                        <label for="dirección">Dirección del Proovedor</label>
-                        <input value="{{$supplier->dirección}}" type="text" class="form-control" id="dirección" name="dirección">
-                        @error('dirección')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                      
+
+                        <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Asignar la direccion de la sucursal</label>
+                            <select name="adress_id" id="adress_id" class="form-select">     
+                                @foreach ($direcciones as $adress)
+                                 <option value="{{$adress->id}}"> {{$adress->nombre}}</option>
+                                 @endforeach
+                              </select>             
+                        </div> 
+
                     </div>
                     <button type="submit" class="btn btn-primary">Actualizar Proovedor</button>
         </form>

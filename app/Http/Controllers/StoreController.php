@@ -21,14 +21,15 @@ class StoreController extends Controller
  
     public function create()
     {
-        return View('stores.create');
+        $direcciones = Adress::all();
+        return View('stores.create',compact('direcciones'));
     }
 
     public function store(StoreStoreRequest $store)
     {
 
         $adress = Adress::create([
-            'nombre' => $store->adress,
+            'nombre' => $store->adress
         ]);
 
 
@@ -36,6 +37,7 @@ class StoreController extends Controller
             'nombre' => $store->nombre,
             'adress_id' => $adress->id
         ]);
+        
         if($mensaje)
         {
             toast('Local agregado','success');
@@ -55,7 +57,8 @@ class StoreController extends Controller
    
     public function edit(Store $store)
     {
-        return view('stores.edit',compact('store'));
+        $direcciones = Adress::all();
+        return view('stores.edit',compact('store', 'direcciones'));
     }
 
    

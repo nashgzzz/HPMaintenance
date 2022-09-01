@@ -21,16 +21,11 @@
                         
                         <div class="form-group col-md-6"> 
                             <label for="RoleAsigne">Asignar Marca a Vehículo</label>
-                               
-                            <select name="brand_id" id="brand_id" class="form-select">
-                                       
+                            <select name="brand_id" id="brand_id" class="form-select">     
                                 @foreach ($marcas as $brand)
-                                
-                                    <option value="{{$brand->id}}"> {{$brand->nombre}}</option>
-                                  
-                                @endforeach
-                              </select>
-                                  
+                                 <option value="{{$brand->id}}"> {{$brand->nombre}}</option>
+                                 @endforeach
+                              </select>             
                         </div> 
 
                     </div>

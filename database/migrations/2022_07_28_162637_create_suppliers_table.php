@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nombre',100);
             $table->integer('rut');
-            $table->string('dirección',300);
+            $table->foreignID('adress_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

@@ -150,52 +150,6 @@
 
             </li>
             
-
-            <li class="nav-item">
-
-                @if(Route::currentRouteName()=='adress.index')
-
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#adress"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Dirección</span>
-                </a>
-                <div id="adress" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Dirección</h6>
-                    <a class="collapse-item" href="{{ route('adress.index') }}" >Listar Direcciones</a>
-                        <a class="collapse-item" href="{{ route('adress.create') }}">Agregar Direcciones</a>
-                    </div>
-                </div>
-                @elseif(Route::currentRouteName()=='adress.create')
-                <a class="nav-link " href="#" data-toggle="collapse" data-target="#clientes"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Dirección</span>
-                </a>
-                <div id="adress" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Dirección</h6>
-                    <a class="collapse-item" href="{{ route('adress.index') }}" >Listar Direcciones</a>
-                        <a class="collapse-item" href="{{ route('adress.create') }}">Agregar Direcciones</a>
-                    </div>
-                </div>
-                @else
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#adress" aria-expanded="false" aria-controls="collapseUtilities">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                    <span>Dirección</span>
-
-                </a>
-                <div id="adress" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
-                    <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Dirección</h6>
-                    <a class="collapse-item" href="{{ route('adress.index') }}" >Listar Direcciones</a>
-                        <a class="collapse-item" href="{{ route('adress.create') }}">Agregar Direcciones</a>
-                    </div>
-                </div>
-                @endif
-
-            </li>
            
             <li class="nav-item">
 

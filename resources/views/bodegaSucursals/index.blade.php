@@ -32,20 +32,17 @@
                         <tr>
                             <td>{{$sucursal->id}}</td>
                             <td>{{$sucursal->nombre}}</td>
-                            <td>{{$sucursal->adress->nombre}}</td>
-                            
 
+                    
+                            
+                            <td>{{$sucursal->adress->nombre}}</td>
                                 <td> 
                                     <form method="POST" action="{{ route('bodegaSucursals.destroy',$sucursal) }}">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
-                                
                                     <a type="button" href="{{route('bodegaSucursals.edit', $sucursal)}}" class="btn btn-info">Editar</a>
-                                    
-    
-                                   
                                 </td>
                         </tr>
                         @endforeach            

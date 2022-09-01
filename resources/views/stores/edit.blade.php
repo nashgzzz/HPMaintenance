@@ -19,13 +19,17 @@
                         @enderror
                         </div>
                      
-                        <div class="form-group col-md-6">
-                        <label for="adress">Dirección</label>
-                        <input value="{{$store->nombre}}"  type="text" class="form-control" id="adress" name="adress">
-                        @error('adress')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                        <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Asignar la direccion de la sucursal</label>
+                               
+                                     <select name="adress_id" id="adress_id" class="form-select">
+                                       
+                                        @foreach ($direcciones as $adress)
+                                        <option value="{{$adress->id}}"> {{$adress->nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                  
+                        </div> 
                     </div>
                     <button type="submit" class="btn btn-primary">Actualizar Local</button>
         </form>

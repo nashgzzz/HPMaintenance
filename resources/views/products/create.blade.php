@@ -51,6 +51,18 @@
                         @enderror
                         </div>
 
+                        <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Asignar inventario al producto</label>
+                               
+                                     <select name="car_models_id" id="car_models_id" class="form-select">
+                                       
+                                        @foreach ($inventario as $model)
+                                            <option value="{{$model->id}}"> {{$model->nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                  
+                        </div> 
+
                         <div class="form-group col-md-6">
                         <label for="inventory_id">Inventario</label>
                         <input value="{{old('inventory_id')}}" type="number" class="form-control" id="inventory_id" name="inventory_id" placeholder="Inventario">

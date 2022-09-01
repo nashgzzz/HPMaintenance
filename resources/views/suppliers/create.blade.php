@@ -26,12 +26,12 @@
                         </div>
                      
                         <div class="form-group col-md-6">
-                        <label for="dirección">Dirección del Proovedor</label>
-                        <input value="{{old('dirección')}}" type="text" class="form-control" id="dirección" name="dirección" placeholder="Dirección">
-                        @error('dirección')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                            <label for="adress">Dirección</label>
+                            <input value="{{old('adress')}}" type="text" class="form-control" id="adress" name="adress" placeholder="Dirección del local">
+                            @error('adress')
+                                <span> {{$message}} </span>
+                            @enderror
+                            </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Agregar Proovedor</button>
         </form>

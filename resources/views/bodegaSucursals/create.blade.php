@@ -23,7 +23,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="adress">Dirección</label>
-                            <input value="{{old('adress')}}" type="text" class="form-control" id="adress" name="adress" placeholder="Dirección de la sucursal">
+                               <input value="{{old('adress')}}" type="text" class="form-control" id="adress" name="adress" placeholder="Dirección de la sucursal">
                             @error('adress')
                                 <span> {{$message}} </span>
                             @enderror

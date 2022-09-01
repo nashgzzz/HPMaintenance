@@ -26,7 +26,7 @@ class UpdateSupplierRequest extends FormRequest
         return [
             'nombre' => 'required',
             'rut' => 'required',
-            'dirección' => 'required'
+            'adress_id' => 'required'
         ];
     }
 }

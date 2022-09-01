@@ -63,6 +63,8 @@ class BodegaSucursalController extends Controller
 
     public function update(UpdateBodegaSucursalRequest $request, BodegaSucursal $bodegaSucursal)
     {
+
+        
         $mensaje = $bodegaSucursal->update([
             'nombre' => $request->nombre,
             'adress_id' => $request->adress_id

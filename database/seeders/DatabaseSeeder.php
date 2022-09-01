@@ -42,7 +42,6 @@ class DatabaseSeeder extends Seeder
          $this -> call(AdressSeeder::class);
          $this -> call(CountrySeeder::class);
          $this -> call(CategorySeeder::class);
-         $this -> call(SupplierSeeder::class);
          $this -> call(BrandSeeder::class);
          $this -> call(StateSeeder::class);
          $this -> call(CitySeeder::class);
@@ -51,6 +50,7 @@ class DatabaseSeeder extends Seeder
          $this -> call(ItemClientSeeder::class);
          $this -> call(KindProductSeeder::class);
          $this -> call(StoreSeeder::class);
+         $this -> call(SupplierSeeder::class);
          $this -> call(ClientSeeder::class);
          $this -> call(InventorySeeder::class);
          $this -> call(EmployeeSeeder::class);

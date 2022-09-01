@@ -26,7 +26,7 @@ class StoreSupplierRequest extends FormRequest
         return [
             'nombre' => 'required',
             'rut' => 'required',
-            'dirección' => 'required'
+            'adress' => 'required'
         ];
     }
 }

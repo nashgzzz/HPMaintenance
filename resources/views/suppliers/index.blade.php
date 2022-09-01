@@ -34,7 +34,7 @@
                             <td>{{$suplier->id}}</td>
                             <td>{{$suplier->nombre}}</td>
                             <td>{{$suplier->rut}}</td>
-                            <td>{{$suplier->dirección}}</td>
+                            <td>{{$suplier->adress->nombre}}</td>
                             <td>
                                 <form method="POST" action="{{ route('suppliers.destroy',$suplier) }}">
                                     @csrf

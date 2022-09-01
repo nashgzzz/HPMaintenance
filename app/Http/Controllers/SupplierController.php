@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adress;
+use App\Models\Supplier;
 use App\Http\Requests\StoreSupplierRequest;
 use App\Http\Requests\UpdateSupplierRequest;
-use App\Models\Supplier;
 
 class SupplierController extends Controller
 {
@@ -20,16 +21,23 @@ class SupplierController extends Controller
     
     public function create()
     {
-        return View('suppliers.create');
+        $direcciones = Adress::all();
+        return View('suppliers.create',compact('direcciones'));
     }
 
    
     public function store(StoreSupplierRequest $supplier)
     {
+
+        $adress = Adress::create([
+            'nombre' => $supplier->adress
+        ]);
+        
+
         $mensaje = Supplier::create([
             'nombre' => $supplier->nombre,
             'rut' => $supplier->rut,
-            'dirección' => $supplier->dirección
+            'adress_id' => $adress->id
         ]);
 
         if($mensaje)
@@ -52,7 +60,8 @@ class SupplierController extends Controller
    
     public function edit(Supplier $supplier)
     {
-        return view('suppliers.edit',compact('supplier'));
+        $direcciones = Adress::all();
+        return view('suppliers.edit',compact('supplier','direcciones'));
     }
 
   
@@ -61,7 +70,7 @@ class SupplierController extends Controller
         $mensaje = $supplier->update([
             'nombre' => $request->nombre,
             'rut' => $request->rut,
-            'dirección' => $request->dirección
+            'adress_id' => $request->adress_id
         ]);
         if($mensaje)
         {

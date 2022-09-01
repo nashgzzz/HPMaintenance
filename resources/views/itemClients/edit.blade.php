@@ -50,7 +50,7 @@
                             <select  name="bodega_sucursal_id" id="bodega_sucursal_id" class="form-select"> 
                                        
                                         @foreach ($bodegaSucursales as $sucursal)
-                                            <option value="{{$sucursal->id}}">{{$sucursal->nombre}}</option>
+                                        <option value="{{$sucursal->id}}" @if($sucursal->id == '$sucursal->id') selected @endif >{{$sucursal->nombre}}</option>
                                         @endforeach
                                       </select>
                                   

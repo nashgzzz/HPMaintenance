@@ -42,7 +42,7 @@
                     
 
                 </div>
-            {!! Form::submit('Actualilizar Rol', ['class' => 'btn btn-primary']) !!}
+            {!! Form::submit('Actualizar Rol', ['class' => 'btn btn-primary']) !!}
         {!! Form::close() !!}
     </div>
 </div>

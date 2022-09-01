@@ -14,5 +14,9 @@ class Supplier extends Model
     public function products(){
         return $this->hasOne(Product::class);
     }
+
+    public function adress(){
+        return $this->belongsTo(Adress::class);
+    }
     
 }
