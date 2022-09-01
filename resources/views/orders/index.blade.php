@@ -39,12 +39,13 @@
                             <td>{{$order->valor}}</td>
                             <td>{{$order->fecha_pedido}}</td>
                             <td>{{$order->user->name}}</td>
-                            <td><form action="{{ route('orders.destroy',$order) }}" method="POST">
-                                <a type="button" href="{{route('orders.edit', $order)}}" class="btn btn-info">Editar</a>
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
+                            <td> 
+                                <form method="POST" action="{{ route('orders.destroy',$order) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
+                                </form>
+                                    <a type="button" href="{{route('orders.edit', $order)}}" class="btn btn-info">Editar</a>
                              </td>
                         </tr>
                         @endforeach            
@@ -115,7 +116,29 @@
         });
 
 </script>
+@endsection
 
+@section('js')
+    <script>
+    $('.show_confirm').click(function(event) {
+            var form =  $(this).closest("form");
+            var name = $(this).data("name");
+            event.preventDefault();
+            Swal.fire({
+                title: 'Estas seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Sí, bórralo!'
+                }).then((result) => {
 
-
+                if (result.isConfirmed) {
+                    form.submit();
+                }
+                })
+            
+        });
+    </script>
 @endsection
