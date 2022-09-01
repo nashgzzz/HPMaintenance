@@ -26,9 +26,16 @@ class ClientController extends Controller
 
     public function store(StoreClientRequest $client)
     {
-        Client::create([ 
+        $mensaje = Client::create([ 
             'user_id' => $client->user_id 
         ]);
+        if($mensaje)
+        {
+            toast('Cliente agregado','success');
+            
+        }else{
+            toast('Cliente no agregado','warning');
+        }
 
         return redirect()->route('clients.index');
     }
@@ -48,15 +55,29 @@ class ClientController extends Controller
 
     public function update(UpdateClientRequest $request, Client $client)
     {
-        $client->update([
+        $mensaje = $client->update([
             'user_id' => $request->user_id
         ]);
+        if($mensaje)
+        {
+            toast('Cliente actualizado','success');
+            
+        }else{
+            toast('Cliente no actualizado','warning');
+        }
         return redirect()->route('clients.index');
     }
 
     public function destroy(Client $client)
     {
-        $client->delete();
+        $mensaje = $client->delete();
+        if($mensaje)
+        {
+            toast('Cliente eliminado','success');
+            
+        }else{
+            toast('Cliente no eliminado','warning');
+        }
         return redirect()->route('clients.index');
     }
 }

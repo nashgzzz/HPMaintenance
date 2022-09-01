@@ -26,9 +26,16 @@ class EmployeeController extends Controller
    
     public function store(StoreEmployeeRequest $employee)
     {
-        Employee::create([ 
+        $mensaje = Employee::create([ 
             'user_id' => $employee->user_id 
         ]);
+        if($mensaje)
+        {
+            toast('Empleado agregado','success');
+            
+        }else{
+            toast('Empleado no agregado','warning');
+        }
 
         return redirect()->route('employees.index');
     
@@ -49,9 +56,17 @@ class EmployeeController extends Controller
    
     public function update(UpdateEmployeeRequest $request, Employee $employee)
     {
-        $employee->update([
+        $mensaje = $employee->update([
             'user_id' => $request->user_id
         ]);
+        if($mensaje)
+        {
+            toast('Empleado actualizado','success');
+            
+        }else{
+            toast('Empleado no actualizado','warning');
+        }
+
         return redirect()->route('employees.index');
     }
 
@@ -59,7 +74,14 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         //
-        $employee->delete();
+        $mensaje = $employee->delete();
+        if($mensaje)
+        {
+            toast('Empleado eliminado','success');
+            
+        }else{
+            toast('Empleado no eliminado','warning');
+        }
         return redirect()->route('employees.index');
     }
 }

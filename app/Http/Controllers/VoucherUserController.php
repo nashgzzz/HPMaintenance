@@ -26,10 +26,17 @@ class VoucherUserController extends Controller
    
     public function store(StorevoucherUserRequest $voucherUser)
     {
-        $voucherUser = voucherUser::create([
+       $mensaje = $voucherUser = voucherUser::create([
             'user_id' => $voucherUser->user_id,
             'voucher_id' => $voucherUser->voucher_id
         ]);
+        if($mensaje)
+        {
+            toast('Voucher de usuario agregado','success');
+            
+        }else{
+            toast('Voucher de usuariro no agregado','warning');
+        }
 
         return redirect()->route('voucherUsers.index');
     }
@@ -49,18 +56,32 @@ class VoucherUserController extends Controller
     
     public function update(UpdatevoucherUserRequest $request, voucherUser $voucherUser)
     {
-        $voucherUser->update([
+        $mensaje = $voucherUser->update([
             'user_id' => $request->user_id,
             'voucher_id' => $request->voucher_id
             ]
         );
+        if($mensaje)
+        {
+            toast('Voucher de usuario actualizado','success');
+            
+        }else{
+            toast('Voucher de usuariro no actualizado','warning');
+        }
         return redirect()->route('voucherUsers.index');
     }
 
     
     public function destroy(voucherUser $voucherUser)
     {
-        $voucherUser->delete();
+        $mensaje = $voucherUser->delete();
+        if($mensaje)
+        {
+            toast('Voucher de usuario eliminado','success');
+            
+        }else{
+            toast('Voucher de usuariro no eliminado','warning');
+        }
         return redirect()->route('voucherUsers.index');
     }
 }

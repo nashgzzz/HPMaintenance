@@ -31,7 +31,7 @@ class ProductController extends Controller
     
     public function store(StoreProductRequest $product)
     {
-        $product = Product::create([
+        $mensaje = $product = Product::create([
 
             'nombre' => $product->nombre,
             'direccion' => $product->direccion,
@@ -44,6 +44,13 @@ class ProductController extends Controller
             'store_id' => $product->store_id,
             'bodega_id' => $product->bodega_id
         ]);
+        if($mensaje)
+        {
+            toast('Producto agregado','success');
+            
+        }else{
+            toast('Producto no agregado','warning');
+        }
 
         return redirect()->route('products.index');
     }
@@ -63,7 +70,7 @@ class ProductController extends Controller
     
     public function update(UpdateProductRequest $request, Product $product)
     {
-        $product->update([
+        $mensaje = $product->update([
             'nombre' => $request->nombre,
             'direccion' => $request->direccion,
             'serie' => $request->serie,
@@ -76,13 +83,27 @@ class ProductController extends Controller
             'bodega_id' => $request->bodega_id
             ]
         );
+        if($mensaje)
+        {
+            toast('Producto actualizado','success');
+            
+        }else{
+            toast('Producto no actualizado','warning');
+        }
         return redirect()->route('products.index');
     }
 
    
     public function destroy(Product $product)
     {
-        $product->delete();
+        $mensaje = $product->delete();
+        if($mensaje)
+        {
+            toast('Producto eliminado','success');
+            
+        }else{
+            toast('Producto no eliminado','warning');
+        }
         return redirect()->route('products.index');
     }
 }

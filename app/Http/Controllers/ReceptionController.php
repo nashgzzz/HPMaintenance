@@ -25,13 +25,19 @@ class ReceptionController extends Controller
     
     public function store(StoreReceptionRequest $reception)
     {
-        Reception::create([
+        $mensaje = Reception::create([
             'nombre' => $reception->nombre,
             'descripcion' => $reception->descripcion,
             'fecha' => $reception->fecha,
             'bodega_sucursal_id' =>$reception->bodega_sucursal_id
         ]);
-
+        if($mensaje)
+        {
+            toast('Recepción agregada','success');
+            
+        }else{
+            toast('Recepción no agregada','warning');
+        }
         return redirect()->route('receptions.index');
     }
 
@@ -49,19 +55,33 @@ class ReceptionController extends Controller
    
     public function update(UpdateReceptionRequest $request, Reception $reception)
     {
-        $reception->update([
+        $mensaje = $reception->update([
             'nombre' => $request->nombre,
             'descripcion' => $request->descripcion,
             'fecha' => $request->fecha,
             'bodega_sucursal_id' =>$request->bodega_sucursal_id
         ]);
+        if($mensaje)
+        {
+            toast('Recepción actualizada','success');
+            
+        }else{
+            toast('Recepción no actualizada','warning');
+        }
         return redirect()->route('receptions.index');
     }
 
    
     public function destroy(Reception $reception)
     {
-        $reception->delete();
+       $mensaje = $reception->delete();
+        if($mensaje)
+        {
+            toast('Recepción eliminada','success');
+            
+        }else{
+            toast('Recepción no eliminada','warning');
+        }
         return redirect()->route('receptions.index');
     }
 }

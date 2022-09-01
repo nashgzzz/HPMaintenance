@@ -12,8 +12,6 @@ class BranchOfficeUserController extends Controller
     public function index()
     {
         $branchOfficeUsers = branchOfficeUser::all();
-       
- 
         return View('branchOfficeUsers.index',compact('branchOfficeUsers'));
     }
 
@@ -26,10 +24,19 @@ class BranchOfficeUserController extends Controller
  
     public function store(StorebranchOfficeUserRequest $branchOfficeUser)
     {
-        branchOfficeUser::create([
+        $mensaje = branchOfficeUser::create([
             'user_id'=> $branchOfficeUser->user_id,
-            'branch_office_id'=> $branchOfficeUser->branch_office_id
+            'bodega_sucursal_id'=> $branchOfficeUser->bodega_sucursal_id
         ]);
+        
+        if($mensaje)
+        {
+            toast('Bodega sucursal usuario agregada','success');
+            
+        }else{
+            toast('Bodega sucursal usuario no agregada','warning');
+        }
+
 
         return redirect()->route('branchOfficeUsers.index');
     }
@@ -48,18 +55,33 @@ class BranchOfficeUserController extends Controller
   
     public function update(UpdatebranchOfficeUserRequest $request, branchOfficeUser $branchOfficeUser)
     {
-        $branchOfficeUser->update([
+        $mensaje = $branchOfficeUser->update([
             'user_id'=> $request->user_id,
-            'branch_office_id'=> $request->branch_office_id
+            'bodega_sucursal_id'=> $request->bodega_sucursal_id
         
         ]);
+        if($mensaje)
+        {
+            toast('Bodega sucursal usuario actualizada','success');
+            
+        }else{
+            toast('Bodega sucursal usuario no actualizada','warning');
+        }
+
         return redirect()->route('branchOfficeUsers.index');
     }
 
  
     public function destroy(branchOfficeUser $branchOfficeUser)
     {
-        $branchOfficeUser->delete();
+        $mensaje = $branchOfficeUser->delete();
+        if($mensaje)
+        {
+            toast('Bodega sucursal usuario eliminada','success');
+            
+        }else{
+            toast('Bodega sucursal usuario no eliminada','warning');
+        }
         return redirect()->route('branchOfficeUsers.index');
     }
 }

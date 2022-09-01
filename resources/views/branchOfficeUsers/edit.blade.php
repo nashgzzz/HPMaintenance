@@ -20,9 +20,9 @@
                         </div>
                      
                         <div class="form-group col-md-6">
-                        <label for="branch_office_id">Sucursal</label>
-                        <input value="{{$branchOfficeUser->branch_office_id}}"  type="number" class="form-control" id="branch_office_id" name="branch_office_id">
-                        @error('branch_office_id')
+                        <label for="bodega_sucursal_id">Sucursal</label>
+                        <input value="{{$branchOfficeUser->bodega_sucursal_id}}"  type="number" class="form-control" id="bodega_sucursal_id" name="bodega_sucursal_id">
+                        @error('bodega_sucursal_id')
                             <span> {{$message}} </span>
                         @enderror
                         </div>

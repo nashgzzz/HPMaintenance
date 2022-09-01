@@ -28,7 +28,7 @@ class ItemClientController extends Controller
     public function store(StoreItemClientRequest $itemClient)
     {
         
-        $itemClient = ItemClient::create([
+        $mensaje = ItemClient::create([
 
             'nombre' => $itemClient->nombre,
             'fecha_isntalacion' => $itemClient->fecha_isntalacion,
@@ -37,12 +37,12 @@ class ItemClientController extends Controller
             'bodega_sucursal_id' => $itemClient->bodega_sucursal_id
         ]);
         
-        if($itemClient)
+        if($mensaje)
         {
-            toast('Productos Cliente agregado','success');
+            toast('Productos cliente agregado','success');
             
         }else{
-            toast('Producto Cliente no agregado','warning');
+            toast('Producto cliente no agregado','warning');
         }
 
         return redirect()->route('itemClients.index');
@@ -66,7 +66,7 @@ class ItemClientController extends Controller
     public function update(UpdateItemClientRequest $request, ItemClient $itemClient)
     {
         
-        $itemClient->update([
+        $mensaje = $itemClient->update([
             'nombre' => $request->nombre,
             'fecha_isntalacion' => $request->fecha_isntalacion,
             'descripcion' => $request->descripcion,
@@ -74,6 +74,14 @@ class ItemClientController extends Controller
             'bodega_sucursal_id' => $request->bodega_sucursal_id
             ]
         );
+
+        if($mensaje)
+        {
+            toast('Productos cliente actualizado','success');
+            
+        }else{
+            toast('Producto cliente no actualizado','warning');
+        }
        
 
         return redirect()->route('itemClients.index');
@@ -82,7 +90,14 @@ class ItemClientController extends Controller
 
     public function destroy(ItemClient $itemClient)
     {
-        $itemClient->delete();
+       $mensaje =  $itemClient->delete();
+        if($mensaje)
+        {
+            toast('Productos cliente eliminado','success');
+            
+        }else{
+            toast('Producto cliente no eliminado','warning');
+        }
         return redirect()->route('itemClients.index');
     }
 }

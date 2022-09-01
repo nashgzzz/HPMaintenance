@@ -27,7 +27,7 @@ class OrderController extends Controller
     {
      
         
-        $order = Order::create([
+        $mensaje = $order = Order::create([
 
             'nombre' => $order->nombre,
             'cantidad' => $order->cantidad,
@@ -36,6 +36,14 @@ class OrderController extends Controller
             'user_id' => auth()->user()->id
             
         ]);
+        if($mensaje)
+        {
+            toast('Pedido agregado','success');
+            
+        }else{
+            toast('Pedido no agregado','warning');
+        }
+       
 
         return redirect()->route('orders.index');
     }
@@ -54,7 +62,7 @@ class OrderController extends Controller
     
     public function update(UpdateOrderRequest $request, Order $order)
     {
-        $order->update([
+        $mensaje = $order->update([
             'nombre' => $request->nombre,
             'cantidad' => $request->cantidad,
             'valor' => $request->valor,
@@ -62,12 +70,28 @@ class OrderController extends Controller
             'user_id' => auth()->user()->id
             ]
         );
+        if($mensaje)
+        {
+            toast('Pedido actualizado','success');
+            
+        }else{
+            toast('Pedido no actualizado','warning');
+        }
+       
         return redirect()->route('orders.index');
     }
 
     public function destroy(Order $order)
     {
-        $order->delete();
+        $mensaje = $order->delete();
+        if($mensaje)
+        {
+            toast('Pedido eliminado','success');
+            
+        }else{
+            toast('Pedido no eliminado','warning');
+        }
+       
         return redirect()->route('orders.index');
     }
 }

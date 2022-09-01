@@ -32,7 +32,7 @@
                         <tr>
                             <td>{{$branchOfficeUsers->id}}</td>
                             <td>{{$branchOfficeUsers->user_id}}</td>
-                            <td>{{$branchOfficeUsers->branch_office_id}}</td>
+                            <td>{{$branchOfficeUsers->bodega_sucursal_id}}</td>
                             <td><form action="{{ route('branchOfficeUsers.destroy',$branchOfficeUsers) }}" method="POST">
                                 <a type="button" href="{{route('branchOfficeUsers.edit', $branchOfficeUsers)}}" class="btn btn-info">Editar</a>
                                 @csrf

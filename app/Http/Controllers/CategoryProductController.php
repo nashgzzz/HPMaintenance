@@ -13,7 +13,6 @@ class CategoryProductController extends Controller
     {
         $categoryProducts = CategoryProduct::all();
         // dd($users);
- 
          return View('categoryProducts.index',compact('categoryProducts'));
     }
 
@@ -26,11 +25,17 @@ class CategoryProductController extends Controller
    
     public function store(StoreCategoryProductRequest $categoryProduct)
     {
-        CategoryProduct::create([
+        $mensaje = CategoryProduct::create([
             'product_id' => $categoryProduct->product_id,
             'category_id' => $categoryProduct->category_id
         ]);
-
+        if($mensaje)
+        {
+            toast('Categorias y producto agregada','success');
+            
+        }else{
+            toast('Categorias y producto no agregada','warning');
+        }
         return redirect()->route('categoryProducts.index');
     }
 
@@ -49,17 +54,32 @@ class CategoryProductController extends Controller
 
     public function update(UpdateCategoryProductRequest $request, CategoryProduct $categoryProduct)
     {
-        $categoryProduct->update([
+        $mensaje = $categoryProduct->update([
             'product_id' => $request->product_id,
             'category_id' => $request->category_id
         ]);
+
+        if($mensaje)
+        {
+            toast('Categorias y producto actualizada','success');
+            
+        }else{
+            toast('Categorias y producto no actualizada','warning');
+        }
         return redirect()->route('categoryProducts.index');
     }
 
 
     public function destroy(CategoryProduct $categoryProduct)
     {
-        $categoryProduct->delete();
+       $mensaje =  $categoryProduct->delete();
+        if($mensaje)
+        {
+            toast('Categorias y producto eliminada','success');
+            
+        }else{
+            toast('Categorias y producto no eliminada','warning');
+        }
         return redirect()->route('categoryProducts.index');
     }
 }

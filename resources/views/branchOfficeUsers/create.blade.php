@@ -12,16 +12,16 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="user_id">Usuario</label>
-                        <input value="{{old('user_id')}}" type="number" class="form-control" id="user_id" name="user_id" placeholder="user_id">
+                        <input value="{{old('user_id')}}" type="number" class="form-control" id="user_id" name="user_id" placeholder="Usuario ID">
                         @error('user_id')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                      
                         <div class="form-group col-md-6">
-                        <label for="branch_office_id">Sucursal</label>
-                        <input value="{{old('branch_office_id')}}" type="number" class="form-control" id="branch_office_id" name="branch_office_id" placeholder="branch_office_id">
-                        @error('branch_office_id')
+                        <label for="bodega_sucursal_id">Sucursal</label>
+                        <input value="{{old('bodega_sucursal_id')}}" type="number" class="form-control" id="bodega_sucursal_id" name="bodega_sucursal_id" placeholder="Bodega Sucursal">
+                        @error('bodega_sucursal_id')
                             <span> {{$message}} </span>
                         @enderror
                         </div>

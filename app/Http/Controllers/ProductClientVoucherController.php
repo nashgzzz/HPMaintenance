@@ -26,11 +26,18 @@ class ProductClientVoucherController extends Controller
   
     public function store(StoreproductClientVoucherRequest $productClientVoucher)
     {
-        productClientVoucher::create([
+        $mensaje = productClientVoucher::create([
             'product_id'=> $productClientVoucher->product_id,
             'item_clients_id'=> $productClientVoucher->item_clients_id,
             'vouchers_id'=> $productClientVoucher->vouchers_id
         ]);
+        if($mensaje)
+        {
+            toast('Voucher de productos del cliente agregado','success');
+            
+        }else{
+            toast('Voucher de productos del cliente no agregado','warning');
+        }
 
         return redirect()->route('productClientVouchers.index');
     }
@@ -49,19 +56,33 @@ class ProductClientVoucherController extends Controller
 
     public function update(UpdateproductClientVoucherRequest $request, productClientVoucher $productClientVoucher)
     {
-        $productClientVoucher->update([
+        $mensaje = $productClientVoucher->update([
             'product_id'=> $request->product_id,
             'item_clients_id'=> $request->item_clients_id,
             'vouchers_id'=> $request->vouchers_id
         
         ]);
+        if($mensaje)
+        {
+            toast('Voucher de productos del cliente actualizado','success');
+            
+        }else{
+            toast('Voucher de productos del cliente no actualizado','warning');
+        }
         return redirect()->route('productClientVouchers.index');
     }
 
    
     public function destroy(productClientVoucher $productClientVoucher)
     {
-        $productClientVoucher->delete();
+        $mensaje = $productClientVoucher->delete();
+        if($mensaje)
+        {
+            toast('Voucher de productos del cliente eliminado','success');
+            
+        }else{
+            toast('Voucher de productos del cliente no eliminado','warning');
+        }
         return redirect()->route('productClientVouchers.index');
     }
 }

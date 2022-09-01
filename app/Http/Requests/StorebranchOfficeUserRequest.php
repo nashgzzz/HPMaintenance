@@ -25,7 +25,7 @@ class StorebranchOfficeUserRequest extends FormRequest
     {
         return [
            'user_id'=> 'required',
-           'branch_office_id'=> 'required'
+           'bodega_sucursal_id'=> 'required'
         ];
     }
 }

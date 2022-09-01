@@ -26,7 +26,7 @@ class VoucherController extends Controller
    
     public function store(StoreVoucherRequest $voucher)
     {
-        Voucher::create([
+        $mensaje = Voucher::create([
             'nombre' => $voucher->nombre,
             'serie' =>  $voucher->serie,
             'Hora_llegada' =>  $voucher->Hora_llegada,
@@ -36,6 +36,13 @@ class VoucherController extends Controller
             'branch_office_id' => $voucher->branch_office_id,
             'products_id' => $voucher->products_id
         ]);
+        if($mensaje)
+        {
+            toast('Voucher agregado','success');
+            
+        }else{
+            toast('Voucher no agregado','warning');
+        }
 
         return redirect()->route('vouchers.index');
     }
@@ -55,7 +62,7 @@ class VoucherController extends Controller
    
     public function update(UpdateVoucherRequest $request, Voucher $voucher)
     {
-        $voucher->update([
+        $mensaje = $voucher->update([
             'nombre' => $request->nombre,
             'serie' =>  $request->serie,
             'Hora_llegada' =>  $request->Hora_llegada,
@@ -65,13 +72,27 @@ class VoucherController extends Controller
             'branch_office_id' => $request->branch_office_id,
             'products_id' => $request->products_id
         ]);
+        if($mensaje)
+        {
+            toast('Voucher actualizado','success');
+            
+        }else{
+            toast('Voucher no actualizado','warning');
+        }
         return redirect()->route('vouchers.index');
     }
 
     
     public function destroy(Voucher $voucher)
     {
-        $voucher->delete();
+        $mensaje = $voucher->delete();
+        if($mensaje)
+        {
+            toast('Voucher eliminado','success');
+            
+        }else{
+            toast('Voucher no eliminado','warning');
+        }
         return redirect()->route('vouchers.index');
     }
 }
