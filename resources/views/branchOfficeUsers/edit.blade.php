@@ -13,7 +13,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="user_id">Usuario para Sucursal</label>
-                        <input value="{{$branchOfficeUser->user_id}}"  type="text" class="form-control" id="user_id" name="user_id" placeholder="user_id">
+                        <input value="{{$branchOfficeUser->user_id}}"  type="number" class="form-control" id="user_id" name="user_id">
                         @error('user_id')
                             <span> {{$message}} </span>
                         @enderror
@@ -21,7 +21,7 @@
                      
                         <div class="form-group col-md-6">
                         <label for="branch_office_id">Sucursal</label>
-                        <input value="{{$branchOfficeUser->branch_office_id}}"  type="int" class="form-control" id="branch_office_id" name="branch_office_id" placeholder="branch_office_id">
+                        <input value="{{$branchOfficeUser->branch_office_id}}"  type="number" class="form-control" id="branch_office_id" name="branch_office_id">
                         @error('branch_office_id')
                             <span> {{$message}} </span>
                         @enderror

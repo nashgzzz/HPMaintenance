@@ -25,7 +25,7 @@ class StoreBodegaSucursalRequest extends FormRequest
     {
         return [
             'nombre' => 'required',
-            'adress_id' => 'required'
+            'adress' => 'required'
         ];
     }
 }

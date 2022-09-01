@@ -12,7 +12,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre Producto</label>
-                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
@@ -20,7 +20,7 @@
                         
                         <div class="form-group col-md-6">
                         <label for="direccion">Dirección</label>
-                        <input value="{{old('direccion')}}" type="text" class="form-control" id="direccion" name="direccion" placeholder="direccion">
+                        <input value="{{old('direccion')}}" type="text" class="form-control" id="direccion" name="direccion" placeholder="Dirección">
                         @error('direccion')
                             <span> {{$message}} </span>
                         @enderror
@@ -29,7 +29,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="serie">Serie</label>
-                        <input value="{{old('serie')}}" type="int" class="form-control" id="serie" name="serie" placeholder="serie">
+                        <input value="{{old('serie')}}" type="int" class="form-control" id="serie" name="serie" placeholder="Serie del producto">
                         @error('serie')
                             <span> {{$message}} </span>
                         @enderror
@@ -37,7 +37,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="iva">Iva</label>
-                        <input value="{{old('serie')}}" type="int" class="form-control" id="iva" name="iva" placeholder="iva">
+                        <input value="{{old('serie')}}" type="number" class="form-control" id="iva" name="iva" placeholder="Iva">
                         @error('iva')
                             <span> {{$message}} </span>
                         @enderror
@@ -45,7 +45,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="precio">Precio</label>
-                        <input value="{{old('precio')}}" type="int" class="form-control" id="precio" name="precio" placeholder="precio">
+                        <input value="{{old('precio')}}" type="number" class="form-control" id="precio" name="precio" placeholder="Precio">
                         @error('precio')
                             <span> {{$message}} </span>
                         @enderror
@@ -53,7 +53,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="inventory_id">Inventario</label>
-                        <input value="{{old('inventory_id')}}" type="int" class="form-control" id="inventory_id" name="inventory_id" placeholder="inventory_id">
+                        <input value="{{old('inventory_id')}}" type="number" class="form-control" id="inventory_id" name="inventory_id" placeholder="Inventario">
                         @error('inventory_id')
                             <span> {{$message}} </span>
                         @enderror
@@ -61,7 +61,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="supplier_id">Proovedor</label>
-                        <input value="{{old('supplier_id')}}" type="int" class="form-control" id="supplier_id" name="supplier_id" placeholder="supplier_id">
+                        <input value="{{old('supplier_id')}}" type="number" class="form-control" id="supplier_id" name="supplier_id" placeholder="Proovedor">
                         @error('supplier_id')
                             <span> {{$message}} </span>
                         @enderror
@@ -69,7 +69,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="kind_products_id">Tipo de Producto</label>
-                        <input value="{{old('kind_products_id')}}" type="int" class="form-control" id="kind_products_id" name="kind_products_id" placeholder="kind_products_id">
+                        <input value="{{old('kind_products_id')}}" type="number" class="form-control" id="kind_products_id" name="kind_products_id" placeholder="Tipo de producto">
                         @error('kind_products_id')
                             <span> {{$message}} </span>
                         @enderror
@@ -77,7 +77,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="store_id">Local</label>
-                        <input value="{{old('store_id')}}" type="int" class="form-control" id="store_id" name="store_id" placeholder="store_id">
+                        <input value="{{old('store_id')}}" type="number" class="form-control" id="store_id" name="store_id" placeholder="Local">
                         @error('store_id')
                             <span> {{$message}} </span>
                         @enderror

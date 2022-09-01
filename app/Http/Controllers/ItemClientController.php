@@ -33,11 +33,10 @@ class ItemClientController extends Controller
             'nombre' => $itemClient->nombre,
             'fecha_isntalacion' => $itemClient->fecha_isntalacion,
             'descripcion' => $itemClient->descripcion,
-            'obvervaciones' => $itemClient->obvervaciones
+            'obvervaciones' => $itemClient->obvervaciones,
+            'bodega_sucursal_id' => $itemClient->bodega_sucursal_id
         ]);
-
-        $itemClient->bodegaSucursales()->attach($itemClient->bodegaSucursales);
-
+        
         if($itemClient)
         {
             toast('Productos Cliente agregado','success');
@@ -72,11 +71,10 @@ class ItemClientController extends Controller
             'fecha_isntalacion' => $request->fecha_isntalacion,
             'descripcion' => $request->descripcion,
             'obvervaciones' => $request->obvervaciones,
-            'branch_office_id' => $request->branch_office_id
+            'bodega_sucursal_id' => $request->bodega_sucursal_id
             ]
         );
-        $bodegaSucursales = BodegaSucursal::all();
-        $itemClient->bodegaSucursales()->sync($itemClient->bodegaSucursales);
+       
 
         return redirect()->route('itemClients.index');
     }

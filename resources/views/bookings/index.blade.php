@@ -22,7 +22,7 @@
                         <th>Id</th>
                         <th>Nombre</th>
                         <th>Descripción</th>
-                        <th>Producto Id</th>
+                        <th>Producto</th>
                         <th>Acciones</th>
 
                     </tr>

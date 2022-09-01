@@ -12,7 +12,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre de Reserva</label>
-                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la reserva">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
@@ -20,15 +20,15 @@
 
                         <div class="form-group col-md-6">
                         <label for="descripcion">Descripción de la Reserva</label>
-                        <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion">
+                        <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción">
                         @error('descripcion')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                      
                         <div class="form-group col-md-6">
-                        <label for="product_id">producto</label>
-                        <input value="{{old('product_id')}}" type="int" class="form-control" id="product_id" name="product_id" placeholder="product_id">
+                        <label for="product_id">Producto</label>
+                        <input value="{{old('product_id')}}" type="number" class="form-control" id="product_id" name="product_id" placeholder="Producto">
                         @error('product_id')
                             <span> {{$message}} </span>
                         @enderror

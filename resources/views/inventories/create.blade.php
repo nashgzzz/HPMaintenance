@@ -12,7 +12,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre del Inventario</label>
-                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
@@ -20,7 +20,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="descripcion">Descripción del Inventario</label>
-                        <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion">
+                        <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción">
                         @error('descripcion')
                             <span> {{$message}} </span>
                         @enderror
@@ -28,7 +28,7 @@
                         
                         <div class="form-group col-md-6">
                         <label for="mail">Email</label>
-                        <input value="{{old('mail')}}" type="email" class="form-control" id="mail" name="mail" placeholder="mail">
+                        <input value="{{old('mail')}}" type="email" class="form-control" id="mail" name="mail" placeholder="E-mail">
                         @error('mail')
                             <span> {{$message}} </span>
                         @enderror

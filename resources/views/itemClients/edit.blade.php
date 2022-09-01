@@ -44,15 +44,16 @@
                         </div>
                        
                         <div class="form-group col-md-6"> 
-                            <label for="RoleAsigne">Editar sucursal del cliente</label>
-                                   @foreach ($bodegaSucursales as $sucursal)
-                                       <div>
-                                           <label>
-                                               {!! Form::checkbox('bodegaSucursales[]', $sucursal->id, null, ['class' => 'mr-1']) !!}
-                                               {{$sucursal->nombre}}
-                                           </label>
-                                       </div>
-                                   @endforeach
+                            
+                            <label for="RoleAsigne">Asignar sucursal del cliente</label>
+                               
+                            <select  name="bodega_sucursal_id" id="bodega_sucursal_id" class="form-select"> 
+                                       
+                                        @foreach ($bodegaSucursales as $sucursal)
+                                            <option value="{{$sucursal->id}}">{{$sucursal->nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                  
                         </div> 
    
 

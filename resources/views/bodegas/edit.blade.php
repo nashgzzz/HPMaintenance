@@ -13,7 +13,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre de Bodega</label>
-                        <input value="{{$bodega->nombre}}"  type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{$bodega->nombre}}"  type="text" class="form-control" id="nombre" name="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror

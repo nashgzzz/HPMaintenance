@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Brand;
+use App\Models\CarModel;
 use App\Http\Requests\StoreCarModelRequest;
 use App\Http\Requests\UpdateCarModelRequest;
-use App\Models\CarModel;
 
 class CarModelController extends Controller
 {
@@ -20,7 +21,10 @@ class CarModelController extends Controller
    
     public function create()
     {
-        return view('carModel.create');
+
+        $marcas = Brand::all();
+        return view('carModel.create', compact('marcas'));
+
     }
 
  
@@ -51,7 +55,8 @@ class CarModelController extends Controller
   
     public function edit(CarModel $carModel)
     {
-        return view('carModel.edit',compact('carModel'));
+        $marcas = Brand::all();
+        return view('carModel.edit',compact('carModel', 'marcas'));
     }
 
   

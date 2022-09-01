@@ -27,8 +27,8 @@ class BodegaSucursal extends Model
         return $this->hasMany(Reception::class);
     }
 
-    public function item_client(){
-        return $this->hasOne(ItemClient::class);
+    public function item_clients(){
+        return $this->hasMany(ItemClient::class);
     }
    
 }

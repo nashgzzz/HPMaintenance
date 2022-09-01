@@ -78,7 +78,7 @@
                            </div>
                            <div class="form-group col-md-6">
                            <label for="TelUser">Teléfono</label>
-                           <input value="{{$user->telefono}}" type="int" class="form-control" id="telefono" name="telefono">
+                           <input value="{{$user->telefono}}" type="number" class="form-control" id="telefono" name="telefono">
                            @error('telefono')
                                <span> {{$message}} </span>
                            @enderror

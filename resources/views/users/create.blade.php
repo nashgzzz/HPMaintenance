@@ -75,7 +75,7 @@
                         </div>
                         <div class="form-group col-md-6">
                         <label for="TelUser">Teléfono</label>
-                        <input value="{{old('telefono')}}" type="int" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
+                        <input value="{{old('telefono')}}" type="number" class="form-control" id="telefono" name="telefono" placeholder="Teléfono">
                         @error('telefono')
                             <span> {{$message}} </span>
                         @enderror

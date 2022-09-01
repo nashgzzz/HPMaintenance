@@ -65,10 +65,14 @@
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">Delete</button>
+                                                
                                 
                                         </form>
                                     
                             </td>
+                            
+                           
+
                             @endcan
                         </tr>
                         @endforeach            

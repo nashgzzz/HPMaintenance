@@ -27,7 +27,8 @@ class UpdateItemClientRequest extends FormRequest
             'nombre' => 'required',
             'fecha_isntalacion' => 'required',
             'descripcion' => 'required',
-            'obvervaciones' => 'required'
+            'obvervaciones' => 'required',
+            'bodega_sucursal_id' => 'required'
         ];
     }
 }

@@ -13,20 +13,27 @@
         <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Modelo del Vehículo</label>
-                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                         
 
-                        <div class="form-group col-md-6">
-                        <label for="brand_id">Marca del Vehículo</label>
-                        <input value="{{old('user_id')}}" type="int" class="form-control" id="brand_id" name="brand_id" placeholder="brand_id">
-                        @error('brand_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                
+
+                        <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Asignar Marca a Vehículo</label>
+                               
+                                     <select name="brand_id" id="brand_id" class="form-select">
+                                       
+                                        @foreach ($marcas as $brand)
+                                            <option value="{{$brand->id}}"> {{$brand->nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                  
+                        </div> 
+                        
 
                     </div>
                     <button type="submit" class="btn btn-primary">Agregar Modelo del Vehículo</button>

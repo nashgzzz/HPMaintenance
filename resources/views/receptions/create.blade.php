@@ -12,14 +12,14 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre de la recepción</label>
-                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                         <div class="form-group col-md-6">
                         <label for="descripcion">Descripción</label>
-                        <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion">
+                        <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción">
                         @error('descripcion')
                             <span> {{$message}} </span>
                         @enderror
@@ -27,7 +27,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="fecha">Fecha</label>
-                        <input value="{{old('fecha')}}" type="date" class="form-control" id="fecha" name="fecha" placeholder="Fecha fecha">
+                        <input value="{{old('fecha')}}" type="date" class="form-control" id="fecha" name="fecha">
                         @error('fecha')
                             <span> {{$message}} </span>
                         @enderror
@@ -36,7 +36,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="user_id">Usuario</label>
-                        <input value="{{old('user_id')}}" type="text" class="form-control" id="user_id" name="user_id" placeholder="user_id">
+                        <input value="{{old('user_id')}}" type="number" class="form-control" id="user_id" name="user_id" placeholder="Usuario">
                         @error('user_id')
                             <span> {{$message}} </span>
                         @enderror

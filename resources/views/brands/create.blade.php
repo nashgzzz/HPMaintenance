@@ -12,7 +12,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Marca del Vehículo</label>
-                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
+                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Marca del Vehículo">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror

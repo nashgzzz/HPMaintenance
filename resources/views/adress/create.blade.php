@@ -12,7 +12,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Dirección</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Dirección">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror

@@ -13,7 +13,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre Producto</label>
-                        <input value="{{$product->nombre}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{$product->nombre}}" type="text" class="form-control" id="nombre" name="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
@@ -21,7 +21,7 @@
                         
                         <div class="form-group col-md-6">
                         <label for="direccion">Dirección</label>
-                        <input value="{{$product->direccion}}" type="text" class="form-control" id="direccion" name="direccion" placeholder="direccion">
+                        <input value="{{$product->direccion}}" type="text" class="form-control" id="direccion" name="direccion">
                         @error('direccion')
                             <span> {{$message}} </span>
                         @enderror
@@ -30,7 +30,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="serie">Serie</label>
-                        <input value="{{$product->serie}}" type="int" class="form-control" id="serie" name="serie" placeholder="serie">
+                        <input value="{{$product->serie}}" type="int" class="form-control" id="serie" name="serie">
                         @error('serie')
                             <span> {{$message}} </span>
                         @enderror
@@ -38,7 +38,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="iva">Iva</label>
-                        <input value="{{$product->iva}}" type="int" class="form-control" id="iva" name="iva" placeholder="iva">
+                        <input value="{{$product->iva}}" type="number" class="form-control" id="iva" name="iva">
                         @error('iva')
                             <span> {{$message}} </span>
                         @enderror
@@ -46,7 +46,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="precio">Precio</label>
-                        <input value="{{$product->precio}}" type="int" class="form-control" id="precio" name="precio" placeholder="precio">
+                        <input value="{{$product->precio}}" type="number" class="form-control" id="precio" name="precio">
                         @error('precio')
                             <span> {{$message}} </span>
                         @enderror
@@ -54,7 +54,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="inventory_id">Inventario</label>
-                        <input value="{{$product->inventory_id}}" type="int" class="form-control" id="inventory_id" name="inventory_id" placeholder="inventory_id">
+                        <input value="{{$product->inventory_id}}" type="number" class="form-control" id="inventory_id" name="inventory_id">
                         @error('inventory_id')
                             <span> {{$message}} </span>
                         @enderror
@@ -62,7 +62,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="supplier_id">Proovedor</label>
-                        <input value="{{$product->supplier_id}}" type="int" class="form-control" id="supplier_id" name="supplier_id" placeholder="supplier_id">
+                        <input value="{{$product->supplier_id}}" type="number" class="form-control" id="supplier_id" name="supplier_id">
                         @error('supplier_id')
                             <span> {{$message}} </span>
                         @enderror
@@ -70,7 +70,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="kind_products_id">Tipo de Producto</label>
-                        <input value="{{$product->kind_products_id}}" type="int" class="form-control" id="kind_products_id" name="kind_products_id" placeholder="kind_products_id">
+                        <input value="{{$product->kind_products_id}}" type="number" class="form-control" id="kind_products_id" name="kind_products_id">
                         @error('kind_products_id')
                             <span> {{$message}} </span>
                         @enderror
@@ -78,7 +78,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="store_id">Local</label>
-                        <input value="{{$product->store_id}}" type="int" class="form-control" id="store_id" name="store_id" placeholder="store_id">
+                        <input value="{{$product->store_id}}" type="number" class="form-control" id="store_id" name="store_id">
                         @error('store_id')
                             <span> {{$message}} </span>
                         @enderror

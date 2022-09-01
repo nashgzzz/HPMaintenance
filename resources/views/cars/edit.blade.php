@@ -13,44 +13,48 @@
         <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre Vehículo</label>
-                        <input value="{{$car->nombre}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{$car->nombre}}" type="text" class="form-control" id="nombre" name="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                         <div class="form-group col-md-6">
                         <label for="patente">Patente</label>
-                        <input value="{{$car->patente}}" type="text" class="form-control" id="patente" name="patente" placeholder="patente ">
+                        <input value="{{$car->patente}}" type="text" class="form-control" id="patente" name="patente">
                         @error('patente')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                         <div class="form-group col-md-6">
                         <label for="color">Color</label>
-                        <input value="{{$car->color}}" type="text" class="form-control" id="color" name="color" placeholder="color">
+                        <input value="{{$car->color}}" type="text" class="form-control" id="color" name="color">
                         @error('color')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                         <div class="form-group col-md-6">
                         <label for="descripcion">Descripcion</label>
-                        <input value="{{$car->descripcion}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion">
+                        <input value="{{$car->descripcion}}" type="text" class="form-control" id="descripcion" name="descripcion">
                         @error('descripcion')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
-                        <div class="form-group col-md-6">
-                        <label for="car_models_id">Modelo</label>
-                        <input value="{{$car->car_models_id}}" type="int" class="form-control" id="car_models_id" name="car_models_id" placeholder="car_models_id">
-                        @error('car_models_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                        <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Asignar Modelo a Vehículo</label>
+                               
+                                     <select name="car_models_id" id="car_models_id" class="form-select">
+                                       
+                                        @foreach ($modelo as $model)
+                                            <option value="{{$model->id}}"> {{$model->nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                  
+                        </div> 
 
                         
 
                     </div>
-                    <button type="submit" class="btn btn-primary">Acttualizar Vehículo</button>
+                    <button type="submit" class="btn btn-primary">Actualizar Vehículo</button>
         </form>
 
 

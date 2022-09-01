@@ -12,7 +12,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="user_id">Usuario</label>
-                        <input value="{{old('user_id')}}" type="text" class="form-control" id="user_id" name="user_id" placeholder="user_id">
+                        <input value="{{old('user_id')}}" type="number" class="form-control" id="user_id" name="user_id" placeholder="user_id">
                         @error('user_id')
                             <span> {{$message}} </span>
                         @enderror
@@ -20,7 +20,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="voucher_id">Voucher</label>
-                        <input value="{{old('voucher_id')}}" type="text" class="form-control" id="voucher_id" name="voucher_id" placeholder="voucher_id">
+                        <input value="{{old('voucher_id')}}" type="number" class="form-control" id="voucher_id" name="voucher_id" placeholder="voucher_id">
                         @error('voucher_id')
                             <span> {{$message}} </span>
                         @enderror

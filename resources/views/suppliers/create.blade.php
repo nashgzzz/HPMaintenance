@@ -12,14 +12,14 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre Proovedor</label>
-                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                         <div class="form-group col-md-6">
                         <label for="rut">RUT del Proovedor</label>
-                        <input value="{{old('rut')}}" type="text" class="form-control" id="rut" name="rut" placeholder="rut">
+                        <input value="{{old('rut')}}" type="text" class="form-control" id="rut" name="rut" placeholder="Rut del proovedor">
                         @error('rut')
                             <span> {{$message}} </span>
                         @enderror
@@ -27,7 +27,7 @@
                      
                         <div class="form-group col-md-6">
                         <label for="dirección">Dirección del Proovedor</label>
-                        <input value="{{old('dirección')}}" type="text" class="form-control" id="dirección" name="dirección" placeholder="dirección">
+                        <input value="{{old('dirección')}}" type="text" class="form-control" id="dirección" name="dirección" placeholder="Dirección">
                         @error('dirección')
                             <span> {{$message}} </span>
                         @enderror

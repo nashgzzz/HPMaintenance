@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Car;
+use App\Models\CarModel;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
-use App\Models\Car;
 
 class CarController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function index()
     {
         $cars = Car::all();
@@ -21,22 +18,13 @@ class CarController extends Controller
         return View('cars.index',compact('cars'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return View('cars.create');
+        $modelo = CarModel::all();
+        return View('cars.create', compact('modelo'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreCarsRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+  
     public function store(StoreCarRequest $car)
     {
 
@@ -63,35 +51,20 @@ class CarController extends Controller
         return redirect()->route('cars.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Cars  $cars
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show(Car $car)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Cars  $cars
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit(Car $car)
     {
-        return view('cars.edit',compact('car'));
+        $modelo = CarModel::all();
+        return view('cars.edit',compact('car','modelo'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateCarsRequest  $request
-     * @param  \App\Models\Cars  $cars
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(UpdateCarRequest $request, Car $car)
     {
 
@@ -114,12 +87,6 @@ class CarController extends Controller
         return redirect()->route('cars.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Cars  $cars
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Car $car)
     {
         $mensaje = $car->delete();

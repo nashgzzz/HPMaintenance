@@ -13,7 +13,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="name">Nombre del Permiso</label>
-                        <input value="{{$permission->name}}" type="text" class="form-control" id="name" name="name" placeholder="name">
+                        <input value="{{$permission->name}}" type="text" class="form-control" id="name" name="name">
                         @error('name')
                             <span> {{$message}} </span>
                         @enderror
@@ -21,7 +21,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="guard_name">Guard name</label>
-                        <input value="{{$permission->guard_name}}" type="text" class="form-control" id="v" name="guard_name" placeholder="guard_name">
+                        <input value="{{$permission->guard_name}}" type="text" class="form-control" id="v" name="guard_name">
                         @error('guard_name')
                             <span> {{$message}} </span>
                         @enderror

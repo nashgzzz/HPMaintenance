@@ -21,7 +21,7 @@
                      
                         <div class="form-group col-md-6">
                         <label for="adress">Dirección</label>
-                        <input value="{{$store->adress->nombre}}"  type="int" class="form-control" id="adress" name="adress">
+                        <input value="{{$store->nombre}}"  type="text" class="form-control" id="adress" name="adress">
                         @error('adress')
                             <span> {{$message}} </span>
                         @enderror

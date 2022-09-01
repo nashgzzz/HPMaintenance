@@ -20,7 +20,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="fecha_isntalacion">Fecha Instalación</label>
-                        <input value="{{old('fecha_isntalacion')}}" type="date" class="form-control" id="fecha_isntalacion" name="fecha_isntalacion" placeholder="fecha_isntalacion">
+                        <input value="{{old('fecha_isntalacion')}}" type="date" class="form-control" id="fecha_isntalacion" name="fecha_isntalacion">
                         @error('fecha_isntalacion')
                             <span> {{$message}} </span>
                         @enderror
@@ -28,7 +28,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="descripcion">Descripción</label>
-                        <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion">
+                        <input value="{{old('descripcion')}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción">
                         @error('descripcion')
                             <span> {{$message}} </span>
                         @enderror
@@ -44,14 +44,14 @@
                        
                         <div class="form-group col-md-6"> 
                             <label for="RoleAsigne">Asignar sucursal del cliente</label>
-                                   @foreach ($bodegaSucursales as $sucursal)
-                                       <div>
-                                           <label>
-                                               {!! Form::checkbox('bodegaSucursales[]', $sucursal->id, null, ['class' => 'mr-1']) !!}
-                                               {{$sucursal->nombre}}
-                                           </label>
-                                       </div>
-                                   @endforeach
+                               
+                                     <select name="bodega_sucursal_id" id="bodega_sucursal_id" class="form-select">
+                                       
+                                        @foreach ($bodegaSucursales as $sucursal)
+                                            <option value='{{$sucursal->id}}'> {{$sucursal->nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                  
                         </div> 
                         
 

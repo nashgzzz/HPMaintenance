@@ -13,7 +13,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre del Pedido</label>
-                        <input value="{{$order->nombre}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{$order->nombre}}" type="text" class="form-control" id="nombre" name="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
@@ -22,7 +22,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="cantidad">Cantidad</label>
-                        <input value="{{$order->cantidad}}" type="int" class="form-control" id="cantidad" name="cantidad" placeholder="cantidad">
+                        <input value="{{$order->cantidad}}" type="number" class="form-control" id="cantidad" name="cantidad">
                         @error('cantidad')
                             <span> {{$message}} </span>
                         @enderror
@@ -31,7 +31,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="valor">Valor</label>
-                        <input value="{{$order->valor}}" type="int" class="form-control" id="valor" name="valor" placeholder="valor">
+                        <input value="{{$order->valor}}" type="number" class="form-control" id="valor" name="valor">
                         @error('valor')
                             <span> {{$message}} </span>
                         @enderror
@@ -40,7 +40,7 @@
                         
                         <div class="form-group col-md-6">
                         <label for="fecha_pedido">Fecha del pedido</label>
-                        <input value="{{\Carbon\Carbon::parse($order->fecha_pedido)->format('Y-m-d')}}" type="date" class="form-control" id="fecha_pedido" name="fecha_pedido" placeholder="fecha_pedido">
+                        <input value="{{\Carbon\Carbon::parse($order->fecha_pedido)->format('Y-m-d')}}" type="date" class="form-control" id="fecha_pedido" name="fecha_pedido">
                         @error('fecha_pedido')
                             <span> {{$message}} </span>
                         @enderror

@@ -13,7 +13,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre </label>
-                        <input value="{{$kindProduct->nombre}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{$kindProduct->nombre}}" type="text" class="form-control" id="nombre" name="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
@@ -22,7 +22,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="fecha">Estado</label>
-                        <input value="{{$kindProduct->status}}" type="int" class="form-control" id="status" name="status" placeholder="status">
+                        <input value="{{$kindProduct->status}}" type="number" class="form-control" id="status" name="status">
                         @error('status')
                             <span> {{$message}} </span>
                         @enderror

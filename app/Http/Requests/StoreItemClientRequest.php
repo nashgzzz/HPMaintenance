@@ -28,7 +28,7 @@ class StoreItemClientRequest extends FormRequest
             'fecha_isntalacion' => 'required',
             'descripcion' => 'required',
             'obvervaciones' => 'required',
-            'bodegaSucursales' => 'required'
+            'bodega_sucursal_id' => 'required'
         ];
     }
 }

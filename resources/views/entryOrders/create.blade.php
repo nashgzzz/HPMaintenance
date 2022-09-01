@@ -12,14 +12,14 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre de Órden</label>
-                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <input value="{{old('nombre')}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                         <div class="form-group col-md-6">
                         <label for="detalle">Detalle de órden</label>
-                        <input value="{{old('detalle')}}" type="text" class="form-control" id="detalle" name="detalle" placeholder="detalle">
+                        <input value="{{old('detalle')}}" type="text" class="form-control" id="detalle" name="detalle" placeholder="Detalle de la órden">
                         @error('detalle')
                             <span> {{$message}} </span>
                         @enderror

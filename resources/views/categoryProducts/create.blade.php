@@ -12,7 +12,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="product_id">Nombre del producto</label>
-                        <input value="{{old('product_id')}}" type="text" class="form-control" id="product_id" name="product_id" placeholder="product_id">
+                        <input value="{{old('product_id')}}" type="number" class="form-control" id="product_id" name="product_id" placeholder="product_id">
                         @error('product_id')
                             <span> {{$message}} </span>
                         @enderror
@@ -20,7 +20,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="category_id">Nombre de la Categoria</label>
-                        <input value="{{old('category_id')}}" type="text" class="form-control" id="category_id" name="category_id" placeholder="category_id">
+                        <input value="{{old('category_id')}}" type="number" class="form-control" id="category_id" name="category_id" placeholder="category_id">
                         @error('category_id')
                             <span> {{$message}} </span>
                         @enderror

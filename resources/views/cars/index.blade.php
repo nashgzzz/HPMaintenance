@@ -3,14 +3,14 @@
 <div class="container-fluid">
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Autos</h1>
+<h1 class="h3 mb-2 text-gray-800">Vehículos</h1>
 
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
     
-    <a type="button" class="btn btn-success" href="{{ route('cars.create') }}">Agregar un Auto</a>
+    <a type="button" class="btn btn-success" href="{{ route('cars.create') }}">Agregar un Vehículo</a>
     
     </div>
     <div class="card-body">
@@ -23,9 +23,9 @@
                         <th>Nombre</th>
                         <th>Patente</th>
                         <th>Color</th>
-                        <th>Descripcion</th>
+                        <th>Descripción</th>
                         <th>Modelo</th>
-                        <th>User</th>
+                        <th>Usuario</th>
                         <th>Acciones</th>
 
                     </tr>

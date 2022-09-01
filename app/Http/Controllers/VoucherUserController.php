@@ -8,11 +8,7 @@ use App\Models\voucherUser;
 
 class VoucherUserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
         $voucherUsers = voucherUser::all();
@@ -21,22 +17,13 @@ class VoucherUserController extends Controller
     
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function create()
     {
         return view('voucherUsers.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StorevoucherUserRequest  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(StorevoucherUserRequest $voucherUser)
     {
         $voucherUser = voucherUser::create([
@@ -47,35 +34,19 @@ class VoucherUserController extends Controller
         return redirect()->route('voucherUsers.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\voucherUser  $voucherUser
-     * @return \Illuminate\Http\Response
-     */
+    
     public function show(voucherUser $voucherUser)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\voucherUser  $voucherUser
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit(voucherUser $voucherUser)
     {
         return View('voucherUsers.edit' , compact('voucherUser'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdatevoucherUserRequest  $request
-     * @param  \App\Models\voucherUser  $voucherUser
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(UpdatevoucherUserRequest $request, voucherUser $voucherUser)
     {
         $voucherUser->update([
@@ -86,12 +57,7 @@ class VoucherUserController extends Controller
         return redirect()->route('voucherUsers.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\voucherUser  $voucherUser
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy(voucherUser $voucherUser)
     {
         $voucherUser->delete();

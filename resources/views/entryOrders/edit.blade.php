@@ -12,15 +12,15 @@
         @method('PUT')
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <label for="nombre">Nombre Reserva</label>
-                        <input value="{{$entryOrder->nombre}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <label for="nombre">Nombre de Órden</label>
+                        <input value="{{$entryOrder->nombre}}" type="text" class="form-control" id="nombre" name="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                         <div class="form-group col-md-6">
-                        <label for="detalle">Descripcion</label>
-                        <input value="{{$entryOrder->detalle}}" type="text" class="form-control" id="detalle" name="detalle" placeholder="detalle">
+                        <label for="detalle">Detalle de órden</label>
+                        <input value="{{$entryOrder->detalle}}" type="text" class="form-control" id="detalle" name="detalle">
                         @error('detalle')
                             <span> {{$message}} </span>
                         @enderror

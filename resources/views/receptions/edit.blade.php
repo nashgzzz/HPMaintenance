@@ -12,15 +12,15 @@
         @method('PUT')
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                        <label for="nombre">Nombre Reserva</label>
-                        <input value="{{$reception->nombre}}" type="text" class="form-control" id="nombre" name="nombre" placeholder="nombre">
+                        <label for="nombre">Nombre de la recepción</label>
+                        <input value="{{$reception->nombre}}" type="text" class="form-control" id="nombre" name="nombre">
                         @error('nombre')
                             <span> {{$message}} </span>
                         @enderror
                         </div>
                         <div class="form-group col-md-6">
-                        <label for="descripcion">Descripcion</label>
-                        <input value="{{$reception->descripcion}}" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="descripcion">
+                        <label for="descripcion">Descripción</label>
+                        <input value="{{$reception->descripcion}}" type="text" class="form-control" id="descripcion" name="descripcion">
                         @error('descripcion')
                             <span> {{$message}} </span>
                         @enderror
@@ -28,7 +28,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="fecha">Fecha</label>
-                        <input value="{{\Carbon\Carbon::parse($reception->fecha)->format('Y-m-d')}}" type="date" class="form-control" id="fecha" name="fecha" placeholder="Fecha fecha">
+                        <input value="{{\Carbon\Carbon::parse($reception->fecha)->format('Y-m-d')}}" type="date" class="form-control" id="fecha" name="fecha">
                         @error('fecha')
                             <span> {{$message}} </span>
                         @enderror
@@ -37,7 +37,7 @@
 
                         <div class="form-group col-md-6">
                         <label for="user_id">Usuario</label>
-                        <input value="{{$reception->user_id}}" type="text" class="form-control" id="user_id" name="user_id" placeholder="user_id">
+                        <input value="{{$reception->user_id}}" type="number" class="form-control" id="user_id" name="user_id" >
                         @error('user_id')
                             <span> {{$message}} </span>
                         @enderror

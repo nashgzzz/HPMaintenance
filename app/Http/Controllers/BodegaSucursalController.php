@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Adress;
+use App\Models\BodegaSucursal;
 use App\Http\Requests\StoreBodegaSucursalRequest;
 use App\Http\Requests\UpdateBodegaSucursalRequest;
-use App\Models\BodegaSucursal;
 
 class BodegaSucursalController extends Controller
 {
@@ -20,15 +21,20 @@ class BodegaSucursalController extends Controller
  
     public function create()
     {
-        return view('bodegaSucursals.create');
+        $direcciones = Adress::all();
+        return view('bodegaSucursals.create', compact('direcciones'));
     }
 
 
     public function store(StoreBodegaSucursalRequest $bodegaSucursal)
     {
+        $adress = Adress::create([
+            'nombre' => $bodegaSucursal->adress
+        ]);
+
         $mensaje = BodegaSucursal::create([
             'nombre' => $bodegaSucursal->nombre,
-            'adress_id' => $bodegaSucursal->adress_id
+            'adress_id' => $adress->id
         ]);
         if($mensaje)
         {
@@ -50,7 +56,8 @@ class BodegaSucursalController extends Controller
 
     public function edit(BodegaSucursal $bodegaSucursal)
     {
-        return view('bodegaSucursals.edit',compact('bodegaSucursal'));
+        $direcciones = Adress::all();
+        return view('bodegaSucursals.edit',compact('bodegaSucursal', 'direcciones'));
     }
 
 

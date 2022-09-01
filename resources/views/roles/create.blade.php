@@ -12,7 +12,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                             <label for="name">Nombre del Rol</label>
-                            <input  type="text" class="form-control" id="name" name="name" placeholder="name">
+                            <input  type="text" class="form-control" id="name" name="name" placeholder="Nomber del rol">
                             @error('name')
                                 <span> {{$message}} </span>
                             @enderror
@@ -20,7 +20,7 @@
 
                             <div class="form-group col-md-6">
                             <label for="guard_name">Guard Name</label>
-                            <input type="text" class="form-control" id="guard_name" name="guard_name" placeholder="guard_name">
+                            <input type="text" class="form-control" id="guard_name" name="guard_name" placeholder="Guard_name">
                             @error('guard_name')
                                 <span> {{$message}} </span>
                             @enderror

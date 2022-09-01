@@ -12,7 +12,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="user_id">ID de Usuario</label>
-                        <input value="{{$employee->user_id}}" type="int" class="form-control" id="user_id" name="user_id" placeholder="user_id">
+                        <input value="{{$employee->user_id}}" type="number" class="form-control" id="user_id" name="user_id">
                         @error('user_id')
                             <span> {{$message}} </span>
                         @enderror  
