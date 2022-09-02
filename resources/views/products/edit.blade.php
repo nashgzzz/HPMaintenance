@@ -52,37 +52,55 @@
                         @enderror
                         </div>
 
-                        <div class="form-group col-md-6">
-                        <label for="inventory_id">Inventario</label>
-                        <input value="{{$product->inventory_id}}" type="number" class="form-control" id="inventory_id" name="inventory_id">
-                        @error('inventory_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                    
+                          <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Asignar inventario al producto</label>
+                               
+                                     <select name="inventory_id" id="inventory_id" class="form-select">
+                                       
+                                        @foreach ($inventarios as $inventario)
+                                            <option value="{{$inventario->id}}"> {{$inventario->nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                  
+                        </div> 
 
-                        <div class="form-group col-md-6">
-                        <label for="supplier_id">Proovedor</label>
-                        <input value="{{$product->supplier_id}}" type="number" class="form-control" id="supplier_id" name="supplier_id">
-                        @error('supplier_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                        <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Asignar Proovedor</label>
+                               
+                                     <select name="supplier_id" id="supplier_id" class="form-select">
+                                       
+                                        @foreach ($proovedores as $proovedor)
+                                            <option value="{{$proovedor->id}}"> {{$proovedor->nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                  
+                        </div> 
 
-                        <div class="form-group col-md-6">
-                        <label for="kind_products_id">Tipo de Producto</label>
-                        <input value="{{$product->kind_products_id}}" type="number" class="form-control" id="kind_products_id" name="kind_products_id">
-                        @error('kind_products_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
 
-                        <div class="form-group col-md-6">
-                        <label for="store_id">Local</label>
-                        <input value="{{$product->store_id}}" type="number" class="form-control" id="store_id" name="store_id">
-                        @error('store_id')
-                            <span> {{$message}} </span>
-                        @enderror
-                        </div>
+                        <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Asignar el tipo del producto</label>
+                               
+                                     <select name="kind_products_id" id="kind_products_id" class="form-select">
+                                       
+                                        @foreach ($tipos as $tipo)
+                                            <option value="{{$tipo->id}}"> {{$tipo->nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                  
+                        </div> 
+
+                        <div class="form-group col-md-6"> 
+                            <label for="RoleAsigne">Asignar bodega principal</label>
+                               
+                                     <select name="store_id" id="store_id" class="form-select">
+                                       
+                                        @foreach ($bodegaPrinc as $bode)
+                                            <option value="{{$bode->id}}"> {{$bode->nombre}}</option>
+                                        @endforeach
+                                      </select>
+                                  
+                        </div> 
                     </div>
                     <button type="submit" class="btn btn-primary">Actualizar Producto</button>
         </form>

@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Store;
+use App\Models\Bodega;
 use App\Models\Product;
+use App\Models\Supplier;
 use App\Models\Inventory;
+use App\Models\KindProduct;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 
@@ -26,14 +30,20 @@ class ProductController extends Controller
    
     public function create()
     {
-        $inventario = Inventory::all();
-        return view('products.create', compact('inventario'));
+        
+        $inventarios = Inventory::all();
+        $proovedores = Supplier::all();
+        $tipos = KindProduct::all();
+        $locales = Store::all();
+        $bodegaPrinc = Bodega::all();
+        return view('products.create', compact('inventarios', 'proovedores','tipos', 'bodegaPrinc','locales'));
     }
 
     
     public function store(StoreProductRequest $product)
     {
-        $mensaje = $product = Product::create([
+        
+        $mensaje = Product::create([
 
             'nombre' => $product->nombre,
             'direccion' => $product->direccion,
@@ -46,6 +56,8 @@ class ProductController extends Controller
             'store_id' => $product->store_id,
             'bodega_id' => $product->bodega_id
         ]);
+
+        
         if($mensaje)
         {
             toast('Producto agregado','success');
@@ -66,7 +78,13 @@ class ProductController extends Controller
    
     public function edit(Product $product)
     {
-        return View('products.edit' , compact('product'));
+         
+        $inventarios = Inventory::all();
+        $proovedores = Supplier::all();
+        $tipos = KindProduct::all();
+        $locales = Store::all();
+        $bodegaPrinc = Bodega::all();
+        return View('products.edit' , compact('inventarios','product', 'proovedores','tipos', 'bodegaPrinc','locales'));
     }
 
     
@@ -108,4 +126,34 @@ class ProductController extends Controller
         }
         return redirect()->route('products.index');
     }
+
+
+    public function asignar($bodega)
+    {
+        $bodega = Bodega::find($bodega);
+        $inventarios = Inventory::all();
+        $proovedores = Supplier::all();
+        $tipos = KindProduct::all();
+        $locales = Store::all();
+        return view('bodegas.asignar',compact('bodega','inventarios', 'proovedores','tipos','locales'));
+    }
+
+    public function asignar_producto(Request $request, Bodega $bodega)
+    {
+
+      
+        $bodega->bodega()->sync($request->bodega);
+        
+        if($bodega)
+        {
+            toast('Bodega asignada','success');
+            
+        }else{
+            toast('Bodega no asignada','warning');
+        }
+        
+        return redirect()->route('users.index');
+
+    }
+
 }

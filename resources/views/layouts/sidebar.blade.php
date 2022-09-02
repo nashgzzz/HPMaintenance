@@ -943,6 +943,58 @@
                
             </li>
 
+            <!-- MANTENEDOR DIVIDER BODEGA PRINCIPAL -->
+           
+            <li class="nav-item">
+
+                @if(Route::currentRouteName()=='bodegas.index')
+
+                <a class="nav-link " href="#" data-toggle="collapse" data-target="#bodegas"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>Bodega Principal </span>
+                </a>
+                <div id="bodegas" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Bodega Principal</h6>
+                    <a class="collapse-item" href="{{ route('bodegas.index') }}" >Listar bodegas  </a>
+                        <a class="collapse-item" href="{{ route('bodegas.create') }}">Agregar bodegas </a>
+                    </div>
+                </div>
+
+                @elseif(Route::currentRouteName()=='bodegas.create')
+
+                <a class="nav-link " href="#" data-toggle="collapse" data-target="#bodegas"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>Bodega Principal</span>
+                </a>
+                <div id="bodegas" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Bodega Principal</h6>
+                    <a class="collapse-item" href="{{ route('bodegas.index') }}" >Listar bodegas   </a>
+                        <a class="collapse-item" href="{{ route('bodegas.create') }}">Agregar bodegas  </a>
+                    </div>
+                </div>
+
+                @else
+
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#bodegas" aria-expanded="false" aria-controls="collapseUtilities">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>Bodega Principal</span> 
+
+                </a>
+                <div id="bodegas" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" >
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Bodega Principal</h6>
+                    <a class="collapse-item" href="{{ route('bodegas.index') }}" >Listar bodegas  </a>
+                        <a class="collapse-item" href="{{ route('bodegas.create') }}">Agregar bodegas </a>
+                    </div>
+                </div>
+                @endif
+
+            </li>
+
 
              <!-- MANTENEDOR DIVIDER PRODUCTOS -->
              @can('roles.index', 'permissions.index')

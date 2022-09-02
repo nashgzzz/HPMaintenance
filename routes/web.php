@@ -57,6 +57,15 @@ Route::get('/dashboard', function () {
 Route::get('users/asignar/{user}', [ UserController::class, 'asignar'])->name('users.asignar');
 Route::put('users/asignar/bodega/{user}', [ UserController::class, 'asignar_bodega'])->name('users.asignar.bodega');
 
+
+Route::get('bodega-sucursals/asignar/{itemClient}', [ ItemClientController::class, 'asignar'])->name('bodegaSucursals.asignar');
+Route::put('bodega-sucursals/asignar/producto/{itemClient}', [ ItemClientController::class, 'asignar_producto'])->name('bodegaSucursals.asignar.producto');
+
+
+Route::get('bodega-principal/asignar/{product}', [ ProductController::class, 'asignar'])->name('bodegas.asignar');
+Route::put('bodega-principal/asignar/producto/{product}', [ ProductController::class, 'asignar_producto'])->name('bodegas.asignar.producto');
+
+
 Route::resource('clients', ClientController::class)->names('clients');
 Route::resource('users', UserController::class)->names('users');
 Route::resource('cars', CarController::class)->names('cars');

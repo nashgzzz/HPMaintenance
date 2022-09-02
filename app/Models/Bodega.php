@@ -16,7 +16,7 @@ class Bodega extends Model
     }
 
     public function products(){
-        return $this->hasMany(Product::class);
+        return $this->hasOne(Product::class);
     }
     
     public function bodega_usuarios(){

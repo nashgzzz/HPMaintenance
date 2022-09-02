@@ -25,7 +25,7 @@ class UpdateProductRequest extends FormRequest
     {
         return [
             
-            'nombre' => 'required|alpha',
+            'nombre' => 'required',
             'direccion' => 'required',
             'serie' => 'required',
             'iva' => 'required',

@@ -100,4 +100,31 @@ class ItemClientController extends Controller
         }
         return redirect()->route('itemClients.index');
     }
+
+
+    public function asignar($bodegaSucursal)
+    {
+        $bodegaSucursal = BodegaSucursal::find($bodegaSucursal);
+     
+
+        return view('bodegaSucursals.asignar',compact('bodegaSucursal'));
+    }
+
+    public function asignar_producto(Request $request, BodegaSucursal $bodegaSucursal)
+    {
+
+        $bodegaSucursal->bodegaSucursal()->attach($request->bodegaSucursal);
+        
+        if($bodegaSucursal)
+        {
+            toast('Bodega asignada','success');
+            
+        }else{
+            toast('Bodega no asignada','warning');
+        }
+        
+        return redirect()->route('users.index');
+
+    }
+    
 }

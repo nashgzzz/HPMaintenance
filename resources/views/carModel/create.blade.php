@@ -20,8 +20,6 @@
                         </div>
                         
 
-                
-
                         <div class="form-group col-md-6"> 
                             <label for="RoleAsigne">Asignar Marca a Vehículo</label>
                                
@@ -31,11 +29,10 @@
                                             <option value="{{$brand->id}}"> {{$brand->nombre}}</option>
                                         @endforeach
                                       </select>
-                                  
-                        </div> 
                         
-
+                        </div> 
                     </div>
+
                     <button type="submit" class="btn btn-primary">Agregar Modelo del Vehículo</button>
         </form>
 

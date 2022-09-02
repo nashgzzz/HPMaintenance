@@ -24,7 +24,7 @@ class StoreBrandRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|alpha'
+            'nombre' => 'required'
         ];
     }
 }

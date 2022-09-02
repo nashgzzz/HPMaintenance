@@ -38,6 +38,7 @@
                                     <button type="submit" class="btn btn-xs btn-danger btn-flat show_confirm" data-toggle="tooltip" title='Delete'>Delete</button>
                                 </form>
                                     <a type="button" href="{{route('bodegas.edit', $bodega)}}" class="btn btn-info">Editar</a>
+                                    <a type="button" href="{{route('bodegas.asignar', $bodega)}}" class="btn btn-info">Asignar Producto</a>
                              </td>
                         </tr>
                         @endforeach            

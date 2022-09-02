@@ -6,9 +6,11 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-    <h2>Agregar Producto</h2>
-        <form action="{{ route('products.store') }}" method="POST">
+        <h2>Agregar Producto a {{$bodega->nombre}}</h2>
+        {!! Form::model($bodega, ['route' => ['bodegas.asignar.producto', $bodega->id], 'method' => 'PUT']) !!}
         @csrf
+        <input type="hidden" name="bodegas_id" value={{$bodega->id}}>
+
                     <div class="form-row">
                         <div class="form-group col-md-6">
                         <label for="nombre">Nombre Producto</label>
@@ -101,24 +103,9 @@
                                       </select>
                                   
                         </div> 
-                        <div class="form-group col-md-6"> 
-                            <label for="RoleAsigne">Asignar Bodega principal</label>
-                               
-                                     <select name="bodega_id" id="bodega_id" class="form-select">
-                                       
-                                        @foreach ($bodegaPrinc as $bode)
-                                        <option value="{{$bode->id}}"> {{$bode->nombre}}</option>
-                                    @endforeach
-                                      </select>
-                                  
-                        </div> 
-
-                        
-                        
-                       
                     </div>
-                    <button type="submit" class="btn btn-primary">Agregar Producto</button>
-        </form>
+            {!! Form::submit('Asignar productos a Bodega Principal', ['class' => 'btn btn-primary']) !!}
+        {!! Form::close() !!}
 
 
     
